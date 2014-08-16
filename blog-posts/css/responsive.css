@@ -1,4 +1,12 @@
-@media screen and (min-width: 480px) {
+@media screen and (max-width: 715px) {
+
+#gallery_wrapper{
+  display: none;
+  visibility: hidden;
+}
+.blog{
+  width: 165%;
+}
 
   /********************************
   TWO COLUMN LAYOUT
@@ -11,6 +19,7 @@
     width: 40%;
     float: right;
   }
+
   
   /********************************
   Page: Portfolio
@@ -33,11 +42,13 @@
   }
   
 }
-@media screen and (min-width: 660px) {
+@media screen and (min-width: 716px) {
 
   /********************************
   HEADER
   ********************************/
+
+
   
   nav {
     background:none;
