@@ -48,7 +48,11 @@ a {
   clear: both;
   background: #A2A2A2;
 }
-
+.reflection{
+  font-size: .75em;
+  background: #999999;
+  font-weight: bold;
+}
 @media screen and (max-width: 1024px){
     #wrapper{
       width:100%;
