@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Michael Angelo | Developer, Designer, and All-Around Good Guy.</title>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <header id="header">
+      <a href="index.html" id="logo">
+        <h1>Michael Angelo</h1>
+        <h2>Developer, Designer, and All-Around Good Guy.</h2>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="../index.html" class="selected">Blog</a></li>  
+          <li><a href="../projects.html">Projects</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="wrapper">
+      <div id="blog_wrapper">
+        <div class="blog">
+              <p><strong>Understanding Padding, Border, and Margin (PBM):</strong></p>
+
+                  <p>First, look at that nifty box model on the right ☺ It shows the positions of Content, Padding, Border, and Margin.</p>
+
+                  <hr>
+
+                  <p><strong>Content</strong> -  This is the where the text, image or video appears.</p>
+
+                  <hr>
+
+                  <p><strong>Padding</strong> -  Clears an area around the content. The padding is affected by the background color of the box. So if you wanted to create a more color around the text you would increase the padding</p>
+
+                  <p>Padding: 10px;</p>
+
+                  <p>The code will create a space of 10 pixels around the content that will be the same color as the background color given to the content.</p>
+                  
+                  <hr>
+
+                  <p><strong>Border</strong> -  A border that goes around the padding and content. You can change the border color, size, and line quality.</p>
+                  
+                  <p>Border: 5px solid gray;</p>
+                  
+                  <p>The code above means that around the padding a solid gray border will appear that is 5 pixels thick.</p>
+                  
+                  <hr>
+
+                  <p><strong>Margin</strong> -  Clears an area around the border. The margin does not have a background color, it is completely transparent. So basically you would use this to create space so that if you have to pieces of content next to each other, they wouldn’t be touching.</p>
+
+                  <p>margin: 10px;</p>
+                  
+                  <p>The code creates a transparent margin of 10 pixels around the border.</p>
+
+                  <hr>
+
+                  <p>*note that you don’t have to change the entire PBM, you can alter any of the sides. Look at this code</p>
+                  
+                  <p>padding-top: 10px;<br>border-right: 15px solid black;<br>margin-bottom: 20px;</p>
+                  
+                  <p>The code will make the padding on the top 10 pixels, there will be a border of 15 pixels on the right and a transparent margin of twenty pixels on the bottom. See the image below to see how the content box reacts to the chocobo!</p>
+
+                  <center><img src="../img/pbm-example1.png"></center>
+
+                  <p>One more Example, lets give the content box a width of 100px, a padding of 10px, a border of 5px solid gray, and a margin-top of 50px, just so it doesn't bother that chocobo! The code should look like this:</p>
+                  <p>width: 100px;<br>padding: 10px;<br>border: 5px solid gray;<br>margin-top: 50px;<br><br>And this is the result:</p>
+                  <center><img src="../img/pbm-example2.png"></center>
+              <h4>Understanding Padding, Border, and Margin (PBM):</h4>
+        </div>
+    </div>
+
+    <div id="gallery_wrapper">
+      <div id="gallery">     
+        <img src="../img/box-model.png" alt="">
+        <p>The Box Model</p>
+        <img src="../img/for-fun.png" alt="">
+        <p>Just for fun!</p>
+      </div>
+    </div>
+
+      <footer>
+        <a href="http://twitter.com/lordmikeang">
+          <img src="../img/social_media/twitter.png" alt="Twitter Logo" class="social-icon">
+        </a>
+         <a href="http://facebook.com/michael.angelo.14418"> 
+           <img src="../img/social_media/facebook.png" alt="Facebook Logo" class="social-icon">
+        </a>
+        <a href="https://https://www.linkedin.com/pub/michael-angelo/9a/a93/1b0">
+          <img src="../img/social_media/linked_in.png" alt="Linkedin Logo" class="social-icon">
+        </a>
+        <a href="https://github.com/Yamikamisama">
+          <img src="../img/social_media/github.png" alt="Github Logo" class="social-icon">
+        </a>
+        <a href="#">
+          <img src="../img/social_media/quora.png" alt="Quora Logo" class="social-icon">
+        </a>
+        <p>&copy; 2014 Michael Angelo.</p>
+      </footer>
+
+    </div>
+  </body>
+</html>
