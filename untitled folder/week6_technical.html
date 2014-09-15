@@ -31,24 +31,74 @@
 
               <p>What is a class?</p>
 
-              <p>Classes are a very useful tool that can be used in just about anything in Ruby, and on that note like anything else in ruby a class is an object. Classes are used to create new objects that all share similar traits. See example below. You could create a class for pets, an address book, students, worker info, or Characters in a video game. For more information on just classes see my blog post <a href"http://yamikamisama.github.io/blog-posts/week5_technical.html">Classes in Ruby: A fun Example.</a> </p>
+              <p>Classes are a very useful tool that can be used in just about anything in Ruby, and on that note like anything else in ruby a class is an object. Classes are used to create new objects that all share similar traits. See example below. You could create a class for pets, an address book, students, worker info, or Characters in a video game. For more information on just classes see my blog post <a href= "http://yamikamisama.github.io/blog-posts/week5_technical.html">Classes in Ruby: A fun Example.</a> </p>
+
+              <p><u>This is a class</u></p>
+
+                      <xmp>    class Mammal  
+      def walk  
+        puts "walks around in a circle"  
+      end  
+    end</xmp>
+
+              <p><u>This is a class inheriting</u></p>
+              <xmp>    class Mammal  
+      def walk  
+        puts "walks around in a circle"  
+      end  
+    end  
+      
+    class Dog < Mammal  
+      def speak  
+        puts "Woof!"  
+      end  
+    end  
+      
+    muffin = Dog.new  
+    muffin.walk  
+    muffin.speak   </xmp>
 
               <p>What is a module?</p>
 
               <p>Modules are a way of grouping together methods, classes, and constants. Modules give you two major benefits.  Modules provide a namespace and prevent name clashes. Modules implement the mixin facility.  Modules define a namespace, a sandbox in which your methods and constants can play without having to worry about being stepped on by other methods and constants. For for information goto <a href= "http://www.tutorialspoint.com/ruby/ruby_modules.htm">Tutorials Point</a> and read their information about modules and mixins.</p>
 
+              <p><u>This is a module</u></p>
+              <xmp>    module Earthlings
+      def living_creature
+        puts "I am a creature of earth"
+      end
+    end
+              </xmp>
+
               <p>Modules who? Classes what? What do I use?!</p>
 
-              <p>For me it comes down to readability and practicality.  Modules have the ability to provide methods that you can use across multiple classes, where as classes can only inherit from once class (their super class).  Think of it this way classes are about creating objects; modules are about functions.  You use a module when you have shared methods across multiple classes and want to avoid messy inheritance. Lets look at some examples.</p>
+              <p>For me it comes down to readability and practicality.  Modules have the ability to provide methods that you can use across multiple classes, where as classes can only inherit from once class (their super class).  Think of it this way classes are about creating objects; modules are about functions.  You use a module when you have shared methods across multiple classes and want to avoid messy inheritance.</p>
 
-              <p>This is a class</p>
+              <p><u>This is a class including a module</u></p>
+            <xmp>    module Earthlings
+      def living_creature
+        puts "I am a creature of earth."
+      end
+    end
 
-              <p>This is a class inheriting</p>
+    class Mammal  
+      include Earthlings
+      def walk  
+        puts "Walks around in a circle."  
+      end  
+    end  
+      
+    class Dog < Mammal  
+      def speak  
+        puts "Woof!"  
+      end  
+    end
 
-              <p>This is a module</p>
-
-              <p>This is a class including a module</p>
-
+    muffin = Dog.new  
+    muffin.living_creature
+    muffin.walk  
+    muffin.speak  
+      </xmp>
 
               <h4>Stereotype Threat: A Direct Attack</h4>
         </div>
@@ -56,10 +106,10 @@
 
     <div id="gallery_wrapper">
       <div id="gallery">     
-        <img src="../img/night_at_the_opera1.png" alt="">
-        <p>Still Shot From Night at the Opera</p>
-        <img src="../img/night_at_the_opera2.png" alt="">
-        <p>Night at the Opera Video Shoot</p>
+        <img src="http://www.hokstad.com/rom/rom.png" alt="">
+        <p>Breaksdown of Relationships</p>
+        <img src="../img/modular_living.png" alt="">
+        <p>Just for fun! Modular Living</p>
       </div>
     </div>
 
