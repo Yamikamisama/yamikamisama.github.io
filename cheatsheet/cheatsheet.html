@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title id='title'>Cheat Sheet</title>
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+    </head>
+<body>
+<div id="container"> 
+	<center><h1>JavaScript Cheat Sheet</h1></center>
+	<div id="col1"> 
+		<h2>JavaScript Objects</h2>
+	    <h3>Object Types</h3>
+		<ul>
+		    <li>
+		        a number <br>
+                var someNumber = 5;
+		    </li>
+		    <br>
+		    <li>
+		        a string <br>
+                var someString = "Hello.";
+            </li>
+            <br>
+            <li>
+                a boolean<br>
+                var someBoolean = true;
+            </li> 
+            <br>
+            <li>
+                an array<br>
+                var someArray = ["A", "B", "C"];
+            </li>
+            <br>
+		    <li>
+		      a function <br>
+              var someFunction = function(string){ console.log(string) };
+		    </li>
+		    <br>
+		    <li> 
+		      an object <br>
+              var someObject = { property: "value" };
+            </li>
+            <h3>A Basic Object</h3>
+            <li>
+                var person = {<br>
+                firstName:"John",<br>
+                lastName:"Doe",<br>
+                age:50,<br>
+                eyeColor:"blue"<br>
+                };
+                </li>
+		</ul> 
+	</div> 
+	<div id="col2outer"> 
+		<div id="col2mid"> 
+		<h2>JavaScript Prototypes</h2>
+		<ul>
+		    <h3>Creating a Prototype</h3>
+		    <li>
+		    function person(first, last, age, eyecolor) {<br>
+            this.firstName = first;<br>
+            this.lastName = last;<br>
+            this.age = age;<br>
+            this.eyeColor = eyecolor;<br>
+            this.name = function() {return this.firstName + " " + this.lastName;};<br>
+            }
+		    </li>
+		    <br>
+		    <li>
+		        var myFather = new person("John", "Doe", 50, "blue");<br>
+				var myMother = new person("Sally", "Rally", 48, "green");
+            </li>
+            <br>
+            <h3>Adding a Property to and Object</h3>
+            <li>
+                myFather.nationality = "English";
+            </li> 
+            <br>
+            <h3>Adding a Method to an Object</h3>
+            <li>
+                myFather.name = function () {<br>
+                return this.firstName + " " + this.lastName;<br>
+                };<br>
+            </li>
+            <h3>Adding Properties to a Prototype</h3>
+		    <li>
+		        function person(first, last, age, eyecolor) {<br>
+                this.firstName = first;<br>
+                this.lastName = last;<br>
+                this.age = age;<br>
+                this.eyeColor = eyecolor;<br>
+                }<br>
+                person.prototype.nationality = "English";
+		    </li>
+		    <br>
+            <h3>Adding Methods to a Prototype</h3>
+            <li>
+                function person(first, last, age, eyecolor) {<br>
+                this.firstName = first;<br>
+                this.lastName = last;<br>
+                this.age = age;<br>
+                this.eyeColor = eyecolor;<br>
+                }<br>
+                person.prototype.name = function() {<br>
+                return this.firstName + " " + this.lastName;<br>
+                };
+                </li>
+		</ul> 	
+		</div> 
+		<div id="col2side"> 
+			<h2>JavaScript Looping</h2>
+			<ul>
+			    <h3>Types of Loops</h3>
+			    <li>
+			    for - loops through a block of code a number of times<br>
+				for/in - loops through the properties of an object<br>
+				while - loops through a block of code while a specified condition is true<br>
+				do/while - also loops through a block of code while a specified condition is true
+			    </li>
+			    <br>
+			    <h3>For Loops</h3>
+			    <li>
+			        for (i = 0; i < 5; i++) {<br>
+                    text += "The number is " + i;<br>
+                    }
+	            </li>
+	            <br>
+	            <h3>For/In Loop</h3>
+	            <li>
+	                var person = {fname:"John", lname:"Doe", age:25}; <br>
+                    var text = "";<br>
+                    var x;<br>
+                    for (x in person) {<br>
+                        text += person[x];<br>
+                    }
+	            </li> 
+	            <br>
+	            <h3>While Loop</h3>
+	            <li>
+	                while (i < 10) {<br>
+                    text += "The number is " + i;<br>
+                    i++;<br>
+                    }
+	            </li>
+	            <h3>Do/While Loop</h3>
+			    <li>
+			        do {<br>
+                    text += "The number is " + i;<br>
+                    i++;<br>
+                    }<br>
+                    while (i < 10);
+			    </li>
+			  
+			</ul> 
+		</div> 
+	</div> 
+	<div id="footer"> <p>Copyright &copy AJ Stuhrenberg &amp Michael Angelo  2014 </p> </div> 
+</div>
+
+</body>
+</html>
