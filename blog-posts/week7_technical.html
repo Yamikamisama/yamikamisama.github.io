@@ -33,13 +33,13 @@
 
               <p>SQL Injection is a way that someone can hack their way into a database to retrieve user information.  When you connect to the web server and give them all of your information it is translated, passed along, and stored in a database server.  The information stored could be anything from usernames and passwords to bank accounts and social security numbers.  When you log in to your account the server contacts the database to make sure that the information provided matches the information stored.</p>
 
-              <pre>    SELECT id FROM users
+              <xmp>    SELECT id FROM users
     WHERE username = ‘michaelangelo’ 
-    AND password = ‘xxxxxx’</pre>
+    AND password = ‘xxxxxx’</xmp>
 
               <p>So the way that hackers get around this is by basically throwing an error to find the weak spot and then, adding an or statement that will allow them to bypass the code above and make every password true.  In the login in box they would type in:</p>
 
-              <pre>    test’ or 1=1--</pre>
+              <xmp>    test’ or 1=1--</xmp>
 
               <p>And boom they are in, a couple more SQL commands and they have all the information they want, not to mention full access to the account they hacked.  This is much less common due to the advancement in security measures but it doesn’t hurt to be proactive.  A couple of things that you could do to be more protected are:</p>
 
