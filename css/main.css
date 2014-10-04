@@ -3,14 +3,14 @@ GENERAL
 ********************************/
 
 body {
-  font-family: times, sans-serif;
+  font-family: 'Ek Mukta', sans-serif;
   background-color: #292828;
   color: #A8A8A8;
 }
 
 #wrapper {
-  width: 95%;
-  margin: -5% 0 0 2.55%;
+  width: 80%;
+  margin: -5% auto 0 auto;
   padding: 0;
   background-color: #292828;
 }
@@ -58,7 +58,7 @@ h1 {
 }
 
 h2 {
-  font-size: 0.75em;
+  font-size: 1em;
   margin: -5px 0 0;
   font-weight: normal; 
 }
@@ -109,7 +109,7 @@ footer {
 PAGE PORTFOLIO - BLOG
 ********************************/
 #blog_wrapper{
-  width: 60%;
+  width: 70%;
   float: left;
 }
 
@@ -117,7 +117,7 @@ PAGE PORTFOLIO - BLOG
   float: left;
   margin-top: 20px;
   width: 100%;
-  font-size: 1em;
+  font-size: 1.25em;
   color: #fff;
   border: 2px solid #DBB846;
   border-bottom: #4B4942;
@@ -147,7 +147,7 @@ PAGE PORTFOLIO - PROJECTS
 ********************************/
 #gallery_wrapper{
   float: right;
-  width: 40%;
+  width: 30%;
   }
 
 #gallery {
@@ -170,8 +170,8 @@ PAGE PORTFOLIO - PROJECTS
   margin-top: -5px;
   margin-bottom: 20px;
   padding: 10px 15px 5px 15px;
-  height: 20px;
   width: 100%;
+  font-size: 1.25em;
   background-color: #4B4942;
   color: #fff;
 }
