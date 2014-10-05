@@ -117,7 +117,7 @@ PAGE PORTFOLIO - BLOG
   float: left;
   margin-top: 20px;
   width: 100%;
-  font-size: 1.25em;
+  font-size: 1.1em;
   color: #fff;
   border: 2px solid #DBB846;
   border-bottom: #4B4942;
@@ -170,8 +170,8 @@ PAGE PORTFOLIO - PROJECTS
   margin-top: -5px;
   margin-bottom: 20px;
   padding: 10px 15px 5px 15px;
-  width: 100%;
-  font-size: 1.25em;
+  width: 95%;
+  font-size: 1.1em;
   background-color: #4B4942;
   color: #fff;
 }
