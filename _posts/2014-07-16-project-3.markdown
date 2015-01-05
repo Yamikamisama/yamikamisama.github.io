@@ -1,0 +1,15 @@
+---
+title: Fat Princess
+subtitle: Game Design (Javascript)
+layout: default
+modal-id: 3
+date: 2014-07-16
+img: fat-princess.png
+thumbnail: fat-princess-thumbnail.png
+alt: image-alt
+project-date: April 2014
+client: Start Bootstrap
+category: Web Development
+description: You control the princess, guide her to the cake (she is oh so hungry), avoid the carrots (she doesnt like the veggies)
+
+---
