@@ -9,6 +9,6 @@ thumbnail: music-boxes-thumbnail.png
 alt: image-alt
 project-date: April 2014
 client: <a href="https://github.com/Yamikamisama/Music-Boxes">Source</a>
-category: Web Development
+category: <a href="http://yamikamisama.github.io/music_boxes/">Music Boxes</a>
 description: A simple and beautifully colored music app, seven notes that you can click and play with.
 ---
