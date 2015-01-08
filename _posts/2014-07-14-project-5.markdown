@@ -4,8 +4,8 @@ subtitle: Music (Javascript)
 layout: default
 modal-id: 5
 date: 2014-07-14
-img: music-box.png
-thumbnail: music-box-thumbnail.png
+img: music-boxes.png
+thumbnail: music-boxes-thumbnail.png
 alt: image-alt
 project-date: April 2014
 client: Start Bootstrap
