@@ -1,5 +1,5 @@
 ---
-title: Fat Princess
+title: <a href="http://yamikamisama.github.io/fat_princess/">Fat Princess</a>
 subtitle: Game Design (Javascript)
 layout: default
 modal-id: 3
