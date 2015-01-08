@@ -8,7 +8,7 @@ img: colorbug.png
 thumbnail: colorbug-thumbnail.png
 alt: image-alt
 project-date: April 2014
-client: Start Bootstrap
+client: <a href="https://github.com/Yamikamisama/colorbug">Source</a>
 category: Web Development
 description: A useful debugging gem that colors output based on select class
 

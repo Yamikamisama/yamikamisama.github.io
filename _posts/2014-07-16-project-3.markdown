@@ -7,9 +7,9 @@ date: 2014-07-16
 img: fat-princess.png
 thumbnail: fat-princess-thumbnail.png
 alt: image-alt
-project-date: April 2014
-client: Start Bootstrap
-category: Web Development
+project-date: November 2014
+client: <a href="https://github.com/Yamikamisama/Fat-Princess">Source</a>
+category: Front End Web Development
 description: You control the princess, guide her to the cake (she is oh so hungry), avoid the carrots (she doesnt like the veggies)
 
 ---

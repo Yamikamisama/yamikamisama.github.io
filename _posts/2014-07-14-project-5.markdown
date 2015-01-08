@@ -8,7 +8,7 @@ img: music-boxes.png
 thumbnail: music-boxes-thumbnail.png
 alt: image-alt
 project-date: April 2014
-client: Start Bootstrap
+client: <a href="https://github.com/Yamikamisama/Music-Boxes">Source</a>
 category: Web Development
 description: A simple and beautifully colored music app, seven notes that you can click and play with.
 ---
