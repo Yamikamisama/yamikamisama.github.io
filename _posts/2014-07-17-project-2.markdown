@@ -1,5 +1,5 @@
 ---
-title: Super-Working-Title
+title: <a href="http://wizardworld.herokuapp.com/">Super-Working-Title</a>
 subtitle: Game Design (Javascript)
 layout: default
 modal-id: 2

@@ -1,5 +1,5 @@
 ---
-title: ColorBug
+title: <a href="https://rubygems.org/gems/colorbug">Colorbug</a>
 subtitle: Ruby Development (Gem)
 layout: default
 modal-id: 4
