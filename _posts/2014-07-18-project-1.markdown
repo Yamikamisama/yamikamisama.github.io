@@ -1,5 +1,5 @@
 ---
-title: Song Explorer
+title: <a href="http://song-explorer.herokuapp.com/">Song Explorer</a>
 subtitle: Front End Web Development
 layout: default
 modal-id: 1
