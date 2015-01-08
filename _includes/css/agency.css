@@ -863,3 +863,7 @@ img::-moz-selection {
 body {
     webkit-tap-highlight-color: #{{ site.color.primary }};
 }
+
+.portfolio-caption a, .modal-body h2 a{
+    color: rgb(51, 51, 51);
+}
