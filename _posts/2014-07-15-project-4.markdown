@@ -7,7 +7,7 @@ date: 2014-07-15
 img: colorbug.png
 thumbnail: colorbug-thumbnail.png
 alt: image-alt
-project-date: April 2014
+project-date: November 2014
 client: <a href="https://github.com/Yamikamisama/colorbug">Source</a>
 category: <a href="https://rubygems.org/gems/colorbug">Colorbug</a>
 description: A useful debugging gem that colors output based on select class

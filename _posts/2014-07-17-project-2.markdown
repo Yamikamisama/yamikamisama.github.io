@@ -7,7 +7,7 @@ date: 2014-07-17
 img: super-working-title.png
 thumbnail: super-working-title-thumbnail.png
 alt: image-alt
-project-date: April 2014
+project-date: November 2014
 client: <a href="https://github.com/Yamikamisama/Super-Working-Title">Source</a>
 category: <a href="http://wizardworld.herokuapp.com/">Super-Working-Title</a>
 description: Two mages battle it out using their wind magic to defeat one another.
