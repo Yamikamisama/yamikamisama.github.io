@@ -127,7 +127,12 @@ p{
 	width:100%;
 }
 
-li, a{
+li{
+	text-decoration: none;
+}
+
+a{
+	color: black;
 	text-decoration: none;
 }
 
