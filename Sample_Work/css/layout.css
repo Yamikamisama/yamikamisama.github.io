@@ -136,6 +136,10 @@ a{
 	text-decoration: none;
 }
 
+#left_nav a{
+	color: black;
+}
+
 .twitter-timeline{
 	height: 30.4em;
 }
