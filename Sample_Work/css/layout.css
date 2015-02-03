@@ -19,7 +19,7 @@ body{
 	float: left;
 }
 
-#center_carousel{
+#center_view{
 	height:30em;
 	width:59%;
 	border: 3px solid black;
@@ -145,7 +145,6 @@ li, a{
 #owl-demo .item img{
     display: block;
     width: 100%;
-    height: auto;
     position: relative;
 		height: 30em;
 }
