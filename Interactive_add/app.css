@@ -1,0 +1,69 @@
+/***********************
+			POSTER IMAGE
+***********************/
+
+body {
+    width: 280px;
+}
+#wrapper {
+    margin: 0;
+    width: 280px;
+    height: 158px;
+    border: 1px solid black;
+}
+#show-image {
+    width: 280px;
+    height: 158px;
+    border: 1px solid black;
+}
+
+/***********************
+		THUMBNAIL IMAGES
+***********************/
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+li img {
+    width: 30%;
+    margin: 2.5% 0 2.5% 0;
+    padding: 2.5% 1.66% 2.5% 1.66%;
+    display: inline-block;
+    float: left;
+}
+li img:hover {
+    background-color: #999;
+    transition: background-color 500ms linear;
+}
+
+/***********************
+	TEXT APPEAR ON HOVER
+***********************/
+
+.text-effect {
+    width: 280px;
+    height: 133px;
+    line-height: 0px;
+    color: transparent;
+    text-align: center;
+    font-size: 1em;
+    font-family: “HelveticaNeue-Light”, “Helvetica Neue Light”, “Helvetica Neue”, Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+}
+.text-effect:hover {
+    line-height: 50px;
+    color: #fff;
+    text-shadow: black 0.2em 0.2em 0.3em
+}
+.text-effect img {
+    float: left;
+    margin: 0 15px;
+}
