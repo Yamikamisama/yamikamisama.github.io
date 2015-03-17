@@ -1,6 +1,6 @@
 ---
 title: <a href="http://yamikamisama.github.io/theremouse/spotify.html">Theremouse^</a>
-subtitle:JavaScript, jQuery, and Firebase
+subtitle: JavaScript, jQuery, and Firebase
 layout: default
 modal-id: 9
 date: 2015-02-13
