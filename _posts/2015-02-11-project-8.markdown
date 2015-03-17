@@ -1,6 +1,6 @@
 ---
-title: <a href="http://pats-rotten-tomatoes.herokuapp.com/">Pat's Rotten Tomatoes^</a>
-subtitle: Pats Rotten Tomatoes
+title: <a href="http://pats-rotten-tomatoes.herokuapp.com/">Pat's Rotten Tomatoes</a>
+subtitle: API, Bootstrap, Sinatra
 layout: default
 modal-id: 8
 date: 2015-01-10
