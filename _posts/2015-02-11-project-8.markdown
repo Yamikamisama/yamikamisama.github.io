@@ -1,0 +1,14 @@
+---
+title: <a href="http://pats-rotten-tomatoes.herokuapp.com/">Pat's Rotten Tomatoes^</a>
+subtitle: Pats Rotten Tomatoes
+layout: default
+modal-id: 8
+date: 2015-01-10
+img: pats.png
+thumbnail: pats.png
+alt: image-alt
+project-date: January 2014
+client: <a href="https://github.com/Yamikamisama/PatsRottenTomatoes">Source</a>
+category: <a href="http://pats-rotten-tomatoes.herokuapp.com/">Pat's Rotten Tomatoes^</a>
+description: This is an app that pulls upcoming movies from the Rotten Tomatoes Website using the Rotten Tomatoes API and allows you to sort and favorite them in various ways. The app is great for anybody who wants a quick list movies comming out soon!
+---
