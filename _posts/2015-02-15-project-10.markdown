@@ -1,0 +1,14 @@
+---
+title: <a href="http://everythingisawesome.herokuapp.com/#">Lego/Gaga Sample</a>
+subtitle: API, jQuery, Sinatra, Responsive
+layout: default
+modal-id: 10
+date: 2015-02-13
+img: PairMe^.png
+thumbnail: PairMe^.png
+alt: image-alt
+project-date: February 2014
+client: <a href="https://github.com/Yamikamisama/LegoSample">Source</a>
+category: <a href="http://everythingisawesome.herokuapp.com">Lego/Gaga Sample</a>
+description: This an example of my work, I have included the wireframes so that you can see my process, I have also made this site in two versions The Lego Movie Version (click <a href="http://everythingisawesome.herokuapp.com/#">here</a> to view), and a Lady Gaga Version (click <a href="http://gagalicious.herokuapp.com/">here</a> to view) to show that my designs and functionallity translates to any "product". I hope you enjoy them and please feel free to contact me with suggestions.
+---

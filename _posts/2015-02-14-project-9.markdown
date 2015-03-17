@@ -1,5 +1,5 @@
 ---
-title: <a href="http://yamikamisama.github.io/theremouse/spotify.html">Theremouse^</a>
+title: <a href="http://yamikamisama.github.io/theremouse/spotify.html">Theremouse</a>
 subtitle: JavaScript, jQuery, and Firebase
 layout: default
 modal-id: 9
