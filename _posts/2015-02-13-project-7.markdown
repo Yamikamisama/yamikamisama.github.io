@@ -1,0 +1,14 @@
+---
+title: <a href="http://song-explorer.herokuapp.com/">Song Explorer</a>
+subtitle: Front End Web Development
+layout: default
+modal-id: 1
+date: 2014-07-18
+img: song-explorer.png
+thumbnail: song-explorer-thumbnail.png
+alt: image-alt
+project-date: November 2014
+client: <a href="https://github.com/Yamikamisama/Song-Explorer">Source</a>
+category: <a href="http://song-explorer.herokuapp.com/">Song Explorer</a>
+description: An application used to bring random music to users based on genres.
+---
