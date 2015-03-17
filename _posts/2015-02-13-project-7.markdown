@@ -1,14 +1,14 @@
 ---
-title: <a href="http://song-explorer.herokuapp.com/">Song Explorer</a>
-subtitle: Front End Web Development
+title: <a href="https://pair-me-up.herokuapp.com/">PairMe^</a>
+subtitle: Chrome Extension
 layout: default
-modal-id: 1
-date: 2014-07-18
-img: song-explorer.png
-thumbnail: song-explorer-thumbnail.png
+modal-id: 7
+date: 2015-02-13
+img: PairMe^.png
+thumbnail: PairMe^.png
 alt: image-alt
-project-date: November 2014
-client: <a href="https://github.com/Yamikamisama/Song-Explorer">Source</a>
-category: <a href="http://song-explorer.herokuapp.com/">Song Explorer</a>
-description: An application used to bring random music to users based on genres.
+project-date: February 2014
+client: <a href="https://github.com/Yamikamisama/Pair-Me-Up">Source</a>
+category: <a href="https://pair-me-up.herokuapp.com/">PairMe^</a>
+description: Created at a hackathon, PairMe^ is a chrome extension for creating pairing sessions. The extension allows two users to sign in and create an interval for how long each will drive and navigate, it then prompts the users to switch on completion of the time. When the paring session is over it emails both users with a link to a feedback form so they can give actionable, kind, and specific feedback. This feedback goes to the database and updates their user profile page where they can view the feedback and see how they are rated as a pair Driver or Navigator.
 ---
