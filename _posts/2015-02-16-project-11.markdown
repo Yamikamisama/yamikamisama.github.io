@@ -1,14 +1,14 @@
 ---
-title: <a href="http://everythingisawesome.herokuapp.com/#">Lego/Gaga Sample</a>
-subtitle: API, jQuery, Sinatra, Responsive
+title: <a href="http://yamikamisama.github.io/algo_music/">algoMusic</a>
+subtitle: Html, CSS, Javascript, Timber.js
 layout: default
 modal-id: 11
 date: 2015-03-13
-img: lego_gaga.png
-thumbnail: lego_gaga.png
+img: algo_music.png
+thumbnail: algo_music.png
 alt: image-alt
-project-date: February 2014
-client: <a href="https://github.com/Yamikamisama/LegoSample">Source</a>
-category: <a href="http://everythingisawesome.herokuapp.com">Lego/Gaga Sample</a>
-description: This an example of my work, I have included the wireframes so that you can see my process, I have also made this site in two versions The Lego Movie Version (click <a href="http://everythingisawesome.herokuapp.com/#">here</a> to view), and a Lady Gaga Version (click <a href="http://gagalicious.herokuapp.com/">here</a> to view) to show that my designs and functionallity translates to any "product". I hope you enjoy them and please feel free to contact me with suggestions.
+project-date: March 2014
+client: <a href="https://github.com/Yamikamisama/algoMusic">Source</a>
+category: <a href="http://yamikamisama.github.io/algo_music/">algoMusic</a>
+description: algoMusic is a single page app built with JavaScript, D3.js, and Timber.js!
 ---
