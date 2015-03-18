@@ -4,8 +4,8 @@ subtitle: Javascript, Timber.js (Hackathon)
 layout: default
 modal-id: 11
 date: 2015-02-28
-img: algo_music.png
-thumbnail: algo_music.png
+img: theremouse.png
+thumbnail: theremouse.png
 alt: image-alt
 project-date: February 2015
 client: <a href="https://github.com/Yamikamisama/algoMusic">Source</a>

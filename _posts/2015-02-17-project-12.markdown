@@ -4,8 +4,8 @@ subtitle: *Under Contruction*
 layout: default
 modal-id: 12
 date: 2015-03-13
-img: where_to.png
-thumbnail: where_to.png
+img: theremouse.png
+thumbnail: theremouse.png
 alt: image-alt
 project-date: March 2015
 client: <a href="https://github.com/jjparseghian/where_to">Source</a>
