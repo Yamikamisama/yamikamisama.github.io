@@ -4,8 +4,8 @@ subtitle: API, jQuery, Sinatra, Responsive
 layout: default
 modal-id: 10
 date: 2015-02-13
-img: PairMe^.png
-thumbnail: PairMe^.png
+img: lego_gaga.png
+thumbnail: lego_gaga.png
 alt: image-alt
 project-date: February 2014
 client: <a href="https://github.com/Yamikamisama/LegoSample">Source</a>
