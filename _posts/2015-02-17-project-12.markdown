@@ -1,14 +1,14 @@
 ---
-title: <a href="http://warm-atoll-6305.herokuapp.com/">Where To?</a>
-subtitle: *Under Contruction*
+title: <a href="http://yamikamisama.github.io/algo_music/">algoMusic</a>
+subtitle: Html, CSS, Javascript, Timber.js
 layout: default
 modal-id: 11
-date: 2015-03-14
+date: 2015-03-13
 img: algo_music.png
 thumbnail: algo_music.png
 alt: image-alt
 project-date: March 2014
-client: <a href="https://github.com/jjparseghian/where_to">Source</a>
-category: <a href="http://warm-atoll-6305.herokuapp.com/">Where To?</a>
-description: Where To? is an app that encourages users to explore and share images from their previous trips. Along with the picture they can add a title, where it was taken, and a decription of their experience! Its a great way to get to see the world through other peoples eyes.
+client: <a href="https://github.com/Yamikamisama/algoMusic">Source</a>
+category: <a href="http://yamikamisama.github.io/algo_music/">algoMusic</a>
+description: algoMusic is a single page app built with JavaScript, D3.js, and Timber.js!
 ---
