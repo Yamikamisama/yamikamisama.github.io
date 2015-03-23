@@ -120,7 +120,8 @@ a{
 	margin-left: -10%;
 }
 
-.btm-img{
+.btm-img p{
+	text-align: left;
 	font-size: 2em;
 }
 
