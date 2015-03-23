@@ -1,3 +1,6 @@
+/**************/
+/*MAIN STYLING*/
+/**************/
 h1,
 h2,
 h3,
@@ -5,30 +8,6 @@ h4,
 h5,
 h6 {
     font-weight: 400;
-}
-
-.top-header {
-    font-size: 3.5em;
-    margin: 0 4%;
-}
-
-.center-header {
-    font-size: 2.4em;
-    margin: 0 11%;
-}
-
-.product {
-    text-align: center;
-}
-
-.product img {
-    width: 100%;
-}
-
-.product p {
-    margin: 15px 0;
-    font-family: 'Open Sans';
-    font-style: italic;
 }
 
 .underline {
@@ -41,14 +20,6 @@ h6 {
 
 .bold {
     font-weight: 700;
-}
-
-.btn-lg.round {
-    font-family: 'Oswald', sans-serif;
-    font-size: 2em;
-    border-radius: 40px;
-    background-color: #f06822;
-    color: #fff;
 }
 
 .container {
@@ -67,6 +38,43 @@ body {
     padding: 3% 0;
 }
 
+/*****************/
+/*PRODUCT STYLING*/
+/*****************/
+.product img {
+    width: 100%;
+}
+
+.product p {
+    margin: 15px 0;
+    font-family: 'Open Sans';
+    font-style: italic;
+}
+
+.btn-lg.round {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2em;
+    border-radius: 40px;
+    background-color: #f06822;
+    color: #fff;
+}
+
+/*********/
+/*HEADERS*/
+/*********/
+.top-header {
+    font-size: 3.5em;
+    margin: 0 4%;
+}
+
+.center-header {
+    font-size: 2.4em;
+    margin: 0 11%;
+}
+
+/******************/
+/*TESTIMONAL CARDS*/
+/******************/
 .card {
     height: 53em;
     background-color: #f6f1ec;
@@ -87,6 +95,39 @@ body {
     margin: 10% auto;
 }
 
+.card-text {
+    margin: 0 9%;
+    font-family: 'Bitter', serif;
+    font-style: italic;
+    text-align: left;
+    font-size: 1.1em;
+}
+
+.card-desc-footer {
+    font-family: "Bitter";
+    margin: 0 9%;
+    text-align: left;
+}
+
+.sig {
+    margin-left: -10%;
+}
+
+/*********************/
+/*LARGE BOTTOM BUTTOM*/
+/*********************/
+.btm-img p {
+    text-align: left;
+    font-size: 2em;
+}
+
+.btm-btn {
+    font-size: 1.5em;
+}
+
+/************/
+/*BOTTOM NAV*/
+/************/
 ul {
     list-style: none;
     margin-left: -10%;
@@ -109,33 +150,9 @@ a {
     float: right;
 }
 
-.card-text {
-    margin: 0 9%;
-    font-family: 'Bitter', serif;
-    font-style: italic;
-    text-align: left;
-    font-size: 1.1em;
-}
-
-.card-footer {
-    font-family: "Bitter";
-    margin: 0 9%;
-    text-align: left;
-}
-
-.sig {
-    margin-left: -10%;
-}
-
-.btm-img p {
-    text-align: left;
-    font-size: 2em;
-}
-
-.btm-btn {
-    font-size: 1.5em;
-}
-
+/************************/
+/*RESPONSIVE MEDIA QUERY*/
+/************************/
 @media only screen and (max-width: 570px) {
     .btm-product img {
         width: 100%;
