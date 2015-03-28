@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
- var firebase = new Firebase('https://north-american-hipster.firebaseio.com/');
+ var firebase = new Firebase("https://saysong.firebaseio.com");
       $('#messageInput').keypress(function (e) {
         if (e.keyCode == 13) {
           var name = $('#nameInput').val();
