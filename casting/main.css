@@ -1,0 +1,37 @@
+body{
+	font-family: 'Jura', sans-serif;
+	color: #16A8E0;
+	background: url('') no-repeat center center fixed;
+}
+
+.btn{
+	margin: 20px 0 0 0px;
+  border: 3px solid #16A8E0;
+  border-radius: 0;
+  color: #16A8E0;
+  background-color: #fff;
+}
+
+.btn:hover, .btn:focus{
+	background-color: rgba(22, 168, 224, 0.25);
+	color:#048BBE;
+}
+
+.hidden-div{
+	display: none;
+  margin-top: -28%;
+  background-color: white;
+  border-bottom: 5px solid #0074A1;
+  border-top: 5px solid #0074A1;
+  padding: 2.5% 0;
+}
+
+.hidden-div h1{
+	font-size: 4em;
+	color:#0074A1;
+}
+
+.hidden-logo{
+	display: none;
+	margin-top: -31%;
+}
