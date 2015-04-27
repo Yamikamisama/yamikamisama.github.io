@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/ico" href="file:///Users/MichaelAngelo/Desktop/Projects/julia_sounds/img/favicon.ico">
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+	<script src="http://connect.soundcloud.com/sdk.js"></script> <!-- Soundcloud -->
+
+
+	<title>Fractal Buffet</title>
+	<style type="text/css">
+	canvas {
+		display: block;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+	}
+	</style>
+</head>
+<body>
+	<header class="header">
+		<div class="logo"><a href="#0"><img src="img/logo.png" alt="Logo"></a></div>
+		<a class="primary-nav-trigger" href="#0">
+			<span class="menu-text">Menu</span><span class="menu-icon"></span>
+		</a> <!-- primary-nav-trigger -->
+	</header>
+
+	<nav>
+		<ul class="primary-nav">
+			<li class="label">Soundscapes</li>
+
+			<li><a class="snowflake" id="snowflake" href="#0">Koch Snowflake</a></li>
+			<li><a class="twist" href="#0">Sierpinski Triangle</a></li>
+			<li class="label">Meet the team</li>
+			<ul class="team">
+				<li><a href="https://github.com/Yamikamisama"><img src="img/mike.jpg" alt="">Michael Angelo</a></li>
+				<li><a href="https://github.com/StephReaves/"><img src="img/steph-reaves.jpg" alt="">Steph Reaves</a></li>
+				<li><a href="https://github.com/stephtzhang"><img src="img/steph-zhang.jpg" alt="">Steph Zhang</a></li>
+				<li><a href="https://github.com/abaldwinhunter"><img src="img/ashley.jpg" alt="">Ashley BH</a></li>
+				<li><a href="https://github.com/melissawimberly"><img src="img/melissa.jpg" alt="">Missy Wimberly</a></li>
+			</ul>
+			<li class="label">Follow us</li>
+
+			<li class="social facebook"><a href="#0">Facebook</a></li>
+			<li class="social twitter"><a href="#0">Twitter</a></li>
+		</ul>
+	</nav>
+	<section class="intro">
+		<h1>Fractal Buffet</h1>
+		<canvas id="canvas"></canvas>
+	</section>
+	<script src="js/jquery-2.1.1.js"></script>
+	<script src="js/main.js"></script> <!-- Resource jQuery -->
+	<script type="text/javascript" src="js/kochanimated.js"></script>
+	<script type="text/javascript" src="js/twist.js"></script>
+	<script type="text/javascript" src="js/soundcloud.js"></script>
+
+	<script src="http://code.jquery.com/jquery-1.7.2.js"></script>
+	<script src="http://api.soundcloud.com/tracks.json?limit=10&callback=createTrackList&client_id=54c92eba43154126e2a9c5046d707dd2"></script>
+
+</body>
+</html>
