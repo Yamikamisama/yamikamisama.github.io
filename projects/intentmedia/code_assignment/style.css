@@ -5,6 +5,7 @@ body{
 #calendar {
   border: 3px solid #000;
   margin: 0px;
+  height: 212px;
   padding: 0px;
   float: left;
 }
@@ -79,7 +80,7 @@ body{
   background-color: #F7F7F7;
 }
 
-#wrapper{
+#calendarWrapper{
   display: inline-block;
   border: 3px solid #000;
   border-radius: 7px;

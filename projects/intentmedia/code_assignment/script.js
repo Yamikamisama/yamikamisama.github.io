@@ -5,7 +5,7 @@ var Calendar = function () {
   this.selectedDate = new Date();
   this.render = render;
   this.savedDate = null;
-  this.changeDate = function(){};
+  this.template = '<div id="largeDisplay"><h1 id="displayDay"></h1><h1 id="displayDayNum"></h1><hr class="line leader"><hr class="line"><hr class="line"></div><table id="calendar"><tr class="header"><th class="arrows" colspan="2"><a href="">&lt;</a></th><th id="calendarHeader" colspan="3"> </th><th class="arrows" colspan="2"><a href="">&gt;</a></th></tr><tr class="days"><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr><tr><td><a href=""> </a></td><td><a href=""> </a></td><td><a href=""> </a></td><td><a href=""> </a></td><td><a href=""> </a></td><td><a href=""> </a></td><td><a href=""> </a></td></tr><tr><td><a href=""> </a></td><td><a href=""> </a></td><td><a href=""> </a></td><td><a href=""> </a></td><td><a href=""> </a></td><td><a href=""> </a></td><td><a href=""> </a></td></tr><tr><td><a href=""> </a></td><td><a href=""> </a></td><td><a href=""> </a></td><td><a href=""> </a></td><td><a href=""> </a></td><td><a href=""> </a></td><td><a href=""> </a></td></tr><tr><td><a href=""> </a></td><td><a href=""> </a></td><td><a href=""> </a></td><td><a href=""> </a></td><td><a href=""> </a></td><td><a href=""> </a></td><td><a href=""> </a></td></tr><tr><td><a href=""> </a></td><td><a href=""> </a></td><td><a href=""> </a></td><td><a href=""> </a></td><td><a href=""> </a></td><td><a href=""> </a></td><td><a href=""> </a></td></tr><tr><td><a href=""> </a></td><td><a href=""> </a></td><td><a href=""> </a></td><td><a href=""> </a></td><td><a href=""> </a></td><td><a href=""> </a></td><td><a href=""> </a></td></tr></table>';
   var el, tableEl, rowEl, cellEl, tagEl, tempDate, tempDate2, i, j;
 
   // Based on num either add or subtract a month
@@ -76,7 +76,7 @@ var Calendar = function () {
    else if (e.keyCode == '39') {
      addMonths(event, 1);
    }
-  }
+ }
 
   // Click to change date (day or month)
   document.onclick = checkEvent;
@@ -98,12 +98,15 @@ var Calendar = function () {
   ///   Prototype Functions Added to the Date Object   ///
   ////////////////////////////////////////////////////////
 
+  // Names of the Months for display
   Date.prototype.monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
+  // Method to find current Month
   Date.prototype.findMonthName = function () {
     return this.monthNames[this.getMonth()];
   }
 
+  // Finds the days of the Month
   Date.prototype.findDays = function () {
     var dateholder, day, month;
 
@@ -117,11 +120,13 @@ var Calendar = function () {
     return day - 1;
   }
 
+  // Adds each Day
   Date.prototype.addDays = function (num){
     this.setDate(this.getDate() + num);
     this.savedDate = this.getDate();
   }
 
+  // Adds each Month
   Date.prototype.addMonths = function (num){
     if (this.savedDate == null){this.savedDate = this.getDate()};
     this.setDate(1);
@@ -129,6 +134,7 @@ var Calendar = function () {
     this.setDate(Math.min(this.savedDate, this.findDays()));
   }
 
+  // Adds each Year
   Date.prototype.addYears = function (num){
     if (this.savedDate == null){this.savedDate = this.getDate()};
     this.setDate(1);
@@ -136,17 +142,21 @@ var Calendar = function () {
     this.setDate(Math.min(this.savedDate, this.findDays()));
   }
 
+  // renders the View of the Calendar
   function render(){
+    document.getElementById('calendarWrapper').innerHTML = this.template;
     document.body.style.display = 'none';
     el = document.getElementById('calendarHeader').firstChild;
     el.nodeValue = this.selectedDate.findMonthName() + "\u00a0" + this.selectedDate.getFullYear();
 
+    // Setting date Holder
     tempDate = new Date(Date.parse(this.selectedDate));
     tempDate.setDate(1);
     while (tempDate.getDay() !=0 ) {
       tempDate.addDays(-1);
     }
 
+    // Looping though the rows
     tableEl = document.getElementById('calendar');
     for (i=2;i<=7;i++){
       rowEl = tableEl.rows[i];
@@ -159,10 +169,12 @@ var Calendar = function () {
         rowEl.className = "";
       }
 
+      // Lopping though the cells in row
       for(j=0;j<rowEl.cells.length;j++){
         cellEl = rowEl.cells[j];
         tagEl = cellEl.firstChild;
 
+        // Setting dates and attributes to the individual cells
         if (tempDate.getMonth() == this.selectedDate.getMonth()) {
           tagEl.date = new Date(Date.parse(tempDate));
           str = tempDate.toString().split(" ");
@@ -173,6 +185,7 @@ var Calendar = function () {
           tagEl.style.visibility = "hidden";
         }
 
+        // Setting the selected class to the cell (selected cell)
         if(cellEl.oldClass == null){cellEl.oldClass = cellEl.className};
         if(Date.parse(tempDate) == Date.parse((this.selectedDate))){
           setDisplayDate(tagEl)
@@ -184,16 +197,7 @@ var Calendar = function () {
       }
     }
     document.body.style.display = "";
-
   }
+
   this.render();
 }
-
-
-///////////////////////////
-///   Create Calendar   ///
-///////////////////////////
-
-// Create Calendar
-var cal = Calendar();
-
