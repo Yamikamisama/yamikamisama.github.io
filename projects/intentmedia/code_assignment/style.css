@@ -84,8 +84,7 @@ body{
   border: 3px solid #000;
   border-radius: 7px;
   position: absolute;
-  top: 30%;
-  left: 30.5%;
+  margin: 0 calc(50% - 278.5px);
 }
 
 #displayDay, #title{
