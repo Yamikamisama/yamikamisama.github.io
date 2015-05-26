@@ -1,0 +1,73 @@
+body{
+	background-color: #FFF;
+  font-family: 'Jura', sans-serif;
+}
+.bg{
+	 background-color: rgb(132, 167, 168);
+}
+
+.me{
+    padding: 5% 0;
+}
+
+.me img{
+	max-width: 70%;
+	border-radius: 100%;
+	border: 3px solid #fff;
+}
+.heading{
+    background-color: #FFF;
+}
+.hidden-padding{
+	padding-top: 10%;
+}
+.heading h1{
+	display: inline-block;
+}
+
+.red{
+	color: rgb(187, 56, 33);
+}
+.challenge{
+	margin: 5% 0;
+	padding-bottom: 5%
+}
+.challenge img{
+	width: 6%;
+}
+
+.challenge h1{
+	text-align: center;
+}
+
+.challenge .codeHeader{
+	text-align: left;
+}
+
+.button {
+  display: inline-block;
+  text-align:center;
+  padding: 20px 40px;
+  color: white;
+  transition: 300ms ease-in-out;
+  box-shadow: 0px 4px 20px #ccc;
+  font-size: 22px;
+  margin: 50px 0.6%;
+  border: none;
+  background: #ff4444;
+  border-bottom: 3px solid #cc0000;
+}
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 2px 20px #777;
+}
+
+.fix-nav{
+    position: fixed;
+    top: -5%;
+    z-index: 1;
+    background-color: #fff;
+    width: 100%;
+    height: 10em;
+    border-bottom: 3px solid rgb(255, 68, 68);
+}
