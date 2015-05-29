@@ -1,0 +1,349 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link href="http://fonts.googleapis.com/css?family=Jura:400,600" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<title>ZEFR Assignment</title>
+</head>
+<body>
+
+<div class="container-fluid">
+
+	<div class="row heading">
+		<div class="col-lg-6 col-lg-offset-3 text-center">
+			<img src="imgs/ZEFR.png" alt="">
+			<h1>Coding Challenge</h1>
+		</div>
+	</div>
+
+	<div class="row me bg text-center">
+		<div class="col-lg-1"></div>
+		<div class="col-lg-4">
+			<img src="imgs/michaelangelo.png" alt="">
+			<h1>ELLO GOVNA</h1>
+		</div>
+		<div class="col-lg-1"></div>
+		<div class="col-lg-5">
+			<h1>Michael Angelo's Solutions</h1>
+			<p>Hello and welcome to my solutions for the ZEFR coding challenge!  I decided that it would be a good idea to go through the challenges after I submitted the &#34;Official&#34; challenge, just to try and do it in all three of the languages (Ruby, Javascript, and Python).  The 5th Challenge only allowed me to code it in Python, which I have never done, so it was coded on the fly and definitely needed to be refactored (which I have done here).  The 6th challenge had a bug in it, the column names in the database didn&#39;t match what the tests were looking for.  So I mocked up my own SQLite3 Database and my code passed! I took all the comments out from the code just allow you to quickly see the difference between the solutions in the different languages (if you would like to see the code with the comments please reference the &#34;Official&#34; challenge).  Please let me know if there is anything else you need from me.</p>
+			<p> <span class="red">Note: I do not know Python, this is my first attempt at it!</span> </p>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-6 col-lg-offset-3 text-center">
+
+		</div>
+	</div>
+
+	<div class="row text-center buttons-row">
+		<div class="col-lg-2"><button class="button">Part 1</button></div>
+		<div class="col-lg-2"><button class="button">Part 2</button></div>
+		<div class="col-lg-2"><button class="button">Part 3</button></div>
+	</div>
+
+
+
+<!-- Challenge 1 -->
+	<div class="row challenge">
+		<div class="col-lg-12">
+			<h1>Challenge 1 - Instructions</h1>
+			<p>Part 1: Custom Math
+				This project involves 2 phases. You will be creating a simple JavaScript utility library to work with integers. The library will be partitioned into modules/classes. The module hierarchy should follow an inheritance chain design, with derived modules having an "is a" relationship to the modules they extend. Your methods should build upon other methods in your library.</p>
+
+			<p>Phase 1: Create a basic math class that implements the following methods (the utility library only needs to work with integers; we won't even try floating point numbers):
+			</p>
+ 				<ul>
+ 				    <li>add(v1, v2) - returns the integer sum of adding integers v1 and v2</li>
+ 				    <li>subtract(v1, v2) - returns the integer difference between v1 and v2 (v2 from v1)</li>
+ 				    <li>multiply(v1, v2) - returns the integer product of v1 and v2</li>
+ 				</ul>
+ 			<h4>Phase 1 RULES:</h4>
+ 			<ul>
+ 			    <li>NO LIBRARIES/FRAMEWORKS ALLOWED, use only plain-old, built-in, vanilla JavaScript.</li>
+ 			    <li>DO NOT USE built in conversion functions (Number, parseInt, parseFloat, etc)</li>
+ 			    <li>You may ONLY use addition and unary negation arithmetic operators, that is "1 + 1" and "-2" (unary
+					negation is NOT subtraction) All other arithmetic operators are off limits; including compound
+					assignment operators.</li>
+ 			    <li>Comparison operators are allowed if necessary.</li>
+ 			    <li>Functions should be implemented as instance methods</li>
+ 			    <li>This class must be named "BasicMath".</li>
+ 			    <li>Your classes will be defined globally, but you must not create any additional global variables in your library implementation.</li>
+ 			    <li>Write your implementations in the file 'custom-math.js'</li>
+ 			    <li>BONUS (optional): Create another method divide(v1, v2) that returns the integer quotient of v1
+					divided by v2 (Note: division by 0 should return JavaScript’s number constant Infinity)</li>
+ 			</ul>
+
+ 			<p>Phase 2: Create an advanced math class that extends the basic math class and implements the following methods. (again, these are integer only implementations)
+			</p>
+
+			<ul>
+			    <li>posPower(base, exponent) - returns the integer power of 'base' raised to 'exponent' - you only need to support zero and positive integer exponents. Negative exponents should return zero (0), and exponents of 0 always return positive 1.</li>
+			    <li> add(v1, ... , vN) - returns integer sum of a variable number of integer arguments</li>
+			    <li>isRightTriangle(a, b, c) - given the positive integer lengths of three different sides of a triangle, where
+					c is the hypotenuse side, return boolean 'true' if the triangle is a "right triangle" according to Pythagoras' theorem, and 'false' otherwise. Negative arguments cause a return of false. There are no negative lengths.
+					</li>
+			</ul>
+
+			<p>Phase 2 RULES:</p>
+			<ul>
+			    <li>Please follow the same rules as in phase 1!</li>
+			    <li>DO NOT USE JavaScript’s 'Math.pow', 'Math.sqrt', or trigonometric functions.</li>
+			    <li>This class must be named "AdvancedMath"</li>
+			    <li>Tip: leverage your previous work.</li>
+			</ul>
+		</div>
+
+		<div class="col-lg-12">
+			<h1 class="codeHeader"><img src="imgs/js.png" alt="">  Javascript Solution</h1>
+		</div>
+		<div class="col-lg-12">
+			<pre>function BasicMath(){
+	this.add = function(a, b){
+		var sum = a + b;
+		return sum
+	}
+
+	this.subtract = function(a, b){
+		var sum = a + (-(b))
+		return sum
+	}
+
+	this.multiply = function(a, b){
+		var sum = 0
+		while (b > 0){
+			sum += a
+			b = b + (-1)
+		}
+		return sum
+	}
+
+	this.divide = function(a, b){
+		var result = 0
+		if (b === 0 ){return Infinity}
+			while (a > b) {
+				a = a + (-(b))
+				result += 1
+			}
+			return result
+		}
+
+	}
+
+	var AdvancedMath = function(){
+
+		this.posPower = function(base, exponent){
+			var sum = base
+			while (exponent > 1){
+				sum = this.multiply(sum, base)
+				exponent = exponent + (-1)
+			}
+			return sum;
+		};
+
+		this.add = function(){
+			var sum = 0
+			for (var i=0; i < arguments.length; i++){
+				sum += arguments[i]
+			}
+			return sum
+		}
+
+		this.isRightTriangle = function(a, b, c) {
+			if (this.multiply(a,a) + this.multiply(b,b) == this.multiply(c,c)){
+				return true
+			} else {
+				console.log(false)
+				return false
+			}
+		}
+
+	}
+
+// extend BasicMath to AdvancedMath
+AdvancedMath.prototype = new BasicMath();
+AdvancedMath.prototype.constructor = AdvancedMath;
+
+
+
+var basicMath = new BasicMath(); // create instance of that class
+var sum = basicMath.add(1, 2);   // returns 3
+var difference = basicMath.subtract(2, 3); // returns -1
+var product = basicMath.multiply(2, 5); // returns 10
+var quotient = basicMath.divide(8, 4);  // returns 2
+
+var advancedMath = new AdvancedMath();  // create instance of Advanced
+var sum = advancedMath.add(2, 2, 3) // return 7
+var power = advancedMath.posPower(2, 5); // return 32
+var rt = advancedMath.isRightTriangle(3, 4, 5) // retrun true
+var product = advancedMath.multiply(2, 5) // return 10
+</pre>
+		</div>
+	</div>
+
+
+
+
+	<!-- Challenge 2 -->
+		<div class="row bg challenge">
+			<div class="col-lg-12">
+				<h1>Part 2: MySQL - Instructions</h1>
+				<h3>1A: Table Structure</h3>
+				<p>A database system needs to model the following:</p>
+
+				<p>Company: The system manages data for many Companies. Each Company has a name attribute.</p>
+
+				<p>Each Company also offers one or more Medical Plans to its employees.</p>
+
+				<p>Medical Plan: Each Medical Plan has a name attribute and belongs to exactly one Sponsor. Each Medical Plan is available to one or more Employee Groups.</p>
+
+				<p>Employee Group: Each Employee Group has a name attribute and belongs to exactly one Company. Each Employee Group has access to one or more Medical Plans.</p>
+				<ol>
+					  <li>Write SQL to create the tables for these entities.</li>
+				    <li>Write SQL to retrieve all of the Medical Plans for a given Company.
+						</li>
+				    <li>Write SQL to retrieve all of the Employee Groups for a given Company.</li>
+				    <li>Write SQL to retrieve all of the Employee Groups who may access a given Medical Plan.</li>
+				    <li>Write SQL to retrieve all of the Medical Plans that may be accessed by a given Employee Group.
+						</li>
+				</ol>
+
+				<h3>1B: Writing Queries</h3>
+				<p>The following tables and data are defined in a schema:</p>
+￼				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+￼				<p>Write SQL to return the following output:</p>
+			<h3>1C: Optimization</h3>
+			<p>A query is performing more slowly than you would like. What is the first thing you would research when determining how to speed it up?</p>
+
+			</div>
+
+			<div class="col-lg-12">
+				<h1 class="codeHeader"><img src="imgs/sql.png" alt="">  SQL Solution</h1>
+			</div>
+			<div class="col-lg-12">
+				<pre>
+					def none_shall_pass(gibberish)
+					  none_arr = ['n', 'o', 'n', 'e']
+					  gibberish.split("").each {|e| none_arr.shift if e == none_arr.first}
+					  none_arr.length == 0 ? true : false
+					end
+
+					# TESTS
+					none_shall_pass('befvcnefofvndce')
+					none_shall_pass('fgennoeno')
+				</pre>
+			</div>
+
+			<div class="col-lg-12">
+				<h1 class="codeHeader"><img src="imgs/js.png" alt="">  Javascript Solution</h1>
+			</div>
+			<div class="col-lg-12">
+				<pre>
+					function noneShallPass(gibberish){
+					  var noneArr = ['n', 'o', 'n', 'e'];
+					  gibberish.split("").forEach(function(element){
+					    if (element == noneArr[0]){noneArr.shift();}
+					  });
+					  if (noneArr.length == 0){return true;}
+					  return false;
+					}
+
+					// TESTS
+					noneShallPass('befvcnefofvndce')
+					noneShallPass('fgennoeno')
+				</pre>
+			</div>
+
+			<div class="col-lg-12">
+				<h1 class="codeHeader"><img src="imgs/python.png" alt="">  Python Solution</h1>
+			</div>
+			<div class="col-lg-12">
+				<pre>
+					def none_shall_pass(gibberish):
+					    none_list = ['n', 'o', 'n', 'e']
+
+					    gibberish = list(gibberish)
+					    for i in gibberish:
+					        if i == none_list[0]:
+					            none_list.pop(0)
+
+					    print(True if len(none_list) == 0 else False)
+
+					# TESTS
+					none_shall_pass('befvcnefofvndce')
+					none_shall_pass('fgennoeno')
+				</pre>
+			</div>
+		</div>
+
+
+	<!-- Challenge 3 -->
+		<div class="row challenge">
+			<div class="col-lg-12">
+				<h1>Part 3: Roman Numerals - Instructions</h1>
+				<p>The Roman numerals for 1 through 10 are I, II, III, IV, V, VI, VII, VIII, IX, and X. The Roman numerals for 20, 30, 40, 50, 60, 70, 80, 90 and 100 are XX, XXX, XL, L, LX, LXX, LXXX, XC and C. The Roman numeral for any two-digit number can be constructed by concatenating the numeral for its tens and the numeral for its ones.</p>
+
+				<p>Examples:</p>
+
+				<p>22 is 20 + 2 = "XX" + "II" = "XXII"</p>
+				<p>47 is 40 + 7 = "XL" + "VII" = "XLVII"</p>
+				<p>99 is 90 + 9 = "XC" + "IX" = "XCIX"</p>
+
+				<p>Using the language of your choice, write a function that accepts a Roman numeral string a returns the integer equivalent of that string.</p>
+			</div>
+
+			<div class="col-lg-12">
+				<h1 class="codeHeader"><img src="imgs/ruby.png" alt="">  Ruby Solution</h1>
+			</div>
+			<div class="col-lg-12">
+				<pre>
+					def Roman_Numeral_Translator(str)
+
+					  roman_numerals =   { 'M' =>  1000,
+					                      'CM' => 900,
+					                      'D' =>  500,
+					                      'CD' => 400,
+					                      'C' =>  100,
+					                      'XC' => 90,
+					                      'L' =>  50,
+					                      'XL' => 40,
+					                      'X' =>  10,
+					                      'IX' => 9,
+					                      'V' =>  5,
+					                      'IV' => 4,
+					                      'I' =>  1 }
+
+					  result = 0
+					  roman_numerals.keys.each do |key|
+					    while str.start_with?(key)
+					      roman_numerals[key]
+					      result += roman_numerals[key]
+					      str = str.slice(key.length, str.length)
+					    end
+					  end
+					  return result
+					end
+
+					# TESTS
+					# Roman_Numeral_Translator("XIVII")      # => 16
+					# Roman_Numeral_Translator("MMMCDXXIII") # => 3423
+					# Roman_Numeral_Translator("MMCCCXLI")   # => 2341
+					# Roman_Numeral_Translator("MCMLXXXVII") # => 1987
+					# Roman_Numeral_Translator("CDLVI")      # => 456
+				</pre>
+			</div>
+
+
+		</div>
+
+	</div>
+
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
