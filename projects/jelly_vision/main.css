@@ -1,47 +1,51 @@
 body{
-	background-color: #FFF;
+  background-color: #FFF;
   font-family: 'Jura', sans-serif;
 }
 .bg{
-	 background-color: rgb(132, 167, 168);
+   background-color: rgb(132, 167, 168);
 }
 
 .me{
     padding: 5% 0;
 }
+.me p{
+    font-size: 1.45em;
+
+}
 
 .me img{
-	max-width: 70%;
-	border-radius: 100%;
-	border: 3px solid #fff;
+  max-width: 70%;
+  border-radius: 100%;
+  border: 3px solid #fff;
 }
 .heading{
     background-color: #FFF;
 }
 .hidden-padding{
-	padding-top: 10%;
+  padding-top: 10%;
 }
 .heading h1{
-	display: inline-block;
+  display: inline-block;
 }
 
 .red{
-	color: rgb(187, 56, 33);
+  color: rgb(103, 50, 168);
 }
 .challenge{
-	margin: 5% 0;
-	padding-bottom: 5%
+  margin: 5% 0;
+  padding-bottom: 5%
 }
 .challenge img{
-	width: 6%;
+  width: 6%;
 }
 
 .challenge h1{
-	text-align: center;
+  text-align: center;
 }
 
 .challenge .codeHeader{
-	text-align: left;
+  text-align: left;
 }
 
 .button {
@@ -54,8 +58,8 @@ body{
   font-size: 22px;
   margin: 50px 0.6%;
   border: none;
-  background: #ff4444;
-  border-bottom: 3px solid #cc0000;
+  background: #6732A8;
+  border-bottom: 3px solid #4B14A0;
 }
 .button:hover {
   transform: translateY(-3px);
@@ -69,5 +73,10 @@ body{
     background-color: #fff;
     width: 100%;
     height: 10em;
-    border-bottom: 3px solid rgb(255, 68, 68);
+    border-bottom: 3px solid rgb(103, 50, 168);
+}
+
+.challenge .sql-img{
+  width: 25%;
+  margin-top: 2%;
 }
