@@ -3,7 +3,7 @@
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<link href="http://fonts.googleapis.com/css?family=Jura:400,600" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" type="text/css" href="main.css">
-	<title>ZEFR Assignment</title>
+	<title>Jellyvision Assignment</title>
 </head>
 <body>
 
@@ -11,8 +11,8 @@
 
 	<div class="row heading">
 		<div class="col-lg-6 col-lg-offset-3 text-center">
-			<img src="imgs/ZEFR.png" alt="">
-			<h1>Coding Challenge</h1>
+			<img src="imgs/Jelly.png" alt="">
+			<h1>Web App Developer Audition</h1>
 		</div>
 	</div>
 
@@ -25,8 +25,15 @@
 		<div class="col-lg-1"></div>
 		<div class="col-lg-5">
 			<h1>Michael Angelo's Solutions</h1>
-			<p>Hello and welcome to my solutions for the ZEFR coding challenge!  I decided that it would be a good idea to go through the challenges after I submitted the &#34;Official&#34; challenge, just to try and do it in all three of the languages (Ruby, Javascript, and Python).  The 5th Challenge only allowed me to code it in Python, which I have never done, so it was coded on the fly and definitely needed to be refactored (which I have done here).  The 6th challenge had a bug in it, the column names in the database didn&#39;t match what the tests were looking for.  So I mocked up my own SQLite3 Database and my code passed! I took all the comments out from the code just allow you to quickly see the difference between the solutions in the different languages (if you would like to see the code with the comments please reference the &#34;Official&#34; challenge).  Please let me know if there is anything else you need from me.</p>
-			<p> <span class="red">Note: I do not know Python, this is my first attempt at it!</span> </p>
+			<p>Hello and welcome to my solutions for the Jellyvision coding challenge!  I thought it would be more fun and visually pleasing to make my answers into a website so that everyone who's viewing it can enjoy.  Some thoughts about the challenges.</p>
+
+			<p>Part 1 - Fun, especially with all the restrictions, using the functions that I built in the parent class made things much much easier, I also completed the extra credit.</p>
+
+			<p>Part 2 - I definitely needed to refactor, so I put both versions on there so you can see kinda what my process was.</p>
+
+			<p>Part 3 - I have done something similar to this before, translating integers to romanNumerals, but doing it the other way was a little bit trickier,  I tried a couple of different things before I came up with the solution! I also added in some extra values so it goes up to 3000.</p>
+
+			<p> <span class="red">Hope you all enjoy this! All and any feedback is welcomed</span> </p>
 		</div>
 	</div>
 
@@ -37,9 +44,11 @@
 	</div>
 
 	<div class="row text-center buttons-row">
+		<div class="col-lg-3"></div>
 		<div class="col-lg-2"><button class="button">Part 1</button></div>
 		<div class="col-lg-2"><button class="button">Part 2</button></div>
 		<div class="col-lg-2"><button class="button">Part 3</button></div>
+		<div class="col-lg-3"></div>
 	</div>
 
 
@@ -105,7 +114,7 @@
 	}
 
 	this.subtract = function(a, b){
-		var sum = a + (-(b))
+		var sum = a + (-b)
 		return sum
 	}
 
@@ -122,7 +131,7 @@
 		var result = 0
 		if (b === 0 ){return Infinity}
 			while (a > b) {
-				a = a + (-(b))
+				a = a + (-b)
 				result += 1
 			}
 			return result
@@ -153,7 +162,6 @@
 			if (this.multiply(a,a) + this.multiply(b,b) == this.multiply(c,c)){
 				return true
 			} else {
-				console.log(false)
 				return false
 			}
 		}
@@ -210,70 +218,200 @@ var product = advancedMath.multiply(2, 5) // return 10
 
 				<h3>1B: Writing Queries</h3>
 				<p>The following tables and data are defined in a schema:</p>
-￼				<img src="" alt="">
-				<img src="" alt="">
-				<img src="" alt="">
-￼				<p>Write SQL to return the following output:</p>
+				<img class="sql-img" src="imgs/sql_tbl1.png" alt=""><br>
+				<img class="sql-img" src="imgs/sql_tbl2.png" alt=""><br>
+				<img class="sql-img" src="imgs/sql_tbl3.png" alt="">
+				<p>Write SQL to return the following output:</p>
 			<h3>1C: Optimization</h3>
 			<p>A query is performing more slowly than you would like. What is the first thing you would research when determining how to speed it up?</p>
 
 			</div>
 
 			<div class="col-lg-12">
-				<h1 class="codeHeader"><img src="imgs/sql.png" alt="">  SQL Solution</h1>
+				<h1 class="codeHeader"><img src="imgs/sql.png" alt="">  SQL Solution 2A: Table Structure </h1>
 			</div>
 			<div class="col-lg-12">
 				<pre>
-					def none_shall_pass(gibberish)
-					  none_arr = ['n', 'o', 'n', 'e']
-					  gibberish.split("").each {|e| none_arr.shift if e == none_arr.first}
-					  none_arr.length == 0 ? true : false
-					end
+					------------------------------
+					---   Refactored Version   ---
+					------------------------------
 
-					# TESTS
-					none_shall_pass('befvcnefofvndce')
-					none_shall_pass('fgennoeno')
+					-- 2A: Table Structure
+					-- Number 1
+
+					CREATE TABLE companies(
+					  id int AUTO_INCREMENT,
+					  name varchar(100),
+					  PRIMARY KEY (id)
+					);
+
+					CREATE TABLE medical_plans(
+					  id int AUTO_INCREMENT,
+					  name varchar(100),
+					  PRIMARY KEY (id)
+					);
+
+					CREATE TABLE employee_groups(
+					  id int AUTO_INCREMENT,
+					  name varchar(100),
+					  company_id int,
+					  PRIMARY KEY (id),
+					  FOREIGN KEY (company_id) REFERENCES companies(id)
+					);
+
+					CREATE TABLE companies_medical_plans(
+					  company_id int,
+					  medical_plans_id int,
+					  FOREIGN KEY (comany_id) REFERENCES companies(id),
+					  FOREIGN KEY (medical_plans_id) REFERENCES medical_plans(id)
+					);
+
+					CREATE TABLE employees_medical_plans(
+					  employee_groups_id int,
+					  medical_plans_id int,
+					  FOREIGN KEY (medical_plans_id) REFERENCES medical_plans(id),
+					  FOREIGN KEY (employee_groups_id) REFERENCES employee_groups(id)
+					);
+
+
+
+					-- Number 2
+
+					SELECT mp.name
+					FROM medical_plans mp
+					JOIN companies_medical_plans cmp ON mp.id = cmp.medical_plans_id
+					JOIN companies c ON cmp.company_id = c.id
+					WHERE c.id = [INSERT COMPANY ID HERE]
+
+
+
+					-- Number 3
+
+					SELECT eg.name
+					FROM employee_groups eg
+					JOIN companies c ON c.id = eg.company_id
+					WHERE c.id = [INSERT COMPANY ID HERE]
+
+
+
+					-- Number 4
+
+					SELECT eg.name
+					FROM employee_groups eg
+					JOIN employee_medical_plans emp ON eg.id =  emp.employee_groups_id
+					JOIN medical_plans mp ON mp.id =  emp.medical_plan_id
+					WHERE mp.id = 'INSERT MEDICAL_PLANS ID HERE'
+
+
+
+					-- Number 5
+
+					SELECT mp.name
+					FROM medical_plans mp
+					JOIN employee_medical_plans emp ON mp.id =  emp.medical_plan_id
+					JOIN employee_groups eg ON eg.id =  emp.employee_groups_id
+					WHERE eg.id = 'INSERT EMPLOYEE_GROUPS ID HERE'
+
+
+
+
+
+
+
+
+
+
+					------------------------------
+					---   Original Version   ---
+					------------------------------
+
+					-- 2A: Table Structure
+
+					-- Number 1
+					CREATE TABLE Companies(
+					ID int AUTO_INCREMENT,
+					name varchar(255)
+					);
+
+					CREATE TABLE Medical_plans(
+					ID int AUTO_INCREMENT,
+					name varchar(255),
+					company_id
+					);
+
+					CREATE TABLE Employee_groups(
+					ID int AUTO_INCREMENT,
+					name varchar(255),
+					company_id
+					);
+
+
+					-- Number 2
+					SELECT * FROM companies
+					INNER JOIN medical_plans
+					ON companies.id = medical_plans.company_id
+					AND companies.name = [INSERT COMPANY NAME HERE]
+
+					-- if you just want the names change * to medical_plans.names
+
+
+					-- Number 3
+					SELECT * FROM companies
+					INNER JOIN employee_groups
+					ON companies.id = employee_groups.company_id
+					AND companies.name = [INSERT COMPANY NAME HERE]
+
+					-- if you just want the names change * to employee_groups.names
+
+
+					-- Number 4
+					SELECT employee_groups.name from employee_groups
+					INNER JOIN medical_plans
+					ON employee_groups.id =  medical_plans.employee_groups_id
+					WHERE employee_groups.company_id = medical_plans.company_id
+					AND medical_plans.name = 'INSERT MEDICAL PLAN HERE'
+
+
+					-- Number 5
+					SELECT medical_plans.name from medical_plans
+					INNER JOIN employee_groups
+					ON medical_plans.employee_groups_id = employee_groups.id
+					WHERE employee_groups.id = medical_plans.employee_groups_id
+					AND employee_groups.name = 'INSERT EMPLOYEE GROUP NAME'
 				</pre>
 			</div>
 
 			<div class="col-lg-12">
-				<h1 class="codeHeader"><img src="imgs/js.png" alt="">  Javascript Solution</h1>
+				<h1 class="codeHeader"><img src="imgs/sql.png" alt="">  SQL Solution 2B: Writing Queries</h1>
 			</div>
 			<div class="col-lg-12">
 				<pre>
-					function noneShallPass(gibberish){
-					  var noneArr = ['n', 'o', 'n', 'e'];
-					  gibberish.split("").forEach(function(element){
-					    if (element == noneArr[0]){noneArr.shift();}
-					  });
-					  if (noneArr.length == 0){return true;}
-					  return false;
-					}
-
-					// TESTS
-					noneShallPass('befvcnefofvndce')
-					noneShallPass('fgennoeno')
+					-- 2B: Writing Queries
+					SELECT *
+					FROM department
+					LEFT JOIN employee
+					ON department.department_id = employee.department_id
+					ORDER BY employee.employee_id ASC
 				</pre>
 			</div>
 
 			<div class="col-lg-12">
-				<h1 class="codeHeader"><img src="imgs/python.png" alt="">  Python Solution</h1>
+				<h1 class="codeHeader"><img src="imgs/sql.png" alt="">  SQL Solution 2C: Optimization</h1>
 			</div>
 			<div class="col-lg-12">
 				<pre>
-					def none_shall_pass(gibberish):
-					    none_list = ['n', 'o', 'n', 'e']
+					-- 2C: Optimization
+					-- First thing I would do is use Explain before the query to see what it was doing
 
-					    gibberish = list(gibberish)
-					    for i in gibberish:
-					        if i == none_list[0]:
-					            none_list.pop(0)
+					-- After that i would search the googles:
 
-					    print(True if len(none_list) == 0 else False)
+					-- Reduce sql query execution time (This might give me some insight on how to reduce the amount of time that its taking just in a general sense)
 
-					# TESTS
-					none_shall_pass('befvcnefofvndce')
-					none_shall_pass('fgennoeno')
+					-- Optimizing SQL Queries (Similar to the last one but, might give more insight on overall Optimization and not just runtime.)
+
+					-- If I know more informantion like what kind of query im trying to make, I could search for something more meaningful like, join query taking long time, most of the time when you run into a problem there has been someone out there who has done it before.  And in the programming world everybody is willing to share their ignorance to gain knowledge (at least I am!)
+
+					-- And last but not least a good ole trip to the SQL docs never hurts
 				</pre>
 			</div>
 		</div>
