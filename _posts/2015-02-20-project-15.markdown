@@ -1,0 +1,14 @@
+---
+title: <a href="http://www.waywire.com">Waywire</a>
+subtitle: Rails, Perl, Backbone, Node
+layout: default
+modal-id: 12
+date: 2015-05-01
+img: waywire.png
+thumbnail: waywire.png
+alt: image-alt
+project-date: May 2015
+client: <a href="#">Source</a>
+category: <a href="http://www.waywire.com">Waywire</a>
+description: Waywire brings video curation to the masses.  Using Waywire's CMS curators are given a personal subdomain where they can add videos from all over the web that speak to their passions.  This was build Mobile-first with idea that experience should be shareable and social.
+---

@@ -1,0 +1,14 @@
+---
+title: <a href="http://www.eliteguardtraining.com/">Elite Guard Training</a>
+subtitle: HTML, CSS, JS, Bootstrap, Photoshop
+layout: default
+modal-id: 12
+date: 2015-04-02
+img: egt.png
+thumbnail: egt.png
+alt: image-alt
+project-date: April 2015
+client: <a href="#">Source</a>
+category: <a href="http://www.eliteguardtraining.com/">Elite Guard Training</a>
+description: Elite Guard Training's is a combination of game-situation drills with quick repetitions is a necessity to improvement; especially at the professional level. This app is a realization of a PSD that the company sent and I worked my magic on.
+---

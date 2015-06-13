@@ -7,7 +7,7 @@ date: 2015-03-13
 img: algo_music.png
 thumbnail: algo_music.png
 alt: image-alt
-project-date: March 2014
+project-date: March 2015
 client: <a href="https://github.com/Yamikamisama/algoMusic">Source</a>
 category: <a href="http://yamikamisama.github.io/algo_music/">algoMusic</a>
 description: algoMusic is a single page app built with JavaScript, D3.js, and Timber.js!
