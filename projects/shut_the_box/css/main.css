@@ -1,0 +1,118 @@
+/***********************/
+/*   General Styling   */
+/***********************/
+body {
+	font-family: 'Jura', sans-serif;
+  color: white;
+  background: -webkit-repeating-linear-gradient(45deg, #606dbc, #606dbc 10px, #465298 10px, #465298 20px);
+  background: repeating-linear-gradient(45deg, #606dbc, #606dbc 10px, #465298 10px, #465298 20px);
+  text-align: center;
+}
+
+h1{
+	font-size: 4em;
+}
+
+/********************/
+/*   Card Styling   */
+/********************/
+.cards{
+	display: inline-block;
+	list-style: none;
+	height: 26%;
+	padding:0;
+}
+.card{
+	width: 110px;
+	border-radius: 5px;
+	border: 6px solid black;
+	background-color: orange;
+	display: inline-block;
+	text-align: center;
+	margin: 0 13px;
+	font-size: 4em;
+	line-height: 190px;
+}
+.card-active{
+	border: 6px solid yellow;
+}
+
+/**********************/
+/*   Button Styling   */
+/**********************/
+.btn{
+	margin-top: 2%;
+  font-size: 1.5em;
+  background-color: transparent;
+  border: solid #FFFFFF;
+  border-radius: 0;
+  color: #FFFFFF;
+}
+.btn:hover{
+	background-color: rgba(255, 165, 0, 0.34);
+  color: #FFA500;
+  border: solid #FFF;
+}
+
+/********************/
+/*   Dice Styling   */
+/********************/
+.dice-container{
+	width: 100%;
+	height: 135px;
+	padding: 2em 0 0 0;
+	display: inline-block;
+}
+.die{
+	display: inline-block;
+}
+
+/**********************/
+/*   error Handlers   */
+/**********************/
+.win, .loose, .error, .success{
+	display: none;
+	position: fixed;
+	top: 30%;
+	left: 20%;
+	width: 50%;
+	border-radius: 6px;
+	padding: 0 5%;
+}
+.win{
+	color: rgb(86, 38, 94);
+	background-color: rgba(167, 96, 188, 0.9);
+	border: 4px solid rgb(86, 38, 94);
+}
+
+.loose{
+	color: #4E4E4E;
+  background-color: rgba(0, 0, 0, 0.9);
+  border: 4px solid #4E4E4E;
+}
+.error{
+	color: rgb(149, 0, 0);
+	background-color: rgba(203, 80, 80, 0.9);
+	border: 4px solid rgb(149, 0, 0);
+}
+.success{
+	color: rgb(38, 94, 69);
+	background-color: rgba(96, 188, 102, 0.9);
+	border: 4px solid rgb(38, 94, 69);
+}
+
+/*******************/
+/*   Media Query   */
+/*******************/
+@media only screen and (max-width: 570px) {
+	.card{
+		width: 54px;
+		height: 75px;
+		margin: 5px 5px;
+		font-size: 4em;
+		line-height: 80px;
+	}
+	h1{
+		font-size: 2em;
+	}
+}
