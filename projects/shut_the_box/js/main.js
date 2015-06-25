@@ -49,14 +49,12 @@ STB = {
   updateCards: function(total){
     if (total % dieTotal === 0){
       // .animate({width:0},1000, function(){$(this).remove()}); << want to add cool remove animation, but glitchy.
-      $('.card-active').removeClass('card-active').fadeOut('slow', function(){
-        $(this).remove();
-      });
+      $('.card-active').removeClass('card-active').remove();
       if ( $('.card').length === 0 ) {
-        this.messageDisplay('.win');
+        STB.messageDisplay('.win');
         STB.reloadGame();
       } else {
-        this.messageDisplay('.success');
+        STB.messageDisplay('.success');
       }
     } else {
       this.messageDisplay('.error')
