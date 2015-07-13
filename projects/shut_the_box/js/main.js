@@ -1,4 +1,3 @@
-(function(){
 STB = {
 
   // Initalize function to set the module to be functional
@@ -18,7 +17,7 @@ STB = {
   },
 
   // Rolls the dice and stores the sum of the roll
-  // in the dieTotal var
+  // in the dieTotal var1
   dieRoll: function(){
     $('#die-roll').click(function() {
       dieTotal = 0;
@@ -69,8 +68,8 @@ STB = {
       $cards.each(function(){
         var active = $(this).hasClass('card-active')
         if (active){
-          var item = parseInt($(this).html())
-          holder.push(item)
+          var item = parseInt($(this).html());
+          holder.push(item);
         }
       });
       var total = holder.reduce(function(a, b) {
@@ -107,5 +106,4 @@ STB = {
     },2000)
   }
 }
-  STB.init();
-})();
+(function(){STB.init();})();
