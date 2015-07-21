@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Intro to User Experience</title>
+    <meta name="description" content="At its core, User Experience (UX) is defined as how someone feels about using a product, system, or service. Regardless of what we're designing-- a website, an Android app, or a toaster-- we all strive to make our designs useful, easy to use, and enjoyable to use. But how exactly do we make something useful, easy to use, and enjoyable? This class will arm you with the essential tips to find those answers.">
+    <meta name="author" content="Sarah Kahn">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/gdilight.css" id="theme">
+    <!-- For syntax highlighting -->
+    <!-- light editor<link rel="stylesheet" href="lib/css/light.css">-->
+    <!-- dark editor-->
+    <link rel="stylesheet" href="lib/css/dark.css">
+    <!-- If use the PDF print sheet so students can print slides-->
+    <link rel="stylesheet" href="css/print/pdf.css" type="text/css" media="print">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+</head>
+
+<body>
+    <div class="reveal">
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <!-- Opening -->
+            <section>
+                <h1><img src="css/images/gdi_logo_badge.png" alt="Girl Develop It- don't be shy, develop it Logo!" /><h1>
+						<h3>Intro to MVC Frameworks</h3>
+
+					</section>
+					<!-- Welcome-->
+					<section>
+						<h2>Welcome!</h2>
+
+						<p>Girl Develop It is here to provide affordable and accessible programs to learn software through mentorship and hands-on instruction.</p>
+
+						<ul>
+							<li>Some "rules"</li>
+							<li>We are here for you!</li>
+							<li>Every question is important</li>
+							<li>Help each other</li>
+							<li>Have fun</li>
+						</ul>
+
+					</section>
+
+					<!-- Introduction -->
+					<section>
+						<h2>Introductions</h2>
+
+						<p>Tell us about yourself.</p>
+						<ul>
+							<li>Who are you?</li>
+							<li>What do you hope to get out of this class?</li>
+							<li>Quirk about yourself?</li>
+						</ul>
+
+					</section>
+
+					<!-- Agenda -->
+					<section>
+						<h2>What we'll cover today</h2>
+
+						<ul>
+							<li>Brief history of JavaScript and websites</li>
+							<li>Examples of big JavaScript web apps</li>
+							<li>What does JavaScript do in big apps?</li>
+							<li>Making large amounts of JavaScript more managable</li>
+							<li>What is a model? What is a view?</li>
+							<li>Creating our own mini JavaScript framework</li>
+							<li>Nesting views</li>
+							<li>MV* frameworks: types and some popular frameworks</li>
+						</ul>
+
+					</section>
+
+					<!-- What is UX? -->
+					<section>
+						<h1>Histrory</h1>
+                <ul>
+                    <li>JavaScript and Websites</li>
+                    <li>Then and Now</li>
+                </ul>
+            </section>
+            <!-- A day in the life  -->
+            <section>
+                <h2>Web 1.0</h2>
+                <p>JavaScript wasn't really used for much.</p>
+                <img src="img/web1.png" alt="">
+            </section>
+            <section>
+                <h2>Web 2.0</h2>
+                <p>JavaScript for AJAX - this made things a little nicer.</p>
+                <img src="img/web2.png" alt="">
+            </section>
+            <section>
+                <h2>Web Now</h2>
+                <p>JavaScript for <em>everything</em>!</p>
+                <img src="img/web_now.png" alt="">
+            </section>
+            <section>
+                <h2>Big Apps</h2>
+                <p>JavaScript is used for big apps that involve lots of user interaction. Things like...</p>
+            </section>
+            <section>
+                <h2>Hulu</h2>
+                <img src="img/hulu.png" alt="">
+            </section>
+            <section>
+                <h2>Twitter</h2>
+                <img src="img/twitter.png" alt="">
+            </section>
+            <section>
+                <h2>Google Maps</h2>
+                <img src="img/gmaps.png" alt="">
+            </section>
+            <section>
+                <h2>Big App Functionality</h2>
+                <p>There's a lot happening in these big apps. Specifically, JavaScript:</p>
+                <ul>
+                    <li>Fetches data (via AJAX)</li>
+                    <li>Processes and calculates data</li>
+                    <li>Creates DOM (like w/jQuery)</li>
+                    <li>Reacts to events</li>
+                </ul>
+            </section>
+            <section>
+                <h2>... that's a lot of JS</h2>
+                <p>So <em>much</em> <strong>code</strong>.</p>
+                <p>Coursera had <strong>28,848</strong> lines of JavaScript.</p>
+                <img src="../img/wat.gif" alt="">
+                <p><em>It's ok to cry a little.</em></p>
+            </section>
+            <section>
+                <h2>Making it manageable</h2>
+                <p>We can do a few things to make this code more manageable:</p>
+                <ul>
+                    <li>Split into multiple files</li>
+                    <li>Modularize the code into re-usable chunks</li>
+                    <li>Use object-oriented concepts to organize code</li>
+                    <li>Separate the code into "model" vs. "view"</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Model</h2>
+                <p>The model represents your data.</p>
+                <p>The model:</p>
+                <ul>
+                    <li>Fetches data</li>
+                    <li>Processes data</li>
+                </ul>
+            </section>
+            <section>
+                <h2>View</h2>
+                <p>The view is your presentation layer - what people actually see.</p>
+                <p>Your views:</p>
+                <ul>
+                    <li>Create the DOM</li>
+                    <li>Handle DOM events</li>
+                </ul>
+            </section>
+            <section>
+                <h1>MVC</h1>
+                <ul>
+                    <li>JavaScript</li>
+                    <li>Dissecting the pieces of frameworks</li>
+                </ul>
+            </section>
+            <section>
+                <h2>MVC Features</h2>
+                <p>JavaScript MVC frameworks (usually) share 3 primary features:</p>
+                <ul>
+                    <li>Two-way Binding between HTML and a client-side JavaScript object model View Templates</li>
+                    <li>Data Storage (local or through a web server to a database)</li>
+                    <li>URL Routing (keeping the back button working and search engines happy)</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Data binding</h2>
+                <p>Data binding is one of the most popular features of JavaScript MVC frameworks. How it works:</p>
+                <ul>
+                    <li>Change data in your HTML inputs</li>
+                    <li>The JavaScript object bound to the input is <em>immediately</em> updated</li>
+                    <li>Any other elements that are bound to that property update automatically</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Two-way data binding</h2>
+                <p>Most frameworks have two-way data binding. With two-way data binding, you can:</p>
+                <ul>
+                    <li>Update the HTML inputs, which will update your JavaScript object</li>
+                    <li>Update the JavaScript object, which will update every HTML attribute bound to it</li>
+                </ul>
+                <p>Neat, huh?</p>
+                </ul>
+            </section>
+            <section>
+                <h2>View templates</h2>
+                <p>View templates are how we take our JavaScript model data and put it inside of our HTML. There are two ways to solve this:</p>
+                <ol>
+                    <li>String-based templates</li>
+                    <li>DOM-based templates</li>
+                </ol>
+            </section>
+            <section>
+                <h2>String-based templates</h2>
+                <p>String-based templates replace strings or text templates with the dynamic data from your models.</p>
+                <p>Pros: performance (debatable)</p>
+                <p>Cons: difficult to debug control flow logic.</p>
+                <p>Example: <a href="http://handlebarsjs.com/">Handlebars.js</a></p>
+            </section>
+            <section>
+                <h2>DOM-based templates</h2>
+                <p>DOM-based templates use traditional HTML markup and add additional attributes to describe the data binding and events.</p>
+                <p>There is typically less code involved with this approach, and these frameworks often do more work for you.</p>
+            </section>
+            <section>
+                <h2>Data storage</h2>
+                <p>Frameworks store data on the server in one of a few ways:</p>
+                <ul>
+                    <li>automatically synchronizing with RESTful services</li>
+                    <li>asking the developer to implement do-it-yourself AJAX calls to web services returning <code>json</code></li>
+                    <li>allowing either of the above approaches</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Routing</h2>
+                <p>Frameworks that use routes allow you to use the back button in browsers.</p>
+                <p>Seems simple, doesn't it? But with all of that clicking around on one single page, you can't store anything in browser history, which means you can't go back without losing everything.</p>
+                <p>Not all frameworks use routing.</p>
+            </section>
+            <section>
+                <h2>Sample App</h2>
+                <img src="img/bookshelf_screenshot.png" alt="">
+                <p><a href="http://www.teaching-materials.org/jsmvc/demo/bookshelf.html">Try it!</a></p>
+            </section>
+            <section>
+                <h1>Models & Collections</h1>
+                <ul>
+                    <li><code>BookModel</code></li>
+                    <li><code>BookCollection</code></li>
+                </ul>
+            </section>
+            <section>
+                <h2><code>Book</code> Model</h2>
+                <p>Sets defaults and computes properties.</p>
+                <pre><code class="javascript" contenteditable>function BookModel(bookJSON) {
+						  this.title     = bookJSON.title || 'Untitled';
+						  this.author    = bookJSON.author || 'Unknown author';
+						  this.asin      = bookJSON.asin;
+						  this.thumbnail = bookJSON.thumbnail;
+						  this.rating    = bookJSON.rating;
+						  this.review    = bookJSON.review || '';
+						  this.url       = 'http://www.amazon.com/gp/product/' + this.asin + '?tag=amazonsimilar-20';
+						}</code></pre>
+            </section>
+            <section>
+                <h2><code>Book</code> Object</h2>
+                <p>Creates a new <code>Book</code> object using the <code>BookModel</code></p>
+                <pre><code class="javascript" contenteditable>var book = new BookModel({
+							    title: "1984",
+							    author: "George Orwell",
+							    asin: "0451524934",
+							    thumbnail: "http://images.amazon.com/images/P/0451524934.01.ZTZZZZZZ.jpg",
+							    rating: 4
+							  });
+							</code></pre>
+            </section>
+            <section>
+                <h2><code>BookCollection</code></h2>
+                <p>Creates an array of <code>BookModel</code>s and provides sorting options.</p>
+                <pre><code class="javascript" contenteditable>function BookCollection(booksJSON) {
+							  this.items = [];
+							  for (var i = 0; i < booksJSON.length; i++) {
+							    this.items.push(new BookModel(booksJSON[i]));
+							  }
+							};
+
+							BookCollection.prototype.sort = function() {
+							  this.items.sort(function(bookA, bookB){
+							    return (bookA.rating - bookB.rating);
+							  });
+							};</code></pre>
+            </section>
+            <section>
+                <h2><code>BookCollection</code> Object</h2>
+                <p>Adds a newly created <code>BookModel</code> item to the <code>BookCollection</code>.</p>
+                <pre><code class="javascript" contenteditable>var booksJSON = [{
+								    title: "1984",
+								    author: "George Orwell",
+								    asin: "0451524934",
+								    thumbnail: "http://images.amazon.com/images/P/0451524934.01.ZTZZZZZZ.jpg",
+								    rating: 4
+								  }]
+
+								var books = new BookCollection(booksJSON);</code></pre>
+            </section>
+            <section>
+                <h2>Exercise 1</h2>
+                <h2><a href="http://gdichicago.com/classes/js205/exercises/1-models.html">Models in MVC</a></h2>
+            </section>
+            <section>
+                <h2><code>BookShelfView</code></h2>
+                <p>And then a <code>BookShelfView</code>, that uses <code>BookView</code>s.</p>
+                <pre><code class="javascript" contenteditable>function BookShelfView(books) {
+  var shelfDiv = $('&lt;div&gt;');
+  for (var i = 0; i &lt; books.items.length; i++) {
+    var book = books.items[i];
+    shelfDiv.append(new BookView(book));
+  }
+  return shelfDiv;
+}</code></pre></section>
+            <section>
+                <h2><code>BookShelf</code> View</h2>
+                <p><a href="https://gist.github.com/feministy/b3f3b999a35a87c56dc0">View larger</a></p>
+                <pre><code class="javascript small" contenteditable>function BookShelfView(books) {
+  var shelfDiv = $('&lt;div&gt;');
+  for (var i = 0; i &lt; books.items.length; i++) {
+    var book = books.items[i];
+    // Create a div with a linked image inside it,
+    // and add that to the shelf div
+    var bookDiv = $('&lt;div class="book"&gt;');
+    var bookLink = $('&lt;a&gt;');
+    bookLink.attr('href', book.url);
+    var bookCover = $('&lt;img&gt;');
+    bookCover.attr('src', book.thumbnail);
+    bookLink.append(bookCover);
+    bookDiv.append(bookLink);
+
+    shelfDiv.append(bookDiv);
+
+    // On mouseover, pop up the review
+    bookDiv.bind('mouseover', function(e) {
+        var reviewDiv = $('&lt;div class="book-review"&gt;');
+        reviewDiv.html('&lt;strong&gt;' + book.rating + ' stars: &lt;/strong&gt;' + (book.review || ' No review.'));
+        reviewDiv.css({'position': 'absolute', 'top':  e.pageY, 'left': e.pageX});
+        $('body').append(reviewDiv);
+    });
+    bookDiv.bind('mouseout', function() {
+      $('.book-review').remove();
+    });
+  }
+  return shelfDiv;
+}</code></pre></section>
+            <section>
+                <h2>Whoa, really?</h2>
+                <p>Yeah, I know. That's a lot. But! We can break that into two smaller, nested views:</p>
+                <ul>
+                    <li><code>BookView</code></li>
+                    <li><code>BookShelfView</code></li>
+                </ul>
+                <br>
+                <br>
+                <p>Our <code>BookShelfView</code> can be comprised of a bunch of little <code>BookView</code>s. So what does that look like?</p>
+            </section>
+            <section>
+                <h2><code>BookView</code></h2>
+                <p>First we make a <code>BookView</code>:</p>
+                <pre><code class="javascript" contenteditable>function BookView(book) {
+  var bookDiv = $('&lt;div class="book"&gt;');
+  var bookLink = $('&lt;a&gt;');
+  bookLink.attr('href', book.url);
+  var bookCover = $('&lt;img&gt;');
+  bookCover.attr('src', book.thumbnail);
+  bookLink.append(bookCover);
+  bookDiv.append(bookLink);
+
+  // Attach event listeners
+  return bookDiv;
+}</code></pre></section>
+            <section>
+                <h2><code>BookShelfView</code></h2>
+                <p>And then a <code>BookShelfView</code>, that uses <code>BookView</code>s.</p>
+                <pre><code class="javascript" contenteditable>function BookShelfView(books) {
+  var shelfDiv = $('&lt;div&gt;');
+  for (var i = 0; i &lt; books.items.length; i++) {
+    var book = books.items[i];
+    shelfDiv.append(new BookView(book));
+  }
+  return shelfDiv;
+}</code></pre></section>
+            <section>
+                <h2>MVC BookShelf</h2>
+                <p><a href="http://www.teaching-materials.org/jsmvc/demo/bookshelf_mvc.html">Try it!</a></p>
+            </section>
+            <section>
+                <h1>Exercise 2</h1>
+                <h2><a href="http://gdichicago.com/classes/js205/exercises/2-views.html">Views in MVC</a></h2>
+            </section>
+            <section>
+                <h2>Frameworks</h2>
+                <img src="img/frameworks.png" alt=""></section>
+            <section>
+                <h2>MVC</h2>
+                <p>Three components: Model, View, Controller. </p>
+                <p><strong>Controllers</strong> send commands to the Model that update the Model's state. Controllers also send commands to the View that change the presentation of the model.</p>
+                <p>Examples: <a href="http://emberjs.com/">EmberJS</a>, <a href="https://angularjs.org/">AngularJS</a></p>
+            </section>
+            <section>
+                <h2>MVP</h2>
+                <p>Three components: Model, View, Presenter.</p>
+                <p>MVP is derived from MVC.</p>
+                <p><strong>Presenters</strong> are a middle layer, similar to a Controller. All logic related to presentation goes in the Presenters. The Model and the View don't talk to each other at all.</p>
+                <p>Examples: <a href="http://backbonejs.org/">BackboneJS</a></p>
+            </section>
+            <section>
+                <h2>MVC vs. MVP</h2>
+                <p>They're quite similar, but not identical.</p>
+                <img src="img/mvc-mvp.png" alt=""></section>
+            <section>
+                <h2>MVVM</h2>
+                <p>Three components: Model, View, ViewModel.</p>
+                <p><strong>ViewModels</strong> send messages between the View and the Model - it is a mediator or converter. It changes Model info into View info, passes commands from the View into the Model, and exposes public properties, commands, and abstractions.</p>
+                <p>Examples: <a href="http://knockoutjs.com/">KnockoutJS</a></p>
+            </section>
+            <section>
+                <h2>MV*</h2>
+                <p>Something else! There are other types of MV* frameworks out there. They're not as popular, so don't worry about them for now, but it is good to know that there are other options out there.</p>
+            </section>
+            <section>
+                <h2>Further Reading</h2>
+                <p><a href="http://www.smashingmagazine.com/2012/07/27/journey-through-the-javascript-mvc-jungle/">The JavaScript MVC Jungle</a></p>
+                <p>Breakdown of differences between MV* frameworks.</p>
+            </section>
+            <section>
+                <h2>Todo MVC</h2>
+                <p><a href="http://todomvc.com/">Todo MVC</a> implements a Todo list app in many of the popular JavaScript frameworks. It's a great tool to play with the different frameworks to see the differences.</p>
+            </section>
+            <section>
+                <h1>Questions?</h2>
+
+<p>Just like Elmo taught us that everybody poops...</p>
+
+<img src="https://s3-us-west-2.amazonaws.com/gifgifgiffy/cute/elmo_poops.gif" alt="">
+
+<p>Everybody also has questions.</p></section>
+
+						</div>
+						<footer>
+							<div class="copyright">
+								Intro to User Experience -- Girl Develop It RDU --
+								<a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
+							</div>
+						</footer>
+					</div>
+
+
+					<script src="lib/js/head.min.js"></script>
+					<script src="js/reveal.min.js"></script>
+
+					<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+				{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+				{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+				{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+</script>
+
+</body>
+</html>
