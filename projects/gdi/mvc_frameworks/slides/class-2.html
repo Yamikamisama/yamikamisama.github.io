@@ -35,451 +35,324 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
         <!-- Opening -->
+
         <section>
-         <h1><img src="css/images/gdi_logo_badge.png" alt="Girl Develop It- don't be shy, develop it Logo!" /><h1>
-           <h2>Intro to User Experience</h2>
-           <h3>Class 2</h3>
-         </section>
-         <!-- Welcome-->
-         <section>
-           <h2>Welcome</h2>
-           <div class="left-align">
-            <p>Girl Develop It is here to provide affordable and accessible programs to learn software through mentorship and hands-on instruction.</p>
-            <p class="green">Some "rules"</p>
+          <h1><img src="css/images/gdi_logo_badge.png" alt="Girl Develop It- don't be shy, develop it Logo!" /><h1>
+          <h3>Intro to MVC Frameworks</h3>
+        </section>
+          <!-- Welcome-->
+        <section>
+          <h2>Welcome!</h2>
+
+          <p>Girl Develop It is here to provide affordable and accessible programs to learn software through mentorship and hands-on instruction.</p>
+
+          <ul>
+            <li>Some "rules"</li>
+            <li>We are here for you!</li>
+            <li>Every question is important</li>
+            <li>Help each other</li>
+            <li>Have fun</li>
+          </ul>
+
+        </section>
+
+        <!-- Introduction -->
+        <section>
+          <h2>Introductions</h2>
+
+          <p>Tell us about yourself.</p>
+          <ul>
+            <li>Who are you?</li>
+            <li>What do you hope to get out of this class?</li>
+            <li>Quirk about yourself?</li>
+          </ul>
+
+        </section>
+
+        <!-- Agenda -->
+        <section>
+          <h2>What we'll cover today</h2>
+          <ul>
+            <li>Exercise: Bad Robot</li>
+            <li>Exercise: Homework</li>
+            <li>Views</li>
+            <li>Exercise: View Refactor</li>
+            <li>MVC</li>
+            <li>MVP</li>
+            <li>MVVM</li>
+            <li>MV*</li>
+            <li>Angular: Demo/Snippet/Pros and Cons/Resources</li>
+            <li>Backbone: Demo/Snippet/Pros and Cons/Resources</li>
+            <li>Ember: Demo/Snippet/Pros and Cons/Resources</li>
+            <li>React: Demo/Snippet/Pros and Cons/Resources</li>
+            <li>How do we choose</li>
+            <li>Questions</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Bad Robot Exercise</h2>
+          <p>Solidify MVC in the frontend</p>
+        </section>
+
+        <section>
+          <h2>Exercise 1</h2>
+          <ul>
+              <li>Talk about it</li>
+              <li>What did we learn from it?</li>
+              <li>What is the code doing?</li>
+              <li>Lets go through it together</li>
+          </ul>
+        </section>
+
+
+        <section>
+            <h2><code>BookShelfView</code></h2>
+            <p>And then a <code>BookShelfView</code>, that uses <code>BookView</code>s.</p>
+            <pre><code class="javascript" contenteditable>function BookShelfView(books) {
+              var shelfDiv = $('&lt;div&gt;');
+              for (var i = 0; i &lt; books.items.length; i++) {
+              var book = books.items[i];
+              shelfDiv.append(new BookView(book));
+          }
+          return shelfDiv;
+        }</code></pre></section>
+
+        <section>
+            <h2><code>BookShelf</code> View</h2>
+            <p><a href="https://gist.github.com/feministy/b3f3b999a35a87c56dc0">View larger</a></p>
+            <pre><code class="javascript small" contenteditable>function BookShelfView(books) {
+              var shelfDiv = $('&lt;div&gt;');
+              for (var i = 0; i &lt; books.items.length; i++) {
+              var book = books.items[i];
+              // Create a div with a linked image inside it,
+              // and add that to the shelf div
+              var bookDiv = $('&lt;div class="book"&gt;');
+              var bookLink = $('&lt;a&gt;');
+              bookLink.attr('href', book.url);
+              var bookCover = $('&lt;img&gt;');
+              bookCover.attr('src', book.thumbnail);
+              bookLink.append(bookCover);
+              bookDiv.append(bookLink);
+
+              shelfDiv.append(bookDiv);
+
+              // On mouseover, pop up the review
+              bookDiv.bind('mouseover', function(e) {
+              var reviewDiv = $('&lt;div class="book-review"&gt;');
+              reviewDiv.html('&lt;strong&gt;' + book.rating + ' stars: &lt;/strong&gt;' + (book.review || ' No review.'));
+              reviewDiv.css({'position': 'absolute', 'top':  e.pageY, 'left': e.pageX});
+              $('body').append(reviewDiv);
+          });
+          bookDiv.bind('mouseout', function() {
+          $('.book-review').remove();
+        });
+        }
+        return shelfDiv;
+        }</code></pre></section>
+
+        <section>
+            <h2>Whoa, really?</h2>
+            <p>Yeah, I know. That's a lot. But! We can break that into two smaller, nested views:</p>
             <ul>
-             <li>We are here for you!</li>
-             <li>Every question is important</li>
-             <li>Help each other</li>
-             <li>Have fun!</li>
-           </ul>
-         </div>
-       </section>
+                <li><code>BookView</code></li>
+                <li><code>BookShelfView</code></li>
+            </ul>
+            <br>
+            <br>
+            <p>Our <code>BookShelfView</code> can be comprised of a bunch of little <code>BookView</code>s. So what does that look like?</p>
+        </section>
 
-       <!-- Introduction -->
-       <section>
-         <h2>Introduction</h2>
-         <div class="left-align">
-           <p>I'm here to help!</p>
-           <ul>
-             <li>Twitter: <a href="http://twitter.com/lordmikeang">@lordmikeang</a></li>
-             <li>Email: michaelangelodecarlo@gmail.com</li>
-           </ul>
-         </div>
-       </section>
+        <section>
+            <h2><code>BookView</code></h2>
+            <p>First we make a <code>BookView</code>:</p>
+            <pre><code class="javascript" contenteditable>function BookView(book) {
+              var bookDiv = $('&lt;div class="book"&gt;');
+              var bookLink = $('&lt;a&gt;');
+              bookLink.attr('href', book.url);
+              var bookCover = $('&lt;img&gt;');
+              bookCover.attr('src', book.thumbnail);
+              bookLink.append(bookCover);
+              bookDiv.append(bookLink);
 
-       <!-- Agenda -->
-       <section>
-         <h2>Agenda</h2>
-         <ol>
-          <li>Prioritizing Problems</li>
-          <li>Exercise: Prioritizing Problems</li>
-          <li>Getting Buy-in</li>
-          <li>UX and Project Management</li>
-          <li>Information Architecture</li>
-          <li>Interaction Design</li>
-          <li>Wireframing</li>
-          <li>Rapid prototyping</li>
-          <li>Iterating on Feedback</li>
-          <li>Visual Design</li>
-          <li>Resource Review</li>
-        </ol>
-      </section>
-      <section>
-        <h3>Dark Patterns</h3>
-        <a href="http://darkpatterns.org/">The Darkness</a>
-        <p>Dark Patterns are different – they are not mistakes, they are carefully crafted with a solid understanding of human psychology, and they do not have the user’s interests in mind. We as designers, founders, UX & UI professionals and creators need to take a stance against Dark Patterns.</p>
-      </section>
-      <section>
-        <h2>Prioritizing Problems</h2>
-      </section>
-      <section>
-        <h3>Don't panic!</h3>
-        <ol>
-            <li>Dont jump to extremes</li>
-            <li>Scraping the project to start over, usually isn't an option</li>
-            <li>What do we do?</li>
-            <li>How do we begin?</li>
-        </ol>
-      </section>
-      <section>
-        <h3>Not all problems are created equal.</h3>
-        <img src="css/images/prioritization-chart.png" alt="Prioritization chart" />
-      </section>
-       <section>
-        <h3>Not all problems are created equal</h3>
-        <ol>
-            <li>The Chart of the UX gods</li>
-            <li>Plot your problems</li>
-            <li>Get the easy wins</li>
-        </ol>
-      </section>
-      <section>
-        <h3>Some sample problems</h3>
-        <ul>
-          <li>Missing login link from homepage</li>
-          <li>60% of users fail to complete major multi-step task without help</li>
-          <li>Link color may be difficult for some users to read</li>
-          <li>Users must manually select their currency type, instead of having the app do conversions for them</li>
-        </ul>
-      </section>
-      <section>
-        <h3>Prioritized</h3>
-        <img src="css/images/prioritization-chart-2.png" alt="Prioritization chart" />
-      </section>
-      <section>
-        <h3>Band-aid or Shotgun?</h3>
-        <ul>
-            <li>Your long term goal sorts of problems are likely symptoms of needing some major overhaul. They wouldn’t be difficult to implement or hard to determine a solution for if there were any easy fixes. Get out the shotgun for these.</li>
-            <li>Bandaids, however, are fine for your lightweight easy to fix problems. If you can find any easy, low-tech way to make it happen, do it.</li>
-        </ul>
-      </section>
-      <section>
-        <h3>Iterative Fixes</h3>
-        <ul>
-            <li>bandaid or shotgun? does it fit that description?</li>
-            <li>How do we take care of bigger problems?</li>
-        </ul>
-      </section>
-      <section>
-        <h3>99% of Problems</h3>
-        <ul>
-            <li>Most problems can be solved with a more moderate approach</li>
-            <li>find your ideal solution</li>
-            <li>Break it down</li>
-            <li>figure out which pieces you can implement right now to ease the pain</li>
-            <li>Rinse and repeat</li>
-        </ul>
-      </section>
-      <section>
-        <h2>5. Exercise: Finding Problems & Prioritizing</h2>
-        <ul>
-          <li>Go to <a href="http://cnn.com">CNN.com</a> or if anybody is feeling brave we can use your site</li>
-          <li>Take 10 minutes to find three things you think might be problems.</li>
-          <li>We'll discuss as a group, and then try to prioritize fixing them.</li>
-        </ul>
-      </section>
-      <section>
-        <h2>6. Getting Buy-in</h2>
-        <ul>
-          <li>I hope this is optional for some of you</li>
-          <li>Trust the process</li>
-          <li>Take matters into your own hands.</li>
-          <li>Buy-in is earned not given</li>
-        </ul>
-      </section>
+              // Attach event listeners
+              return bookDiv;
+          }</code></pre></section>
 
-      <section>
-        <h3>Create a process document</h3>
-        <p>A document can help lend authority and substance, demonstrating to management that this is serious, grown-up business.</p>
-        <p><a href="css/images/example.pdf">An Example</a></p>
-      </section>
-      <section>
-        <h3>Start doing</h3>
-        <div class="left-align">
-          <p>Examples</p>
+        <section>
+            <h2><code>BookShelfView</code></h2>
+            <p>And then a <code>BookShelfView</code>, that uses <code>BookView</code>s.</p>
+            <pre><code class="javascript" contenteditable>function BookShelfView(books) {
+              var shelfDiv = $('&lt;div&gt;');
+              for (var i = 0; i &lt; books.items.length; i++) {
+              var book = books.items[i];
+              shelfDiv.append(new BookView(book));
+          }
+          return shelfDiv;
+        }</code></pre></section>
+
+
+        <section>
+            <h2>MVC BookShelf</h2>
+            <p><a href="http://www.teaching-materials.org/jsmvc/demo/bookshelf_mvc.html">Try it!</a></p>
+        </section>
+
+        <section>
+            <h1>Exercise 2</h1>
+            <h2><a href="http://gdichicago.com/classes/js205/exercises/2-views.html">Views in MVC</a></h2>
+        </section>
+
+        <section>
+            <h2>Frameworks</h2>
+            <img src="img/frameworks.png" alt="">
+        </section>
+
+        <section>
+            <h2>MVC</h2>
+            <p>Three components: Model, View, Controller. </p>
+            <p><strong>Controllers</strong> send commands to the Model that update the Model's state. Controllers also send commands to the View that change the presentation of the model.</p>
+            <p>Examples: <a href="http://emberjs.com/">EmberJS</a>, <a href="https://angularjs.org/">AngularJS</a></p>
+        </section>
+
+        <section>
+            <h2>MVP</h2>
+            <p>Three components: Model, View, Presenter.</p>
+            <p>MVP is derived from MVC.</p>
+            <p><strong>Presenters</strong> are a middle layer, similar to a Controller. All logic related to presentation goes in the Presenters. The Model and the View don't talk to each other at all.</p>
+            <p>Examples: <a href="http://backbonejs.org/">BackboneJS</a></p>
+        </section>
+
+        <section>
+            <h2>MVC vs. MVP</h2>
+            <p>They're quite similar, but not identical.</p>
+            <img src="img/mvc-mvp.png" alt="">
+        </section>
+        <section>
+            <h2>MVVM</h2>
+            <p>Three components: Model, View, ViewModel.</p>
+            <p><strong>ViewModels</strong> send messages between the View and the Model - it is a mediator or converter. It changes Model info into View info, passes commands from the View into the Model, and exposes public properties, commands, and abstractions.</p>
+            <p>Examples: <a href="http://knockoutjs.com/">KnockoutJS</a></p>
+        </section>
+
+        <section>
+            <h2>MV*</h2>
+            <p>Something else! There are other types of MV* frameworks out there. They're not as popular, so don't worry about them for now, but it is good to know that there are other options out there.</p>
+        </section>
+
+        <!-- Angular MVC Code Example -->
+        <section>
+          <h2>Angular MVC Code Example</h2>
+          <a href="http://todomvc.com/examples/angularjs/#/">Demo</a>
+          <br>
+          <a href="https://github.com/tastejs/todomvc/blob/gh-pages/examples/angularjs/index.html">Angular MVC</a>
+        </section>
+
+        <!-- Angular Pros and Cons -->
+        <section>
+          <h2>Angular Pros and Cons</h2>
+          <a href="http://blog.backand.com/wp-content/uploads/2015/04/angular-pros-cons.jpg"><img src="img/angular-pros-cons.jpg" alt=""></a>
+        </section>
+
+        <!-- Angular Resources -->
+        <section>
+          <h2>Angular Resources</h2>
           <ul>
-            <li>Guerilla testing: Martin Belam describes it as “the art of pouncing on lone people in cafes and public spaces, [then] quickly filming them whilst they use a website for a couple of minutes.” </li>
-            <li>The single biggest factor in getting buy-in for this stuff is to get test results in front of people.</li>
-            <li>Be the evangelist</li>
-            <li>Lurk</li>
-            <li>Be patient</li>
-          </ul>
-        </div>
-      </section>
-      <section>
-        <h3>Share your successes</h3>
-        <div class="left-align">
-          <p>If it's working, let everyone know!</p>
-          <ul>
-            <li>Quotes from users stating when something is easy.</li>
-            <li>Before and after screenshots or heatmaps.</li>
-            <li>Before and after user testing video</li>
-          </ul>
-        </div>
-      </section>
-
-      <section>
-        <h2>7. Working with Project Management</h2>
-        <p>Where does UX fit in?</p>
-      </section>
-
-      <section>
-        <h3>Waterfall</h3>
-        <p><img src="css/images/waterfall.png" /></p>
-      </section>
-      <section>
-        <h3>UX for Waterfall</h3>
-        <ul>
-          <li>Allows more time for careful analysis</li>
-          <li>Less flexibility in rolling out fixes quickly</li>
-          <li>Be careful about prioritizing fixes, since you have less ability to roll them out quickly.</li>
-          <li>Plan for detailed deliverables and careful analysis documents.</li>
-        </ul>
-      </section>
-      <section>
-        <h3>Agile</h3>
-        <p><img src="css/images/agile.png" /></p>
-      </section>
-      <section>
-        <h3>UX for Agile</h3>
-        <ul>
-          <li>Things can be fast and furious</li>
-          <li>Fixes can be implemented quickly, or take more time if they’re larger</li>
-          <li>Rapid turnaround times allows for real life feedback, which can decrease the need for in-depth studies before deploying</li>
-        </ul>
-      </section>
-      <section>
-        <h3>Key differences of Agile UX</h3>
-        <ul>
-          <li>Low fidelity design artifacts, like paper prototypes</li>
-          <li>Collaborative brainstorming/design</li>
-          <li>Immediate feedback from users and colleagues</li>
-          <li>People and ideas over artifacts</li>
-        </ul>
-      </section>
-      <section>
-        <h2>Information Architecture</h2>
-        <p>We’re going to delve in and do some more hands on work, focusing on learning some techniques you can apply when you’re working towards fixing these problems you’ve discovered.</p>
-      </section>
-
-      <section>
-        <h3>The 'Scent' of a Website</h3>
-        <p><a href="http://atoz.ebsco.com/Titles/SearchResults/12589?SearchType=Contains&Find=human+computer+interaction&GetResourcesBy=QuickSearch&resourceTypeName=allTitles&resourceType=&radioButtonChanged=">Human Computer Interaction</a> <br />(available to NC residents via NC LIVE)</p>
-        <p>People look for certain words in a similar way that a foraging animal would look for certain scents.</p>
-      </section>
-
-      <section>
-        <h3>Example</h3>
-        <p><a href="http://nytimes.com">www.nytimes.com</a></p>
-        <ul>
-            <li>Determining whether users are catching the scent is something you will do through testing and metrics</li>
-            <li>look at is the individual words that you’re using</li>
-            <li>Lets discuss</li>
-            <li> <a href="https://developers.google.com/speed/pagespeed/insights/">Google Page Speed Test</a> </li>
-        </ul>
-      </section>
-
-      <section>
-        <h3>Card Sorting</h3>
-        <p><a href="http://rtpewb.com/">Example website</a></p>
-        <p>Card sorting is a simple technique in user experience design where a group of subject experts or "users", however inexperienced with design, are guided to generate a category tree or folksonomy. It is a useful approach for designing information architecture, workflows, menu structure, or web site navigation paths.</p>
-      </section>
-      <section>
-        <h3>Pick out all the 'things' in a site</h3>
-        <ul>
-          <li>Write them down, each seperately.</li>
-          <li>Look for groups and patterns</li>
-          <li>People, places things</li>
-          <li>Put things that are alike together</li>
-        </ul>
-      </section>
-      <section>
-        <h3>Hub and Spoke Diagrams</h3>
-        <img src="http://ux.artu.tv/wp-content/uploads/hubandspokes.png" alt="">
-        <ul>
-          <li>Come up with a description of what makes things alike</li>
-          <li>SAT logic: X is to Y as A is to B</li>
-          <li>Nouns, verbs, and adjectives</li>
-        </ul>
-      </section>
-      <section>
-        <h3>Sitemaps</h3>
-        <p><a href="https://www.gliffy.com/examples/site-map">Example</a></p>
-        <img src="http://bhsmistler.weebly.com/uploads/1/0/9/4/10941401/3960540_orig.gif" alt="">
-      </section>
-
-      <section>
-        <h2>Interaction Design</h2>
-      </section>
-
-      <section>
-        <h3>Make a map</h3>
-        <ul>
-            <li>make cards</li>
-            <li>make a map</li>
-        </ul>
-        <p>next slide has the requirements</p>
-      </section>
-
-      <section>
-        <h3>Example Requirements (look for keywords)</h3>
-        <ul>
-          <li>User uploads a file</li>
-          <li>Superuser is notified, approves and rejects file</li>
-          <li>File is posted to website, or is not posted</li>
-        </ul>
-      </section>
-
-      <section>
-        <h3>Example Requirements</h3>
-        <ul>
-          <li>User <b>logs in</b>, <b>uploads</b> a file</li>
-          <li>Superuser <b>logs in</b>, <b>is notified, approves</b> and <b>rejects</b> file</li>
-          <li>File <b>is posted</b> to website, or <b>is not posted</b></li>
-        </ul>
-      </section>
-      <section>
-        <h3>Some holes</h3>
-        <ul>
-          <li>What does the user see before she has uploaded a file?</li>
-          <li>Can the user see other files she’s uploaded in the past? Can she edit them?</li>
-          <li>How is the superuser notified? Email, RSS feed, in-app messaging?</li>
-          <li>What happens when the superuser rejects a file? Is the user notified?</li>
-          <li>Is the user notified when the file is approved? When it’s posted?</li>
-        </ul>
-      </section>
-      <section>
-        <h3>Exercise: Let's map it out</h3>
-      </section>
-      <section>
-        <h3>A note on states</h3>
-        <ul>
-          <li>A given page or section of a website or application may be variable.</li>
-          <li>Buttons and links can be disabled, active, already viewed.</li>
-          <li>Content may be filtered</li>
-          <li>Always indicate visually to the user what is happening</li>
-          <li>See also: <a href="http://www.usabilityfirst.com/glossary/affordance/">affordance</a></li>
-        </ul>
-      </section>
-      <section>
-        <h2>3. Wireframing</h2>
-        <ul>
-          <li>why?</li>
-          <li>Separate layouts, architecture, and interactions from branding and color.</li>
-          <li>Less emotional</li>
-          <li>Quick to implement</li>
-          <li><a href="https://www.notableapp.com/posts/789277#annotate/789277">Example</a></li>
-        </ul>
-      </section>
-      <section>
-        <h3>Wireframing Tools</h3>
-        <ul>
-          <li>Balsamiq</li>
-          <li>Mockingbird</li>
-          <li>Cacoo</li>
-          <li>Adobe Suite</li>
-          <li>Omnigraffle</li>
-          <li>MS Visio</li>
-        </ul>
-      </section>
-      <section>
-        <h3>Paper/Whiteboard Wireframes</h3>
-      </section>
-      <section>
-        <h2>4. Prototyping in Code</h2>
-        <ul>
-          <li>The way of the future</li>
-          <li>Telepathic design implementation</li>
-        </ul>
-      </section>
-      <section>
-        <h2>5. Getting Feedback</h3>
-          <ul>
-            <li>Iterate</li>
-            <li>Don't get attached</li>
+              <li><a href="http://ng.malsup.com/#!/">ng-nuggets</a></li>
+              <li><a href="https://docs.angularjs.org/api?PHPSESSID=cae8e98e7ca559b4605d75c813b358ee">Angular Docs</a></li>
+              <li><a href="https://frontendmasters.com/">Frontend Masters</a></li>
+              <li><a href="https://www.codeschool.com/">Code School</a></li>
           </ul>
         </section>
+
+        <!-- Backbone MVC Code Example -->
         <section>
-          <h3>Exercise: Make a wireframe</h3>
+          <h2>Backbone MVC Code Example</h2>
+          <a href="http://todomvc.com/examples/backbone/">Demo</a>
+          <br>
+          <a href="https://github.com/tastejs/todomvc/tree/gh-pages/examples/backbone">Backbone MVC</a>
         </section>
+
+        <!-- Backbone Pros and Cons -->
         <section>
-          <h2>6. Visual Design</h2>
+          <h2>Backbone Pros and Cons</h2>
+          <a href="https://metforceweb.s3.amazonaws.com/2015/Jan/Backbone_pros_cons-1421258805979.png">Click Me!</a>
         </section>
+
+        <!-- Backbone Resources -->
         <section>
-          <h3>This is where all your hard work starts to pay off</h3>
-          <p>You've already done the hard part!</p>
-        </section>
-        <section>
-          <h3>Usability and Color</h3>
+          <h2>Backbone Resources</h2>
           <ul>
-            <li>Color affects accessibility. (Up to 10% of the population is colorblind*)</li>
-            <li>We have cultural expectations about color. What does that mean?</li>
-            <li>We have years of training using computers with certain conventions.</li>
-          </ul>
-          <span>*Via <a href="http://www.colourblindawareness.org/colour-blindness/">Color Blind Awareness</a></span>
-        </section>
-        <section>
-          <h3>Some common conventions</h3>
-          <p><img src="css/images/green.png" alt="Green Success Message" /></p>
-          <p><img src="css/images/red.png" alt="Red Fail Message" /></p>
-        </section>
-        <section>
-          <h3 style="color: #000;">Contrast</h3>
-          <h3 style="background:#999; color:#666; width:50%; margin:0 auto;">Lack of Contrast</h3>
-        </section>
-        <section>
-          <h3>Fonts</h3>
-          <p>Fun != easy to read.</p>
-        </section>
-        <section>
-          <h3>Get feedback from professionals</h3>
-          <ul>
-            <li><a href="ux.stackexchange.com">UX Stack Exchange</a></li>
-            <li><a href="http://forrst.com/">Forrst</a></li>
-            <li><a href="http://www.conceptfeedback.com/">ConceptFeedback</a></li>
-            <li><a href="http://dribbble.com/">Dribbble</a></li>
-            <li>Other social media</li>
+              <li><a href="https://backbonetutorials.com/">Backbone Tutorials</a></li>
+              <li><a href="http://backbonejs.org/">Backbone Docs</a></li>
+              <li><a href="https://frontendmasters.com/">Frontend Masters</a></li>
+              <li><a href="https://www.codeschool.com/">Code School</a></li>
           </ul>
         </section>
+
+
+        <!-- Ember MVC Code Example -->
         <section>
-          <h2>7. Resource Review</h2>
+          <h2>Ember MVC Code Example</h2>
+          <a href="http://todomvc.com/examples/emberjs/">Demo</a>
+          <br>
+          <a href="https://github.com/tastejs/todomvc/tree/gh-pages/examples/emberjs">Ember MVC</a>
         </section>
+
+        <!-- Ember Pros and Cons -->
         <section>
-          <h3>Books</h3>
+          <h2>Ember Pros and Cons</h2>
+          <a href="https://metforceweb.s3.amazonaws.com/2015/Jan/Ember_pros_cons-1421258880211.png">Click Me!</a>
+        </section>
+
+        <!-- Ember Resources -->
+        <section>
+          <h2>Ember Resources</h2>
           <ul>
-            <li>The Design of Everyday Things. $18 on Amazon</li>
-            <li>Designing Web Usability, Jakob Nielsen. $34 on Amazon</li>
-            <li>Don't Make Me Think: A Common Sense Approach to Web Usability, Steve Krug. $22 on Amazon</li>
-            <li>The Elements of User Experience: User-Centered Design for the Web and Beyond, Jesse James Garrett. $24 on Amazon.</li>
-            <li>Envisioning Information, Edward Tufte. $33 on Amazon.</li>
-            <li>Web Form Design: Filling in the Blanks, Luke Wroblewski. $39 on Amazon</li>
+              <li><a href="http://ember.vicramon.com/">Ember Tutorials</a></li>
+              <li><a href="http://emberwatch.com/tutorials.html">EmberWatch</a></li>
+              <li><a href="https://frontendmasters.com/">Frontend Masters</a></li>
+              <li><a href="https://www.codeschool.com/">Code School</a></li>
           </ul>
         </section>
+
+
+        <!-- React MVC Code Example -->
         <section>
-          <h3>Online Resources</h3>
+          <h2>React MVC Code Example</h2>
+          <a href="http://todomvc.com/examples/react/#/">Demo</a>
+          <br>
+          <a href="https://github.com/tastejs/todomvc/tree/gh-pages/examples/react">React MVC</a>
+        </section>
+
+        <!-- React Pros and Cons -->
+        <section>
+          <h2>React Pros and Cons</h2>
+          <a href="https://metforceweb.s3.amazonaws.com/2015/Jan/React_pros_cons-1421258880211.png">Click Me!</a>
+        </section>
+
+        <!-- React Resources -->
+        <section>
+          <h2>React Resources</h2>
           <ul>
-            <li><a href="http://uxdesign.cc/">Hints from the Lazybear</a></li>
-            <li><a href="http://uxmag.com/">UX Magazine</a></li>
-            <li><a href="http://www.uxbooth.com/">UX Booth</a></li>
-            <li><a href="http://uxdesign.smashingmagazine.com/">Smashing Magazine UX</a></li>
-            <li><a href="http://webdesign.tutsplus.com/">Web Design Tuts+</a></li>
+              <li><a href="https://facebook.github.io/react/docs/tutorial.html">React Tutorials Facebook</a></li>
+              <li><a href="https://facebook.github.io/react/docs/getting-started.html">React Docs</a></li>
+              <li><a href="https://frontendmasters.com/">Frontend Masters</a></li>
           </ul>
         </section>
+
         <section>
-          <h3>Make some friends</h3>
-          <p><a href="http://uxdesign.cc/how-to-keep-up-do-date-on-ux-design">Some people to follow</a></p>
+          <h2>Choosing a Framework</h2>
+          <p>Now that weve learned all of that, how do we choose a framework?</p>
+          <br>
+          <p>Lets Discuss</p>
         </section>
-        <section>
-          <h3>Conferences</h3>
-          <ul>
-            <li>An Event Apart</li>
-            <li>IxDA</li>
-            <li>Agile UX</li>
-            <li>IA Summit</li>
-            <li>CHI</li>
-          </ul>
-        </section>
-        <section>
-          <h3>Meetups- the poor girl's conference</h3>
-          <ul>
-            <li>Refresh the Triangle (Refreshes are everywhere in the US)</li>
-            <li>Local chapter of The Usability Professional’s Association, TriUXPA</li>
-            <li>Local chapter of Interaction Design Association</li>
-            <li>AIGA</li>
-          </ul>
-        </section>
-        <section>
-          <h3>Toys</h3>
-          <ul>
-            <li><a href="http://www.uistencils.com/products/ipad-sketchbook">UI Sketchbook</a></li>
-            <li><a href="http://www.uistencils.com/products/website-stencil-kit">UI Stencils</a></li>
-            <li><a href="http://www.brainsbehavioranddesign.com/kit.html">Brains, Behavior, and Design Toolkit</a></li>
-          </ul>
-        </section>
+
+
         <section>
           <h3>Go forth, and be awesome!</h3>
         </section>
       </div>
+
       <footer>
         <div class="copyright">
           Intro to User Experience -- Girl Develop It RDU --
