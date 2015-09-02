@@ -83,13 +83,13 @@ body{
 }
 
 .last .col-lg-8 img{
-  width: 3%;
+  width: 8%;
 }
 
 @media only screen and (min-width : 320px) and (max-width : 1200px) {
   .button {
     padding:0;
-    width: 100.5px;
+    width: 26%;
     font-size: 17px;
     margin: 47px 11px -22px;
     border: none;
