@@ -33,22 +33,22 @@ $(document).ready(function() {
 			}
 		} else {
 			if ($(this).text() == "Reason 1" ){
-				$('html, body').animate({scrollTop : 1608},800);
+				$('html, body').animate({scrollTop : 1698},800);
 				return false;
 			} else if ( $(this).text() == "Reason 2" ){
-				$('html, body').animate({scrollTop : 2034},800);
+				$('html, body').animate({scrollTop : 2120},800);
 				return false;
 			} else if ( $(this).text() == "Reason 3" ){
-				$('html, body').animate({scrollTop : 2534},800);
+				$('html, body').animate({scrollTop : 2613},800);
 				return false;
 			} else if ( $(this).text() == "Reason 4" ){
-				$('html, body').animate({scrollTop : 3011},800);
+				$('html, body').animate({scrollTop : 3079},800);
 				return false;
 			} else if ( $(this).text() == "Reason 5" ){
-				$('html, body').animate({scrollTop : 3497},800);
+				$('html, body').animate({scrollTop : 3502},800);
 				return false;
 			} else if ( $(this).text() == "Reason 6" ){
-				$('html, body').animate({scrollTop : 4900},800);
+				$('html, body').animate({scrollTop : 4855},800);
 				return false;
 			}
 		}
