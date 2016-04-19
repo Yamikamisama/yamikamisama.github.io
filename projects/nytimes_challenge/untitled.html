@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New York Region News</title>
+</head>
+
+<body>
+    <header></header>
+    <div id="page" class="page">
+        <div class="row section-header">
+            <div>
+              <h1 class="title">New York Times Coding Challenge</h1>
+            </div>
+        </div>
+        <div class="content">
+          <div class="row">
+              <div class="article-holder"></div>
+              <div class="article-holder"></div>
+              <div class="article-holder "></div>
+          </div>
+          <div class="row">
+              <div class="article-holder"></div>
+              <div class="article-holder"></div>
+              <div class="article-holder"></div>
+              <div class="article-holder"></div>
+          </div>
+          <div class="row">
+              <div class="article-holder"></div>
+              <div class="article-holder"></div>
+              <div class="article-holder"></div>
+              <div class="article-holder"></div>
+          </div>
+          <div class="row">
+              <div class="article-holder"></div>
+              <div class="article-holder"></div>
+              <div class="article-holder"></div>
+              <div class="article-holder"></div>
+          </div>
+          <div class="row">
+              <div class="article-holder"></div>
+              <div class="article-holder"></div>
+              <div class="article-holder"></div>
+              <div class="article-holder"></div>
+          </div>
+          <div class="row">
+              <div class="article-holder"></div>
+              <div class="article-holder"></div>
+              <div class="article-holder"></div>
+              <div class="article-holder"></div>
+          </div>
+          <div class="row">
+              <div class="article-holder"></div>
+              <div class="article-holder"></div>
+              <div class="article-holder"></div>
+              <div class="article-holder"></div>
+          </div>
+        </div>
+    </div>
+    <script>
+
+    imageExists = function(article){
+      article.images.length > 0 ? NYTD.articleCollection.unshift(article) : NYTD.articleCollection.push(article)
+    }
+    var NYTD = {};
+    NYTD.articleCollection = [];
+    NYTD.blogPostCollection = [];
+    NYTD.render_section_front = function(JSON) {
+
+        var newDiv = document.createElement("div");
+        // newDiv.innerHTML = JSON.page.parameters.title
+        // document.body.appendChild(newDiv)
+        var content = JSON.page.content;
+        console.log(content)
+        content.shift();
+        content.forEach(function(object) {
+            object.collections.forEach(function(list) {
+                list.assets.forEach(function(article) {
+                    if (article.type === "Article") {
+                        article.images.length > 0 ? NYTD.articleCollection.unshift(article) : NYTD.articleCollection.push(article)
+                    } else if (article.type === "BlogPost") {
+                        article.images.length > 0 ? NYTD.blogPostCollection.unshift(article) : NYTD.blogPostCollection.push(article)
+                    }
+                })
+            })
+        })
+        console.log(NYTD.articleCollection.length, NYTD.blogPostCollection.length);
+    }
+    var scriptEl = document.createElement('script');
+    scriptEl.setAttribute('src',
+        'http://np-ec2-nytimes-com.s3.amazonaws.com/dev/test/nyregion.js?callback=myJsonpCallback');
+    document.body.appendChild(scriptEl);
+    </script>
+</body>
+
+</html>
