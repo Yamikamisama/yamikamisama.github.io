@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <a href="#" class="martian-button button">Default Button</a>
+    <a href="#" class="martian-button button">Martian language</a>
     <div id="page" class="page">
         <div class="row section-header">
             <div class="small-12 medium-12 large-12 columns text-center">
@@ -101,10 +101,8 @@
                 })
             })
         })
-        console.log(NYTD.articleCollection.length, NYTD.blogPostCollection.length);
 
         var divs = document.getElementsByClassName('article-holder');
-
         for (i = 0; i < divs.length; ++i) {
             var article = NYTD.articleCollection[i]
             var imageAnchor = document.createElement('A');
@@ -123,8 +121,6 @@
               image.src = "https://www.nytimes.com/" + article.images[0].types[0].content;
               credit.innerHTML = article.images[0].credit;
               credit.setAttribute("class","section-image-credit text-right");
-            // image.alt = ;
-            // image.title = src;
             }
             headlineAnchor.href = article.url
             headline.innerHTML = article.headline;
@@ -155,5 +151,4 @@
     document.body.appendChild(scriptEl);
     </script>
 </body>
-
 </html>
