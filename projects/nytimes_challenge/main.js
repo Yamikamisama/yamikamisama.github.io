@@ -149,5 +149,5 @@ var NYTD = {
 
 // Vanilla JS JSONP Request
 var scriptEl = document.createElement('script');
-scriptEl.setAttribute('src','http://np-ec2-nytimes-com.s3.amazonaws.com/dev/test/nyregion.js?callback=myJsonpCallback');
+scriptEl.setAttribute('src','http://np-ec2-nytimes-com.s3.amazonaws.com/dev/test/nyregion.js');
 document.body.appendChild(scriptEl);
