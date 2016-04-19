@@ -1,9 +1,12 @@
+// New York Times Data Object
 var NYTD = {
 
     articleCollection: [],
 
     blogPostCollection: [],
 
+    // Sanitize data that is returned by the
+    // JSONP request to the NYT
     sanitizeData: function(JSON) {
         var content = JSON.page.content;
         content.shift();
@@ -20,6 +23,7 @@ var NYTD = {
         })
     },
 
+    // Creates the initial render of the articles
     renderArticles: function() {
         var divs = document.getElementsByClassName('article-holder');
         for (var i = 0; i < divs.length; ++i) {
@@ -31,6 +35,8 @@ var NYTD = {
         }
     },
 
+    // Renders Images from the Article
+    // as well as the credit attacted to the image
     renderImageAndCredit: function(article, element) {
         var imageAnchor = document.createElement('A');
         var image = document.createElement('IMG');
@@ -47,6 +53,7 @@ var NYTD = {
         element.appendChild(credit)
     },
 
+    // Renders Headline from the Article
     renderHeadline: function(article, element) {
         var headlineAnchor = document.createElement('A');
         var headline = document.createElement('H4');
@@ -57,6 +64,7 @@ var NYTD = {
         headlineAnchor.appendChild(headline)
     },
 
+    // Renders Summary from the Article
     renderSummary: function(article, element) {
         var summary = document.createElement('H6');
         summary.innerHTML = article.summary;
@@ -64,6 +72,8 @@ var NYTD = {
         element.appendChild(summary)
     },
 
+    // Renders Byline from the Article
+    // Including the Date and Author
     renderByline: function(article, element) {
         var byline = document.createElement('P');
         var bylineDate = document.createElement('SPAN');
@@ -81,16 +91,20 @@ var NYTD = {
         byline.appendChild(bylineAuthor)
     },
 
-    changeText: function(element) {
-        var element = element.split(" ")
-        for (var i = 0; i < element.length; i++) {
-            if (element[i].length > 3) {
-                element[i].charAt(0) === element[i].charAt(0).toUpperCase() ? element[i] = "Boinga" : element[i] = "boinga"
+    // ChangeText() takes a string of words and changes them
+    // to a the Martian Language :) fun!
+    changeText: function(words) {
+        var words = words.split(" ")
+        for (var i = 0; i < words.length; i++) {
+            if (words[i].length > 3) {
+                words[i].charAt(0) === words[i].charAt(0).toUpperCase() ? words[i] = "Boinga" : words[i] = "boinga"
             }
         }
-        return element.join(" ")
+        return words.join(" ")
     },
 
+    // Initializes the listener and the associated
+    // changes that will happen when the button is clicked
     initChangeLanguageListener: function() {
         document.getElementById("martian-button").addEventListener("click", function(event) {
             event.preventDefault();
@@ -124,9 +138,16 @@ var NYTD = {
         });
     },
 
+    // This is the callback that the JSONP is looking for
+    // when you make the request
     render_section_front: function(JSON) {
         this.initChangeLanguageListener();
         this.sanitizeData(JSON);
         this.renderArticles();
     }
 }
+
+// Vanilla JS JSONP Request
+var scriptEl = document.createElement('script');
+scriptEl.setAttribute('src','http://np-ec2-nytimes-com.s3.amazonaws.com/dev/test/nyregion.js?callback=myJsonpCallback');
+document.body.appendChild(scriptEl);
