@@ -1,0 +1,487 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link href="http://fonts.googleapis.com/css?family=Jura:400,600" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<title>Jellyvision Assignment</title>
+</head>
+<body>
+
+<div class="container-fluid">
+
+	<div class="row heading">
+		<div class="col-lg-6 col-lg-offset-3 text-center">
+			<img src="imgs/Jelly.png" alt="">
+			<h1>Web App Developer Audition</h1>
+		</div>
+	</div>
+
+	<div class="row me bg text-center">
+		<div class="col-lg-1"></div>
+		<div class="col-lg-4">
+			<img src="imgs/michaelangelo.png" alt="">
+			<h1>ELLO GOVNA</h1>
+		</div>
+		<div class="col-lg-1"></div>
+		<div class="col-lg-5">
+			<h1>Michael Angelo's Solutions</h1>
+			<p>Hello and welcome to my solutions for the Jellyvision coding challenge!  I thought it would be more fun and visually pleasing to make my answers into a website so that everyone who's viewing it can enjoy.  Some thoughts about the challenges.</p>
+
+			<p>Part 1 - Fun, especially with all the restrictions, using the functions that I built in the parent class made things much much easier, I also completed the extra credit.</p>
+
+			<p>Part 2 - I definitely needed to refactor, so I put both versions on there so you can see kinda what my process was.</p>
+
+			<p>Part 3 - I have done something similar to this before, translating integers to romanNumerals, but doing it the other way was a little bit trickier,  I tried a couple of different things before I came up with the solution! I also added in some extra values so it goes up to 3000.</p>
+
+			<p> <span class="red">Hope you all enjoy this! All and any feedback is welcomed</span> </p>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-6 col-lg-offset-3 text-center">
+
+		</div>
+	</div>
+
+	<div class="row text-center buttons-row">
+		<div class="col-lg-3"></div>
+		<div class="col-lg-2"><button class="button">Part 1</button></div>
+		<div class="col-lg-2"><button class="button">Part 2</button></div>
+		<div class="col-lg-2"><button class="button">Part 3</button></div>
+		<div class="col-lg-3"></div>
+	</div>
+
+
+
+<!-- Challenge 1 -->
+	<div class="row challenge">
+		<div class="col-lg-12">
+			<h1>Challenge 1 - Instructions</h1>
+			<p>Part 1: Custom Math
+				This project involves 2 phases. You will be creating a simple JavaScript utility library to work with integers. The library will be partitioned into modules/classes. The module hierarchy should follow an inheritance chain design, with derived modules having an "is a" relationship to the modules they extend. Your methods should build upon other methods in your library.</p>
+
+			<p>Phase 1: Create a basic math class that implements the following methods (the utility library only needs to work with integers; we won't even try floating point numbers):
+			</p>
+ 				<ul>
+ 				    <li>add(v1, v2) - returns the integer sum of adding integers v1 and v2</li>
+ 				    <li>subtract(v1, v2) - returns the integer difference between v1 and v2 (v2 from v1)</li>
+ 				    <li>multiply(v1, v2) - returns the integer product of v1 and v2</li>
+ 				</ul>
+ 			<h4>Phase 1 RULES:</h4>
+ 			<ul>
+ 			    <li>NO LIBRARIES/FRAMEWORKS ALLOWED, use only plain-old, built-in, vanilla JavaScript.</li>
+ 			    <li>DO NOT USE built in conversion functions (Number, parseInt, parseFloat, etc)</li>
+ 			    <li>You may ONLY use addition and unary negation arithmetic operators, that is "1 + 1" and "-2" (unary
+					negation is NOT subtraction) All other arithmetic operators are off limits; including compound
+					assignment operators.</li>
+ 			    <li>Comparison operators are allowed if necessary.</li>
+ 			    <li>Functions should be implemented as instance methods</li>
+ 			    <li>This class must be named "BasicMath".</li>
+ 			    <li>Your classes will be defined globally, but you must not create any additional global variables in your library implementation.</li>
+ 			    <li>Write your implementations in the file 'custom-math.js'</li>
+ 			    <li>BONUS (optional): Create another method divide(v1, v2) that returns the integer quotient of v1
+					divided by v2 (Note: division by 0 should return JavaScript’s number constant Infinity)</li>
+ 			</ul>
+
+ 			<p>Phase 2: Create an advanced math class that extends the basic math class and implements the following methods. (again, these are integer only implementations)
+			</p>
+
+			<ul>
+			    <li>posPower(base, exponent) - returns the integer power of 'base' raised to 'exponent' - you only need to support zero and positive integer exponents. Negative exponents should return zero (0), and exponents of 0 always return positive 1.</li>
+			    <li> add(v1, ... , vN) - returns integer sum of a variable number of integer arguments</li>
+			    <li>isRightTriangle(a, b, c) - given the positive integer lengths of three different sides of a triangle, where
+					c is the hypotenuse side, return boolean 'true' if the triangle is a "right triangle" according to Pythagoras' theorem, and 'false' otherwise. Negative arguments cause a return of false. There are no negative lengths.
+					</li>
+			</ul>
+
+			<p>Phase 2 RULES:</p>
+			<ul>
+			    <li>Please follow the same rules as in phase 1!</li>
+			    <li>DO NOT USE JavaScript’s 'Math.pow', 'Math.sqrt', or trigonometric functions.</li>
+			    <li>This class must be named "AdvancedMath"</li>
+			    <li>Tip: leverage your previous work.</li>
+			</ul>
+		</div>
+
+		<div class="col-lg-12">
+			<h1 class="codeHeader"><img src="imgs/js.png" alt="">  Javascript Solution</h1>
+		</div>
+		<div class="col-lg-12">
+			<pre>function BasicMath(){
+	this.add = function(a, b){
+		var sum = a + b;
+		return sum
+	}
+
+	this.subtract = function(a, b){
+		var sum = a + (-b)
+		return sum
+	}
+
+	this.multiply = function(a, b){
+		var sum = 0
+		while (b > 0){
+			sum += a
+			b = b + (-1)
+		}
+		return sum
+	}
+
+	this.divide = function(a, b){
+		var result = 0
+		if (b === 0 ){return Infinity}
+			while (a > b) {
+				a = a + (-b)
+				result += 1
+			}
+			return result
+		}
+
+	}
+
+	var AdvancedMath = function(){
+
+		this.posPower = function(base, exponent){
+			var sum = base
+			while (exponent > 1){
+				sum = this.multiply(sum, base)
+				exponent = exponent + (-1)
+			}
+			return sum;
+		};
+
+		this.add = function(){
+			var sum = 0
+			for (var i=0; i < arguments.length; i++){
+				sum += arguments[i]
+			}
+			return sum
+		}
+
+		this.isRightTriangle = function(a, b, c) {
+			if (this.multiply(a,a) + this.multiply(b,b) == this.multiply(c,c)){
+				return true
+			} else {
+				return false
+			}
+		}
+
+	}
+
+// extend BasicMath to AdvancedMath
+AdvancedMath.prototype = new BasicMath();
+AdvancedMath.prototype.constructor = AdvancedMath;
+
+
+
+var basicMath = new BasicMath(); // create instance of that class
+var sum = basicMath.add(1, 2);   // returns 3
+var difference = basicMath.subtract(2, 3); // returns -1
+var product = basicMath.multiply(2, 5); // returns 10
+var quotient = basicMath.divide(8, 4);  // returns 2
+
+var advancedMath = new AdvancedMath();  // create instance of Advanced
+var sum = advancedMath.add(2, 2, 3) // return 7
+var power = advancedMath.posPower(2, 5); // return 32
+var rt = advancedMath.isRightTriangle(3, 4, 5) // retrun true
+var product = advancedMath.multiply(2, 5) // return 10
+</pre>
+		</div>
+	</div>
+
+
+
+
+	<!-- Challenge 2 -->
+		<div class="row bg challenge">
+			<div class="col-lg-12">
+				<h1>Part 2: MySQL - Instructions</h1>
+				<h3>1A: Table Structure</h3>
+				<p>A database system needs to model the following:</p>
+
+				<p>Company: The system manages data for many Companies. Each Company has a name attribute.</p>
+
+				<p>Each Company also offers one or more Medical Plans to its employees.</p>
+
+				<p>Medical Plan: Each Medical Plan has a name attribute and belongs to exactly one Sponsor. Each Medical Plan is available to one or more Employee Groups.</p>
+
+				<p>Employee Group: Each Employee Group has a name attribute and belongs to exactly one Company. Each Employee Group has access to one or more Medical Plans.</p>
+				<ol>
+					  <li>Write SQL to create the tables for these entities.</li>
+				    <li>Write SQL to retrieve all of the Medical Plans for a given Company.
+						</li>
+				    <li>Write SQL to retrieve all of the Employee Groups for a given Company.</li>
+				    <li>Write SQL to retrieve all of the Employee Groups who may access a given Medical Plan.</li>
+				    <li>Write SQL to retrieve all of the Medical Plans that may be accessed by a given Employee Group.
+						</li>
+				</ol>
+
+				<h3>1B: Writing Queries</h3>
+				<p>The following tables and data are defined in a schema:</p>
+				<img class="sql-img" src="imgs/sql_tbl1.png" alt=""><br>
+				<img class="sql-img" src="imgs/sql_tbl2.png" alt=""><br>
+				<img class="sql-img" src="imgs/sql_tbl3.png" alt="">
+				<p>Write SQL to return the following output:</p>
+			<h3>1C: Optimization</h3>
+			<p>A query is performing more slowly than you would like. What is the first thing you would research when determining how to speed it up?</p>
+
+			</div>
+
+			<div class="col-lg-12">
+				<h1 class="codeHeader"><img src="imgs/sql.png" alt="">  SQL Solution 2A: Table Structure </h1>
+			</div>
+			<div class="col-lg-12">
+				<pre>
+					------------------------------
+					---   Refactored Version   ---
+					------------------------------
+
+					-- 2A: Table Structure
+					-- Number 1
+
+					CREATE TABLE companies(
+					  id int AUTO_INCREMENT,
+					  name varchar(100),
+					  PRIMARY KEY (id)
+					);
+
+					CREATE TABLE medical_plans(
+					  id int AUTO_INCREMENT,
+					  name varchar(100),
+					  PRIMARY KEY (id)
+					);
+
+					CREATE TABLE employee_groups(
+					  id int AUTO_INCREMENT,
+					  name varchar(100),
+					  company_id int,
+					  PRIMARY KEY (id),
+					  FOREIGN KEY (company_id) REFERENCES companies(id)
+					);
+
+					CREATE TABLE companies_medical_plans(
+					  company_id int,
+					  medical_plans_id int,
+					  FOREIGN KEY (comany_id) REFERENCES companies(id),
+					  FOREIGN KEY (medical_plans_id) REFERENCES medical_plans(id)
+					);
+
+					CREATE TABLE employees_medical_plans(
+					  employee_groups_id int,
+					  medical_plans_id int,
+					  FOREIGN KEY (medical_plans_id) REFERENCES medical_plans(id),
+					  FOREIGN KEY (employee_groups_id) REFERENCES employee_groups(id)
+					);
+
+
+
+					-- Number 2
+
+					SELECT mp.name
+					FROM medical_plans mp
+					JOIN companies_medical_plans cmp ON mp.id = cmp.medical_plans_id
+					JOIN companies c ON cmp.company_id = c.id
+					WHERE c.id = [INSERT COMPANY ID HERE]
+
+
+
+					-- Number 3
+
+					SELECT eg.name
+					FROM employee_groups eg
+					JOIN companies c ON c.id = eg.company_id
+					WHERE c.id = [INSERT COMPANY ID HERE]
+
+
+
+					-- Number 4
+
+					SELECT eg.name
+					FROM employee_groups eg
+					JOIN employee_medical_plans emp ON eg.id =  emp.employee_groups_id
+					JOIN medical_plans mp ON mp.id =  emp.medical_plan_id
+					WHERE mp.id = 'INSERT MEDICAL_PLANS ID HERE'
+
+
+
+					-- Number 5
+
+					SELECT mp.name
+					FROM medical_plans mp
+					JOIN employee_medical_plans emp ON mp.id =  emp.medical_plan_id
+					JOIN employee_groups eg ON eg.id =  emp.employee_groups_id
+					WHERE eg.id = 'INSERT EMPLOYEE_GROUPS ID HERE'
+
+
+
+
+
+
+
+
+
+
+					------------------------------
+					---   Original Version   ---
+					------------------------------
+
+					-- 2A: Table Structure
+
+					-- Number 1
+					CREATE TABLE Companies(
+					ID int AUTO_INCREMENT,
+					name varchar(255)
+					);
+
+					CREATE TABLE Medical_plans(
+					ID int AUTO_INCREMENT,
+					name varchar(255),
+					company_id
+					);
+
+					CREATE TABLE Employee_groups(
+					ID int AUTO_INCREMENT,
+					name varchar(255),
+					company_id
+					);
+
+
+					-- Number 2
+					SELECT * FROM companies
+					INNER JOIN medical_plans
+					ON companies.id = medical_plans.company_id
+					AND companies.name = [INSERT COMPANY NAME HERE]
+
+					-- if you just want the names change * to medical_plans.names
+
+
+					-- Number 3
+					SELECT * FROM companies
+					INNER JOIN employee_groups
+					ON companies.id = employee_groups.company_id
+					AND companies.name = [INSERT COMPANY NAME HERE]
+
+					-- if you just want the names change * to employee_groups.names
+
+
+					-- Number 4
+					SELECT employee_groups.name from employee_groups
+					INNER JOIN medical_plans
+					ON employee_groups.id =  medical_plans.employee_groups_id
+					WHERE employee_groups.company_id = medical_plans.company_id
+					AND medical_plans.name = 'INSERT MEDICAL PLAN HERE'
+
+
+					-- Number 5
+					SELECT medical_plans.name from medical_plans
+					INNER JOIN employee_groups
+					ON medical_plans.employee_groups_id = employee_groups.id
+					WHERE employee_groups.id = medical_plans.employee_groups_id
+					AND employee_groups.name = 'INSERT EMPLOYEE GROUP NAME'
+				</pre>
+			</div>
+
+			<div class="col-lg-12">
+				<h1 class="codeHeader"><img src="imgs/sql.png" alt="">  SQL Solution 2B: Writing Queries</h1>
+			</div>
+			<div class="col-lg-12">
+				<pre>
+					-- 2B: Writing Queries
+					SELECT *
+					FROM department
+					LEFT JOIN employee
+					ON department.department_id = employee.department_id
+					ORDER BY employee.employee_id ASC
+				</pre>
+			</div>
+
+			<div class="col-lg-12">
+				<h1 class="codeHeader"><img src="imgs/sql.png" alt="">  SQL Solution 2C: Optimization</h1>
+			</div>
+			<div class="col-lg-12">
+				<pre>
+					-- 2C: Optimization
+					-- First thing I would do is use Explain before the query to see what it was doing
+
+					-- After that i would search the googles:
+
+					-- Reduce sql query execution time (This might give me some insight on how to reduce the amount of time that its taking just in a general sense)
+
+					-- Optimizing SQL Queries (Similar to the last one but, might give more insight on overall Optimization and not just runtime.)
+
+					-- If I know more informantion like what kind of query im trying to make, I could search for something more meaningful like, join query taking long time, most of the time when you run into a problem there has been someone out there who has done it before.  And in the programming world everybody is willing to share their ignorance to gain knowledge (at least I am!)
+
+					-- And last but not least a good ole trip to the SQL docs never hurts
+				</pre>
+			</div>
+		</div>
+
+
+	<!-- Challenge 3 -->
+		<div class="row challenge">
+			<div class="col-lg-12">
+				<h1>Part 3: Roman Numerals - Instructions</h1>
+				<p>The Roman numerals for 1 through 10 are I, II, III, IV, V, VI, VII, VIII, IX, and X. The Roman numerals for 20, 30, 40, 50, 60, 70, 80, 90 and 100 are XX, XXX, XL, L, LX, LXX, LXXX, XC and C. The Roman numeral for any two-digit number can be constructed by concatenating the numeral for its tens and the numeral for its ones.</p>
+
+				<p>Examples:</p>
+
+				<p>22 is 20 + 2 = "XX" + "II" = "XXII"</p>
+				<p>47 is 40 + 7 = "XL" + "VII" = "XLVII"</p>
+				<p>99 is 90 + 9 = "XC" + "IX" = "XCIX"</p>
+
+				<p>Using the language of your choice, write a function that accepts a Roman numeral string a returns the integer equivalent of that string.</p>
+			</div>
+
+			<div class="col-lg-12">
+				<h1 class="codeHeader"><img src="imgs/ruby.png" alt="">  Ruby Solution</h1>
+			</div>
+			<div class="col-lg-12">
+				<pre>
+					def Roman_Numeral_Translator(str)
+
+					  roman_numerals =   { 'M' =>  1000,
+					                      'CM' => 900,
+					                      'D' =>  500,
+					                      'CD' => 400,
+					                      'C' =>  100,
+					                      'XC' => 90,
+					                      'L' =>  50,
+					                      'XL' => 40,
+					                      'X' =>  10,
+					                      'IX' => 9,
+					                      'V' =>  5,
+					                      'IV' => 4,
+					                      'I' =>  1 }
+
+					  result = 0
+					  roman_numerals.keys.each do |key|
+					    while str.start_with?(key)
+					      roman_numerals[key]
+					      result += roman_numerals[key]
+					      str = str.slice(key.length, str.length)
+					    end
+					  end
+					  return result
+					end
+
+					# TESTS
+					# Roman_Numeral_Translator("XIVII")      # => 16
+					# Roman_Numeral_Translator("MMMCDXXIII") # => 3423
+					# Roman_Numeral_Translator("MMCCCXLI")   # => 2341
+					# Roman_Numeral_Translator("MCMLXXXVII") # => 1987
+					# Roman_Numeral_Translator("CDLVI")      # => 456
+				</pre>
+			</div>
+
+
+		</div>
+
+	</div>
+
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+Questions:
+
+- Why doesnt random number function not work (AJ).
+- How do we fix sticking princess
+  send her backwards somehow
+- How to fix hitbox? Math????
+- Why the music stops playing when the css is not display: inline-block; for arena.
+- Score undefined? How do I get this to work? (only in that one function).
+- Order of JS, is there a specific order? Is it cascading?
+- Adding a start Button? How to transition that.

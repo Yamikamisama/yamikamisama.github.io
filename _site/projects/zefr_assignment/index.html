@@ -1,0 +1,610 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link href="http://fonts.googleapis.com/css?family=Jura:400,600" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<title>ZEFR Assignment</title>
+</head>
+<body>
+
+<div class="container-fluid">
+
+	<div class="row heading">
+		<div class="col-lg-6 col-lg-offset-3 text-center">
+			<img src="imgs/ZEFR.png" alt="">
+			<h1>Coding Challenge</h1>
+		</div>
+	</div>
+
+	<div class="row me bg text-center">
+		<div class="col-lg-1"></div>
+		<div class="col-lg-4">
+			<img src="imgs/michaelangelo.png" alt="">
+			<h1>ELLO GOVNA</h1>
+		</div>
+		<div class="col-lg-1"></div>
+		<div class="col-lg-5">
+			<h1>Michael Angelo's Solutions</h1>
+			<p>Hello and welcome to my solutions for the ZEFR coding challenge!  I decided that it would be a good idea to go through the challenges after I submitted the &#34;Official&#34; challenge, just to try and do it in all three of the languages (Ruby, Javascript, and Python).  The 5th Challenge only allowed me to code it in Python, which I have never done, so it was coded on the fly and definitely needed to be refactored (which I have done here).  The 6th challenge had a bug in it, the column names in the database didn&#39;t match what the tests were looking for.  So I mocked up my own SQLite3 Database and my code passed! I took all the comments out from the code just allow you to quickly see the difference between the solutions in the different languages (if you would like to see the code with the comments please reference the &#34;Official&#34; challenge).  Please let me know if there is anything else you need from me.</p>
+			<p> <span class="red">Note: I do not know Python, this is my first attempt at it!</span> </p>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-6 col-lg-offset-3 text-center">
+
+		</div>
+	</div>
+
+	<div class="row text-center buttons-row">
+		<div class="col-lg-2"><button class="button">Challenge 1</button></div>
+		<div class="col-lg-2"><button class="button">Challenge 2</button></div>
+		<div class="col-lg-2"><button class="button">Challenge 3</button></div>
+		<div class="col-lg-2"><button class="button">Challenge 4</button></div>
+		<div class="col-lg-2"><button class="button">Challenge 5</button></div>
+		<div class="col-lg-2"><button class="button">Challenge 6</button></div>
+	</div>
+
+
+
+<!-- Challenge 1 -->
+	<div class="row challenge">
+		<div class="col-lg-12">
+			<h1>Challenge 1 - Instructions</h1>
+			<p>King Arthur, after getting into a nasty argument with a Frenchman, decides to test how small of a coconut a swallow could conceivably lift. When he's entering his data into his database though, he sometimes accidentally puts in strings instead of numbers. He discovered only the smallest cocounut was liftable by the swallow and wants to find that in his data.</p>
+
+			<p>Write a function that accepts a list of lists, and returns the smallest number you can find of any type. If the list is empty return null. You will not get any strings that are not numbers.</p>
+
+			<p>For example: An input like this: [[9, "3", 4.5, 4],[2, 6.3, 7.0],["1"]] Should return 1.
+			</p>
+		</div>
+
+		<div class="col-lg-12">
+			<h1 class="codeHeader"><img src="imgs/ruby.png" alt="">  Ruby Solution</h1>
+		</div>
+		<div class="col-lg-12">
+			<pre>
+				def smallest_coconut(lists)
+				  lists.flatten!.map! {|e| e.to_f}
+				  lists.nil? == true ? null : lists.min
+				end
+
+
+				# TESTS
+				smallest_coconut([[9, "3", 4.5, 4],[2,6.3,7.0],["1"]])
+				smallest_coconut([[4],[2],["3"]])
+				smallest_coconut([[]])
+			</pre>
+		</div>
+
+		<div class="col-lg-12">
+			<h1 class="codeHeader"><img src="imgs/js.png" alt="">  Javascript Solution</h1>
+		</div>
+		<div class="col-lg-12">
+			<pre>
+				function smallestCoconut(lists) {
+				  var newArray, mergedArray, elementHolder, min;
+
+				  if (lists[0].length == 0) {return null}
+				  newArray = [];
+				  mergedArray = [].concat.apply([], lists).forEach(function(element){
+				    elementHolder = parseInt(element);
+				    newArray.push(elementHolder);
+				  });
+				  min = Math.min.apply(Math, newArray);
+				  return min;
+				}
+
+				// TESTS
+				smallestCoconut([[9, "3", 4.5, 4],[2,6.3,7.0],["1"]])
+				smallestCoconut([[4],[2],["3"]])
+				smallestCoconut([[]])
+			</pre>
+		</div>
+
+		<div class="col-lg-12">
+			<h1 class="codeHeader"><img src="imgs/python.png" alt="">  Python Solution</h1>
+		</div>
+		<div class="col-lg-12">
+			<pre>
+				def smallest_coconut(lists):
+				    transformer = [float(num) for elem in lists for num in elem]
+				    print None if not transformer else min(transformer)
+
+				# TESTS
+				smallest_coconut([[9, "3", 4.5, 4],[2,6.3,7.0],["1"]])
+				smallest_coconut([[4],[2],["3"]])
+				smallest_coconut([[]])
+			</pre>
+		</div>
+	</div>
+
+
+
+
+	<!-- Challenge 2 -->
+		<div class="row bg challenge">
+			<div class="col-lg-12">
+				<h1>Challenge 2 - Instructions</h1>
+				<p>While on the quest for the Holy Grail, King Arthur encounters the famous Black Knight! After explaining his quest and trying to recruit the knight, but failing, Arthur then attempts to walk past the Black Knight. At this time the Black Knight yells "None Shall Pass!". Arthur looks confused for a second and attempts to ask the Knight what he meant. To which again the Knight says "None Shall Pass!".
+
+				<p>Before Arthur can continue, the Knight then starts speaking gibberish, Arthur isn't sure what's going on, but he thinks it might be a riddle.</p>
+
+				<p>Write a function that accepts a string of characters. If the word 'none' can be found, return True, if not then return False. The word can be separated by other characters.</p>
+
+				<p>For example:</p>
+
+				<p>'befvcnefofvndce' will return True, because it contains the letters 'n' 'o' 'n' and 'e'in succession.</p>
+
+				<p>However, 'fgennoeno' will return False, because it does not have a succession of letters that can spell 'none'</p>
+			</div>
+
+			<div class="col-lg-12">
+				<h1 class="codeHeader"><img src="imgs/ruby.png" alt="">  Ruby Solution</h1>
+			</div>
+			<div class="col-lg-12">
+				<pre>
+					def none_shall_pass(gibberish)
+					  none_arr = ['n', 'o', 'n', 'e']
+					  gibberish.split("").each {|e| none_arr.shift if e == none_arr.first}
+					  none_arr.length == 0 ? true : false
+					end
+
+					# TESTS
+					none_shall_pass('befvcnefofvndce')
+					none_shall_pass('fgennoeno')
+				</pre>
+			</div>
+
+			<div class="col-lg-12">
+				<h1 class="codeHeader"><img src="imgs/js.png" alt="">  Javascript Solution</h1>
+			</div>
+			<div class="col-lg-12">
+				<pre>
+					function noneShallPass(gibberish){
+					  var noneArr = ['n', 'o', 'n', 'e'];
+					  gibberish.split("").forEach(function(element){
+					    if (element == noneArr[0]){noneArr.shift();}
+					  });
+					  if (noneArr.length == 0){return true;}
+					  return false;
+					}
+
+					// TESTS
+					noneShallPass('befvcnefofvndce')
+					noneShallPass('fgennoeno')
+				</pre>
+			</div>
+
+			<div class="col-lg-12">
+				<h1 class="codeHeader"><img src="imgs/python.png" alt="">  Python Solution</h1>
+			</div>
+			<div class="col-lg-12">
+				<pre>
+					def none_shall_pass(gibberish):
+					    none_list = ['n', 'o', 'n', 'e']
+
+					    gibberish = list(gibberish)
+					    for i in gibberish:
+					        if i == none_list[0]:
+					            none_list.pop(0)
+
+					    print(True if len(none_list) == 0 else False)
+
+					# TESTS
+					none_shall_pass('befvcnefofvndce')
+					none_shall_pass('fgennoeno')
+				</pre>
+			</div>
+		</div>
+
+
+	<!-- Challenge 3 -->
+		<div class="row challenge">
+			<div class="col-lg-12">
+				<h1>Challenge 3 - Instructions</h1>
+				<p>While researching the Holy Grail, King Arthur discovers that he must cross the bridge of death and will have to answer 3 questions from the bridge keeper. After doing much research he discovers 2 of the questions that he may ask, and wants to be prepared.</p>
+
+				<p>The first question is: "What is your name?" He wants to be able to quickly find the name of any of the brave Knights who accompany him, but he is also very forgetful.</p>
+
+				<p>Write a function that accepts a list of names and a search term. Return all names that match that search. This should be a case-insensitive search.</p>
+
+				<p>For example:</p>
+
+				<p>findNames(['Arthur', 'Lancelot', 'Bedevere', 'Robin', 'Galahad'], 'la')
+				should return: ['Lancelot', 'Galahad']</p>
+			</div>
+
+			<div class="col-lg-12">
+				<h1 class="codeHeader"><img src="imgs/ruby.png" alt="">  Ruby Solution</h1>
+			</div>
+			<div class="col-lg-12">
+				<pre>
+					def find_names(names, search)
+					  found_names = []
+					  names.each {|name| found_names << name if name.downcase.include? (search.downcase)}
+					  return found_names
+					end
+
+
+					# TESTS
+					find_names(['Arthur', 'Lancelot', 'Bedevere', 'Robin', 'Galahad'], 'la')
+					find_names(['A', 'a'], 'a')
+				</pre>
+			</div>
+
+			<div class="col-lg-12">
+				<h1 class="codeHeader"><img src="imgs/js.png" alt="">  Javascript Solution</h1>
+			</div>
+			<div class="col-lg-12">
+				<pre>
+					function findNames(names, search){
+					  var found_names = []
+
+					  for (i = 0; i < names.length; i++) {
+					    if (names[i].toLowerCase().includes(search.toLowerCase())) {found_names.push(names[i])}
+					  };
+					  return found_names;
+					}
+
+					// TESTS
+					findNames(['Arthur', 'Lancelot', 'Bedevere', 'Robin', 'Galahad'], 'la')
+					findNames(['A', 'a'], 'a')
+				</pre>
+			</div>
+
+			<div class="col-lg-12">
+				<h1 class="codeHeader"><img src="imgs/python.png" alt="">  Python Solution</h1>
+			</div>
+			<div class="col-lg-12">
+				<pre>
+					def find_names(names, search):
+					    found_names = []
+
+					    for n in names:
+					        if search.lower() in n.lower():
+					            found_names.append(n)
+					    print found_names
+
+					#TESTS
+					find_names(['Arthur', 'Lancelot', 'Bedevere', 'Robin', 'Galahad'], 'la')
+					find_names(['A', 'a'], 'a')
+				</pre>
+			</div>
+		</div>
+
+
+		<!-- Challenge 4 -->
+			<div class="row bg challenge">
+				<div class="col-lg-12">
+					<h1>Challenge 4 - Instructions</h1>
+					<p>The second question King Arthur discovered seemed to be very simple, but the bridge keeper can also be very tricky.</p>
+
+					<p>The question is: What is your favorite color?</p>
+
+					<p>King Arthur could say his favorite color using RGB, but he had a feeling the bridge keeper would prefer it to be known in hex.</p>
+
+					<p>Write a function that accepts a triplet of RGB, and returns the color in hexadecimal (as a string).</p>
+
+					<p>NOTE: Try not to use any library functions or special formatters for this solution.</p>
+
+					<p>For example:</p>
+
+					<p>rgbToHex(0, 128, 255) == "#00C6FF"</p>
+				</div>
+
+				<div class="col-lg-12">
+					<h1 class="codeHeader"><img src="imgs/ruby.png" alt="">  Ruby Solution</h1>
+				</div>
+				<div class="col-lg-12">
+					<pre>
+						def rgb_to_hex(r, g, b)
+						  color_rgb = [r,g,b]
+						  color_hex = []
+
+						  color_rgb.each do |element|
+						    hex = element.to_s(16)
+						    element < 16 ? color_hex << "0#{hex}" : color_hex << hex
+						  end
+						  return "##{color_hex.join("").upcase}"
+						end
+
+						# TESTS
+						rgb_to_hex(0, 0, 0)
+						rgb_to_hex(255, 0, 0)
+						rgb_to_hex(0, 255, 0)
+						rgb_to_hex(0, 0, 255)
+					</pre>
+				</div>
+
+				<div class="col-lg-12">
+					<h1 class="codeHeader"><img src="imgs/js.png" alt="">  Javascript Solution</h1>
+				</div>
+				<div class="col-lg-12">
+					<pre>
+						function componentToHex(c) {
+						  var hex = c.toString(16);
+						  return hex.length == 1 ? "0" + hex : hex;
+						}
+						function rgbToHex(r, g, b) {
+						  return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+						}
+
+						// TESTS
+						rgbToHex(0, 0, 0)
+						rgbToHex(255, 0, 0)
+						rgbToHex(0, 255, 0)
+						rgbToHex(0, 0, 255)
+
+
+
+						// Alternate Version bit shifts
+						function rgbToHex(r, g, b) {
+						  return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+						}
+					</pre>
+				</div>
+
+				<div class="col-lg-12">
+					<h1 class="codeHeader"><img src="imgs/python.png" alt="">  Python Solution</h1>
+				</div>
+				<div class="col-lg-12">
+					<pre>
+						def rgb_to_hex(r, g, b):
+						    print '#%02x%02x%02x' % (r,g,b)
+
+						# TESTS
+						rgb_to_hex(0, 0, 0)
+						rgb_to_hex(255, 0, 0)
+						rgb_to_hex(0, 255, 0)
+						rgb_to_hex(0, 0, 255)
+					</pre>
+				</div>
+			</div>
+
+
+		<!-- Challenge 5 -->
+			<div class="row challenge">
+				<div class="col-lg-12">
+					<h1>Challenge 5 - Instructions</h1>
+					<p>When King Arthur eventually got to the Bridge Keeper, he was prepared for the questions he would be asked. The Bridge Keeper asked him, "What is your name?" to which Arthur had his answer ready for him. The Bridge Keeper then asked him, "What is your favorite color?" And Arthur answered that as well with ease.</p>
+
+				<p>Finally, the Bridge Keeper looked Arthur right in the eye and asked, "What is the Capital of Assyria?"</p>
+
+				<p>King Arthur looked baffled. "I don't know that! Nobody does!"</p>
+
+				<p>The Bridge Keeper sighed and said "Ok do you have a map? How about this, I'll give you some coordinates and you tell me the country and capital of those coordinates.</p>
+
+				<p>"Alright, I'll give it a shot", replied Arthur.</p>
+
+				<p>"Answer correctly and the grail is yours!"</p>
+
+				<p>Write a function that will take in a pair of x and y coordinates, and will return the country name and capital name of that location as a tuple. This function should be as optimized as possible.</p>
+
+				<p>This kingdom is very blocky, and you will be given a map in the form of an array of countries that have an upper border, right border, bottom border, and left border as integers.</p>
+
+				<p>The coordinates will range from (0 - 100) and the borders are all 'inclusive'.</p>
+
+				<p>For example: if you have borders like this: (0, 10, 10, 0) then the top border is 0, the right border is 10, the bottom border is 10, and the left border is 0.</p>
+
+				<p>You are allowed to 'preprocess' the map, which will not be included as part of the overall runtime of the algorithm.</p>
+
+				<p>**At the bottom of the file, please include a comment which indicates the runtime of your algorithm.</p>
+				</div>
+
+				<div class="col-lg-12">
+					<h1 class="codeHeader"><img src="imgs/ruby.png" alt="">  Ruby Solution</h1>
+				</div>
+				<div class="col-lg-12">
+					<pre>
+						function find_country_and_capital(x, y){
+						  for (country in country_map) {
+						    if (inside_country(x, y, country.borders)) {return (country.name, country.capital);}
+						  }
+						}
+
+						function inside_country(x,y,bounds){
+						  if (x <= bounds[1] && x >= bounds[3] && y >= bounds[0] && y <= bounds[2]){
+						    return true
+						  } else {
+						    return false
+						  }
+						}
+
+						// TESTS
+						x = 10
+						y = 10
+						boundaries = [0, 30, 30, 0]
+
+						inside_country(x,y,boundaries)
+					</pre>
+				</div>
+
+				<div class="col-lg-12">
+					<h1 class="codeHeader"><img src="imgs/js.png" alt="">  Javascript Solution</h1>
+				</div>
+				<div class="col-lg-12">
+					<pre>
+						function find_country_and_capital(x, y){
+						  for (country in country_map) {
+						    if (inside_country(x, y, country.borders)) {return (country.name, country.capital);}
+						  }
+						}
+
+						function inside_country(x,y,bounds){
+						  if (x <= bounds[1] && x >= bounds[3] && y >= bounds[0] && y <= bounds[2]){
+						    return true
+						  } else {
+						    return false
+						  }
+						}
+
+						// TESTS
+						x = 10
+						y = 10
+						boundaries = [0, 30, 30, 0]
+
+						inside_country(x,y,boundaries)
+					</pre>
+				</div>
+
+				<div class="col-lg-12">
+					<h1 class="codeHeader"><img src="imgs/python.png" alt="">  Python Solution</h1>
+				</div>
+				<div class="col-lg-12">
+					<pre>
+						##############################
+						###   Refactored Version   ###
+						##############################
+
+						def find_country_and_capital(x, y):
+						    for country in country_map:
+						        if inside_country(x, y, country.borders):
+						            return (country.name, country.capital)
+						        else:
+						            pass
+
+						def inside_country(x,y,bounds):
+						    if x <= bounds[1] and x >= bounds[3] and y >= bounds[0] and y <= bounds[2]:
+						        return True
+						    else:
+						        return False
+
+
+						# TESTS
+						x = 10
+						y = 10
+						boundaries = (0,30,30,0)
+
+						print inside_country(x,y,boundaries)
+
+
+						#############################
+						###   Original Solution   ###
+						#############################
+
+						# returns a tuple in the form of (country name, capital name)
+						def find_country_and_capital(x, y):
+
+						    # the data that you give me
+						    for country in country_map:
+
+						        bounds = bound_maker(country.borders)
+						        print country
+						        if inside_country(x, y, bounds):
+						            return (country.name, country.capital)
+						        else:
+						            pass
+
+						# create bounds in the format of x,y coordinates
+						def bound_maker(boundaries):
+						    return [(boundaries[3],boundaries[0]), (boundaries[1], boundaries[0]), (boundaries[1], boundaries[2]), (boundaries[3], boundaries[2])]
+
+						# find if the the coords are inside the country
+						def inside_country(x,y,bounds):
+						    num = len(bounds)
+						    inside = False
+
+						    coord1_x,coord1_y = bounds[0]
+						    for i in range(num + 1):
+						        coord2_x, coord2_y = bounds[i % num]
+						        if y >= min(coord1_y, coord2_y):
+						            if y <= max(coord1_y, coord2_y):
+						                if x <= max(coord1_x, coord2_x):
+						                    if coord1_y !=  coord2_y:
+						                        xint = (y - coord1_y) * (coord2_x - coord1_x) / ( coord2_y - coord1_y) + coord1_x
+						                        if x <= xint:
+						                            inside = not inside
+						                    elif coord1_x == coord2_x:
+						                        inside = not inside
+						                    else:
+						                        inside = not inside
+						        coord1_x,coord1_y = coord2_x, coord2_y
+
+						    return inside
+
+						# TESTS
+						find_country_and_capital(10, 10)
+						find_country_and_capital(95, 95)
+						find_country_and_capital(39, 19)
+						find_country_and_capital(16, 31)
+					</pre>
+				</div>
+			</div>
+
+			<!-- Challenge 6 -->
+				<div class="row bg challenge">
+					<div class="col-lg-12">
+						<h1>Challenge 6 - Instructions</h1>
+						<p>As King Arthur was approaching the Bridge of Death, he heard a dreadful noise from behind</p>
+
+						<p>"NI!!" It said. When Arthur turned around he saw a Knight towering over him. "WE DEMAND A SHRUBBERY!"</p>
+
+						<p>"How can I get you a shrubbery?" King Arthur asked. He knew there were none to be found in the area.</p>
+
+						<p>"Oh well you can just use our brand new online store!" replied the Knight. "But the store is not complete yet, we're having some database problems. </p>
+
+						<p>Can you help us?"</p>
+
+						<p>"Yes, oh terrible Knight who says 'Ni', I can"</p>
+
+						<p>The Knights who say Ni need help with their database. Using SQL, write a statement that will return the following fields:</p>
+
+						<p>transaction_id</p>
+						<p>username</p>
+						<p>shrubberyname</p>
+						<p>quantity</p>
+						<p>cost</p>
+						<p>for all shrubberies purchased with a name of 'rosewood' by 'arthur' ordered by the cost of the transaction so that the largest </p>transaction is on top.</p>
+
+						<p>The Tables are setup as follows:</p>
+
+						<p>Table Name: user          Table Name: shrubbery</p>
+						<p>Field    | Type           Field    | Type</p>
+						<p>------------------------  ----------------------</p>
+						<p>id       | integer (pk)   id       |integer (pk)</p>
+						<p>name     | text           name     | text</p>
+                          quantity | integer</p>
+                          cost     | float</p>
+
+						<p>             Table Name: transactions</p>
+						<p>             Field        | Type</p>
+						<p>             ---------------------------</p>
+						<p>             id           | integer (pk)</p>
+						<p>             user_id      | integer</p>
+						<p>             shrubbery_id | integer</p>
+						<p>             quantity     | integer</p>
+						<p>             cost         | float</p>
+						<p>NOTE: even though the test is in 'Python' only write pure SQL for the solution.</p>
+					</div>
+
+					<div class="col-lg-12">
+						<h1 class="codeHeader"><img src="imgs/sql.png" alt="">  SQL Solution</h1>
+					</div>
+					<div class="col-lg-12">
+						<pre>
+							SQL Solution
+
+							"""
+							SELECT transactions.id, user.name, shrubbery.name, transactions.quantity, transactions.cost
+							FROM transactions
+							INNER JOIN user
+							ON transactions.user_id = user.id
+							INNER JOIN shrubbery
+							ON shrubbery.id = transactions.shrubbery_id
+							AND user.name = 'arthur'
+							AND shrubbery.name = "rosewood"
+							ORDER BY transactions.cost DESC
+
+							"""
+						</pre>
+					</div>
+				</div>
+
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
