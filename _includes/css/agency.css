@@ -402,11 +402,11 @@ section h3.section-subheading {
 
 #portfolio .portfolio-item .portfolio-caption {
     margin: 0 auto;
-    padding: 25px;
+    padding: 10px;
     max-width: 400px;
     text-align: center;
     background-color: #fff;
-    height: 7em;
+    height: 57px;
 }
 
 #portfolio .portfolio-item .portfolio-caption h4 {
@@ -417,7 +417,7 @@ section h3.section-subheading {
 #portfolio .portfolio-item .portfolio-caption p {
     margin: 0;
     font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 16px;
+    font-size: 12px;
     font-style: italic;
 }
 
