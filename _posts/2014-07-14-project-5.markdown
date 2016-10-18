@@ -1,5 +1,5 @@
 ---
-title: <a href="http://yamikamisama.github.io/music_boxes/">Music Boxes</a>
+title: <a href="http&colon;//yamikamisama.github.io/music_boxes/">Music Boxes</a>
 subtitle: Music (Javascript)
 layout: default
 modal-id: 5
@@ -8,8 +8,8 @@ img: music-boxes.png
 thumbnail: music-boxes-thumbnail.png
 alt: image-alt
 project-date: January 2015
-client: <a href="https://github.com/Yamikamisama/Music-Boxes">Source</a>
-category: <a href="http://yamikamisama.github.io/music_boxes/">Music Boxes</a>
+client: <a href="http&colon;//github.com/Yamikamisama/Music-Boxes">Source</a>
+category: <a href="http&colon;//yamikamisama.github.io/music_boxes/">Music Boxes</a>
 description: A simple and beautifully colored music app, seven notes that you can click and play with
 
 ---

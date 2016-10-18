@@ -1,5 +1,5 @@
 ---
-title: <a href="https://rubygems.org/gems/colorbug">Colorbug</a>
+title: <a href="https&colon;//rubygems.org/gems/colorbug">Colorbug</a>
 subtitle: Ruby Development (Gem)
 layout: default
 modal-id: 4
@@ -8,8 +8,8 @@ img: colorbug.png
 thumbnail: colorbug-thumbnail.png
 alt: image-alt
 project-date: November 2014
-client: <a href="https://github.com/Yamikamisama/colorbug">Source</a>
-category: <a href="https://rubygems.org/gems/colorbug">Colorbug</a>
+client: <a href="https&colon;//github.com/Yamikamisama/colorbug">Source</a>
+category: <a href="https&colon;//rubygems.org/gems/colorbug">Colorbug</a>
 description: A useful debugging gem that colors output based on select class
 
 String: Yellow

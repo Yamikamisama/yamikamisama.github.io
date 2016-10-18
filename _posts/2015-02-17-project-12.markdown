@@ -1,5 +1,5 @@
 ---
-title: <a href="http://yamikamisama.github.io/2048/">2048</a>
+title: <a href="http&colon;//yamikamisama.github.io/2048/">2048</a>
 subtitle: Javascript, CSS, HTML
 layout: default
 modal-id: 12
@@ -8,7 +8,7 @@ img: 2048.png
 thumbnail: 2048.png
 alt: image-alt
 project-date: February 2015
-client: <a href="https://github.com/Yamikamisama/Old-Lady-2048">Source</a>
-category: <a href="http://yamikamisama.github.io/2048/">2048</a>
+client: <a href="http&colon;//github.com/Yamikamisama/Old-Lady-2048">Source</a>
+category: <a href="http&colon;//yamikamisama.github.io/2048/">2048</a>
 description: This is a clone of the game 2048, the spin is that this one is themed after the nursery rhyme "There was an old lady who swallowed a fly".  Enjoy playing, its a bit addictive. (It is mobile responsive).
 ---

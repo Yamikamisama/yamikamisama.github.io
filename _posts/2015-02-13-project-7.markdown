@@ -1,5 +1,5 @@
 ---
-title: <a href="https://pair-me-up.herokuapp.com/">PairMe^</a>
+title: <a href="https&colon;//pair-me-up.herokuapp.com/">PairMe^</a>
 subtitle: Chrome Extension
 layout: default
 modal-id: 7
@@ -8,7 +8,7 @@ img: PairMe^.png
 thumbnail: PairMe^.png
 alt: image-alt
 project-date: February 2015
-client: <a href="https://github.com/Yamikamisama/Pair-Me-Up">Source</a>
-category: <a href="https://pair-me-up.herokuapp.com/">PairMe^</a>
+client: <a href="https&colon;//github.com/Yamikamisama/Pair-Me-Up">Source</a>
+category: <a href="https&colon;//pair-me-up.herokuapp.com/">PairMe^</a>
 description: Created at a hackathon, PairMe^ is a chrome extension for creating pairing sessions. The extension allows two users to sign in and create an interval for how long each will drive and navigate, it then prompts the users to switch on completion of the time. When the paring session is over it emails both users with a link to a feedback form so they can give actionable, kind, and specific feedback. This feedback goes to the database and updates their user profile page where they can view the feedback and see how they are rated as a pair Driver or Navigator.
 ---

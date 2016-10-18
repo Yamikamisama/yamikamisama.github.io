@@ -1,5 +1,5 @@
 ---
-title: <a href="http://wizardworld.herokuapp.com/">Super-Working-Title</a>
+title: <a href="http&colon;//wizardworld.herokuapp.com/">Super-Working-Title</a>
 subtitle: Game Design (Javascript)
 layout: default
 modal-id: 2
@@ -8,8 +8,8 @@ img: super-working-title.png
 thumbnail: super-working-title-thumbnail.png
 alt: image-alt
 project-date: November 2014
-client: <a href="https://github.com/Yamikamisama/Super-Working-Title">Source</a>
-category: <a href="http://wizardworld.herokuapp.com/">Super-Working-Title</a>
+client: <a href="http&colon;//github.com/Yamikamisama/Super-Working-Title">Source</a>
+category: <a href="http&colon;//wizardworld.herokuapp.com/">Super-Working-Title</a>
 description: Two mages battle it out using their wind magic to defeat one another.
 
 ---
