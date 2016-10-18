@@ -10,5 +10,5 @@ alt: image-alt
 project-date: November 2014
 client: <a href="https://github.com/Yamikamisama/Fat-Princess">Source</a>
 category: <a href="http://yamikamisama.github.io/fat_princess/">Fat Princess</a>
-description: You control the princess, guide her to the cake (she is oh so hungry), avoid the carrots (she doesnt like the veggies)
+description: You control the princess, guide her to the cake (she is oh so hungry), avoid the carrots (she doesnt like the veggies).
 ---
