@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Intro to User Experience</title>
+	<meta name="description" content="At its core, User Experience (UX) is defined as how someone feels about using a product, system, or service. Regardless of what we're designing-- a website, an Android app, or a toaster-- we all strive to make our designs useful, easy to use, and enjoyable to use. But how exactly do we make something useful, easy to use, and enjoyable? This class will arm you with the essential tips to find those answers.">
+	<meta name="author" content="Sarah Kahn">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/gdilight.css" id="theme">
+	<!-- For syntax highlighting -->
+	<!-- light editor<link rel="stylesheet" href="lib/css/light.css">-->
+	<!-- dark editor-->
+	<link rel="stylesheet" href="lib/css/dark.css">
+	<!-- If use the PDF print sheet so students can print slides-->
+	<link rel="stylesheet" href="css/print/pdf.css" type="text/css" media="print">
+	<link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div class="reveal">
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<!-- Opening -->
+				<section>
+					<h1><img src="css/images/gdi_logo_badge.png" alt="Girl Develop It- don't be shy, develop it Logo!" /><h1>
+						<h2>Intro to User Experience</h2>
+						<h3>Class 1</h3>
+					</section>
+					<!-- Welcome-->
+					<section>
+						<h2>Welcome</h2>
+						<div class="left-align">
+							<p>Girl Develop It is here to provide affordable and accessible programs to learn software through mentorship and hands-on instruction.</p>
+							<p class="green">Some "rules"</p>
+							<ul>
+								<li>We are here for you!</li>
+								<li>Every question is important</li>
+								<li>Help each other</li>
+								<li>Have fun!</li>
+							</ul>
+						</div>
+					</section>
+
+					<!-- Introduction -->
+					<section>
+						<h2>Introduction</h2>
+						<div class="left-align">
+							<p>I'm here to help!</p>
+							<ul>
+								<li>Twitter: <a href="http://twitter.com/lordmikeang">@lordmikeang</a></li>
+								<li>Email: michaelangelodecarlo@gmail.com</li>
+							</ul>
+						</div>
+					</section>
+
+					<!-- Agenda -->
+					<section>
+						<h2>Agenda</h2>
+						<ol>
+							<li>Some definitions and history</li>
+							<li>Exercise: Simplify</li>
+							<li>The anatomy of a design</li>
+							<li>Finding out who your users are</li>
+							<li>Getting started with Testing</li>
+							<li>Designing a test</li>
+							<li>Working with users</a></li>
+							<li>Exercise: Conduct a brief test</li>
+							<li>Personas</li>
+							<li>Exercise: Create a proto-persona</li>
+							<li>Identifying Problems</li>
+						</ol>
+					</section>
+
+					<!-- What is UX? -->
+					<section>
+						<h2>1.  What is User Experience?</h2>
+						<blockquote>User Experience is the way a person feels about using a product, system or service. </blockquote>
+					</section>
+
+
+					<!-- A day in the life  -->
+					<section>
+						<h3>What does a UX Designer do all day?</h3>
+						<img src="css/images/amazing-whiteboard-art.png" alt="Amazing whiteboard art."  />
+						<ul>
+							<li>Create/Test/Fail/Learn/Create</li>
+							<li>Consume vast quantities of sticky notes</li>
+							<li>Create amazing whiteboard art</li>
+							<li><a href="http://uxmastery.com/a-day-in-the-life-of-a-ux-designer/">A day in the Life</a></li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Ok, maybe it's more like this...</h3>
+						<img src="css/images/more-like-this.png" alt="A workflow on a whiteboard."  />
+
+					</section>
+
+
+					<section>
+						<h3>Some common themes</h3>
+						<ul>
+							<li>Advocacy and education.</li>
+							<li>Finding problems, proposing actionable solutions.</li>
+							<li>Facilitating communication.</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Advocacy and education</h3>
+						<ul>
+						    <li>advocacy and education. Advocacy both for the users and for UX methodologies. Education on what the problems users are facing every day are, as well as what can be done to fix it.</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Finding problems, proposing actionable solutions.</h3>
+						<ul>
+						    <li>proposing solutions and actionable plans. It's not enough to know there's a problem. If you're the one that points out a problem, they're going to look to you to figure out how to fix it. Which is why there's an inherent component of leadership to working on any UX role.</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Facilitating communication</h3>
+						<ul>
+						    <li>facilitating communication. Show me a website that doesn't work well, and I'll show you an organization with fractured or dysfunctional internal communication. Maybe marketing is at odds with business stakeholders, or the developers left the farm somehow. We've had an excellent example of this, Healthcare.gov. The UI and the backend were farmed out to two different agencies that didn't talk to each other at the very end. That project is worth an entire class in and of itself.</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>A bit of history</h3>
+						<img src="css/images/henry-ford.png" alt="Henry Ford and Model T."  />
+						<ul>
+							<li>1900s- make human labor more efficient.</li>
+							<li>1950s- Toyota's 'respect for people' philosophy.</li>
+							<li>1970s- Xerox PARC.</li>
+						</ul>
+						<p>Read more: <a href="http://www.uxbooth.com/articles/where-ux-comes-from/">Where UX Comes from by Leah Buley</a></p>
+					</section>
+
+					<section>
+						<h3>Don Norman, the first UX Architect</h3>
+						<img src="css/images/don-norman.png" alt="Don Norman"  />
+						<ul>
+							<li>1990s- Applie hired a cognitive scientist named Don Norman.</li>
+							<li>He was the first person to have the title 'UX Architect'.</li>
+							<li><a href="http://www.nngroup.com/">One of the Godfathers of UX</a></li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Why should we care about UX?</h3>
+						<img src="css/images/coffee-maker.png" alt="A complex Coffee Maker."  />
+						<ul>
+							<li>Think about an object you use every day.</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Pretty + functional = the holy grail.</h3>
+						<img src="css/images/french-press.png" alt="A simple Coffee Maker."  />
+					</section>
+
+					<section>
+						<h3>Anyone ever heard of this company?</h3>
+						<img src="css/images/apple-homepage.png" alt="Apple homepage."  />
+
+					</section>
+
+
+					<section>
+						<h3>Tying it back to websites</h3>
+						<ul>
+							<li><a href="http://www.legoclick.com/">Pretty != usable.</a> </li>
+							<img src="css/images/craigslist_homepage.png" alt="Apple homepage."  />
+
+						</ul>
+					</section>
+
+					<section>
+						<h2>2. Simplify: Exercise</h2>
+						<ul>
+							<li><a href="http://www.simpleandusable.com/simplify-this">Simplify this</a> </li>
+							<li>Try to have all the normal buttons present</li>
+							<li>What does the user need to feel comfortable</li>
+							<li>Simplicity is key</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>3. The anatomy of a design</h2>
+						<ul>
+							<li>Information Architecture</li>
+							<li>Content Strategy</li>
+							<li>Interaction Design</li>
+							<li>Visual Design</li>
+						</ul>
+					</section>
+					<section>
+						<h3>A bit of theory</h3>
+						<img src="css/images/ux-honeycomb.png" alt="UX Honeycomb."  />
+
+					</section>
+
+					<section>
+						<h3>What is Information Architecture?</h3>
+						<p>Some examples</p>
+						<ul>
+							<li>Information architecture refers to the overall organization of navigation and content on a website or software interface. Organizing static content pieces, actions, and any other content in a logical, non-overwhelming way is the end goal of information architecture.</li>
+							<li>Navigation
+								<ul>
+									<li>Breadcrumbs</li>
+									<li>Sidebar menus</li>
+									<li>Footer menus</li>
+								</ul>
+							</li>
+							<li>Headers and sections in content blocks</li>
+
+						</ul>
+					</section>
+					<section>
+						<h3>Example</h3>
+						<img src="css/images/IA.png" alt="IA Elements"  />
+
+					</section>
+
+					<section>
+						<h3>What is Interaction Design?</h3>
+						<ul>
+							<li>Interaction design refers to the overall experience of moving through a series of actions on a website or in a software system. For example, completing a task that requires a user to input information and then post that information to a database. The process of getting that user to perform that task is Interaction Design. It's the process of creating a path that guides someone through a series of tasks.</li>
+							<li>Clickable</li>
+							<li>Scrollable</li>
+							<li>Action words, like 'Submit'</li>
+							<li>Typeable (inputs)</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Example</h3>
+						<li><a href="css/images/interaction-design.png" target="_blank">An example from my working life</a></li>
+						<li><a href="www.waywire.com" target="_blank">Another example</a></li>
+					</section>
+
+					<section>
+						<h3>Separating Visual Design</h3>
+						<ul>
+							<li>Style Guide</li>
+							<li>Pictures</li>
+							<li>Colors</li>
+							<li>Typography</li>
+							<li>Overall look and feel</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>4. Finding out who your users are</h2>
+						<p>Before there can be design, there must be data.</p>
+
+					</section>
+					<section>
+						<h3>What you need to know</h3>
+						<ul>
+							<li>Demographic Information: location, languages used, time zones, formatting conventions</li>
+							<li>Technical capabilities: hardware, most commonly used browser/operating system combinations, device type, screen size</li>
+							<li>Common contexts: contexts where device is commonly used (are your users all angrily driving a mini-van while using your product?)</li>
+						</ul>
+
+					</section>
+					<section>
+						<h3>Tools to try</h3>
+						<ul>
+							<li><a href="https://www.google.com/analytics/">Google analytics</a></li>
+							<li><a href="http://piwik.org/">Piwik</a></li>
+							<li><a href="http://www.crazyegg.com/">Crazy Egg</a></li>
+							<li><a href="https://kissmetrics.com/">Kiss Metrics</a></li>
+							<li><a href="http://www.loopfuse.com/">Loopfuse</a>
+								<li><a href="http://www.springmetrics.com/">Spring Metrics</a></li>
+							</ul>
+						</section>
+
+						<section>
+							<h2>5. Getting Started with testing</h3>
+							</section>
+							<section>
+								<h3>Just go for it!</h3>
+								<div class="left-align">
+									<p>The small test- any testing is better than none.</p>
+									<p>Pros</p>
+									<ul>
+										<li>Cheap</li>
+										<li>Easy to get your feet wet</li>
+										<li>Start to get high up buy-in</li>
+									</ul>
+									<p>Cons</p>
+									<ul>
+										<li>Will by it's nature be small in scope</li>
+										<li>Will probably need more testing to be useful</li>
+									</ul>
+								</div>
+							</section>
+							<section>
+								<h3>The big test</h3>
+								<p>Pros
+									<ul>
+										<li>Get a wider range of input.</li>
+										<li>Get more in-depth feedback.</li>
+										<li>Authority.</li>
+									</ul>
+								</p>
+								<p>Cons
+									<ul>
+										<li>More expensive</li>
+										<li>Slow/Time consuming</li>
+										<li>Less focused results are more <br />challenging to apply.</li>
+									</ul>
+								</section>
+								<section>
+									<h3>Ongoing testing</h3>
+									<p>Make it a habit, and you'll never have to do a giant test again!</p>
+								</section>
+								<section>
+									<h2>6. Designing a Test</h2>
+									<ul>
+										<li>Coming up with a testing plan</li>
+										<li>Test styles</li>
+										<li>Remote vs. in-person</li>
+										<li>Tools to use</li>
+									</ul>
+								</section>
+
+								<section>
+									<h3>Users don't have the all answers, either.</h3>
+									<img src="css/images/gnomes.png" alt="underpants gnomes" />
+								</section>
+								<section>
+									<h3>Have a test plan</h3>
+									<ul>
+										<li>Organize yourself.</li>
+										<li>Provide your tester something to react against.</li>
+										<li>Respect everyone's time.</li>
+									</ul>
+								</section>
+								<section>
+									<h3>Example</h3>
+									<div class="left-align">
+										<p><b>Known Problem:</b><br />Non-intuituve browsing mechanism.</p>
+										<p><b>Leading Question:</b><br />How would you search for the latest edition of the wall street journal?</p>
+									</div>
+								</section>
+								<section>
+									<h3>Naturalistic vs Task-oriented</h3>
+									<ul>
+										<li>There is no one right way for every situation.</li>
+										<li>Naturalistic: The naturalistic school of testing tends more towards giving users a loose set of guidelines, and then seeing what they do.</li>
+										<li>Task-focused- can be better for answering very specific questions.</li>
+									</ul>
+								</section>
+								<section>
+									<h3>In-person vs Remote</h3>
+									<p>Types of tests</p>
+									<ul>
+										<li>In-person moderated- sitting with the user, interactive.</li>
+										<li>In-person unmoderated- watching through a mirror, or recording and viewing later.</li>
+										<li>Remote moderated- an interactive session via a tool like <a href="http://skype.com">Skype</a>.</li>
+										<li>Remote unmoderated- using a tool like <a href="http://openhallway.com">Open Hallway</a></li>
+									</ul>
+								</section>
+								<section>
+									<h2>7. Working with users</h2>
+									<p>Rumor has it they're just people.</p>
+								</section>
+
+								<section>
+									<h3>Recruiting</h3>
+									<ul>
+										<li>Don't wait until you have a specific test to run, build up a list</li>
+										<li>Be social</li>
+										<li>Use your application/website</li>
+									</ul>
+								</section>
+
+								<section>
+									<h3>Scheduling</h3>
+									<ul>
+										<li>Leave extra time for fixing problems</li>
+										<li>Remember to eat lunch!</li>
+									</ul>
+								</section>
+								<section>
+									<h3>Legal Stuff</h3>
+									<ul>
+										<li>Check with your organization or client's organization first.</li>
+										<li>Even if they don't have an explicit policy, they might want to have a conversation</li>
+									</ul>
+								</section>
+								<section>
+									<h3>Running a Session</h3>
+									<ul>
+										<li>Be friendly and confident.</li>
+										<li>Be mindful of language.</li>
+										<li>No technobabble.</li>
+										<li>No leading.</li>
+									</ul>
+								</section>
+								<section>
+									<h2>8. Exercise</h2>
+									<p>Let's test something!</p>
+								</section>
+								<section>
+									<h2>What is a Persona, and why make one?</h2>
+									<a href="css/images/zoidberg.pdf" target="_blank">Example Persona</a>
+								</section>
+
+								<section>
+									<h3>Proto-personas</h3>
+									<p>A lightweight starting point.</p>
+								</section>
+
+								<section>
+									<h3>Creating a Persona</h3>
+								</section>
+
+
+								<section>
+									<h3>First, you'll need some information</h3>
+									<p>What does success look like?</p>
+								</section>
+
+								<section>
+									<h3>How familiar is this person. . .</h3>
+									<img src="css/images/levels.png" alt="Beginner, Intermediate, Expert."  />
+									<ul>
+										<li>With the tasks in your application?</li>
+										<li>With applications in general?</li>
+										<li>With the internet in general?</li>
+										<li>With computers in general?</li>
+									</ul>
+								</section>
+
+								<section>
+									<h3>Combinations of different characteristics</h3>
+									<img src="css/images/user.png" alt="A user"  />
+									<p>Your user might be an expert with the tasks of the industry, but not great with the technology you're building in.</p>
+								</section>
+
+								<section>
+									<h3>Complexities of users</h3>
+									<img src="css/images/complexity.png" alt="Shades of user skill levels."  />
+								</section>
+
+								<section>
+									<h3>Make a template.</h3>
+									<p><a href="css/images/zoidberg.pdf" target="_blank">Example Persona</a></p>
+									<ul>
+										<li>Name</li>
+										<li>Job title</li>
+										<li>Technical comfort</li>
+										<li>Location</li>
+										<li>Industry Knowledge</li>
+
+										<li>What they care about</li>
+									</ul>
+								</section>
+
+								<section>
+									<h2>2. Exercise: Create a Persona</h2>
+									<p>Applying what we’ve discussed here, pick a use case for WebAssign (for example, a professor who is good at technology but new to WebAssign,) and create a persona for that user. Give them a name, a backstory, and a picture, in addition to adding 3-4 additional characteristics to the skeletal template that we discussed.</p>
+
+								</section>
+
+
+								<section>
+									<h2>3. How to know when you have a problem</h2>
+								</section>
+								<section>
+									<h3>What does a usability problem look like?</h3>
+									<img src="css/images/frustration.png" alt="A frustrated user" />
+								</section>
+
+								<section>
+									<h3>Cues in metrics</h3>
+									<p><img src="css/images/cnn.png" alt="CNN screenshot" /></p>
+									<ul>
+										<li><a href="http://www.crazyegg.com/demo#heatmap">Too much clicking</a></li>
+										<li><a href="http://www.webdesignerdepot.com/2012/11/google-simplifies-but-retains-dead-space/">Not enough clicking</a></li>
+										<li>Too much scrolling</li>
+										<li><a href="http://www-users.cs.umn.edu/~echi/papers/chi2000/scent.pdf">Slow navigating</a></li>
+									</ul>
+								</section>
+
+								<section>
+									<h3>Begin with the obvious</h3>
+									<img src="css/images/yellow.png" alt="A very yellow website indeed." />
+								</section>
+								<section>
+									<h3>Missing anything?</h3>
+									<div class="left-align">
+										<ul>
+											<li>Can they tell who you are and what you do on the homepage?</li>
+											<li>Does it answer all the questions you'd expect them to ask?</li>
+											<li>Is there a clear call to action?</li>
+											<li>Can they figure out how to contact you?</li>
+											<li>Example: <a href="http://adzerk.com">How the heck do I log in?</a></li>
+										</ul>
+									</div>
+								</section>
+								<section>
+									<h3>Listen for the negative</h3>
+									<ul>
+										<li>I'm <strong>not sure</strong> how to go back.</li>
+										<li>Those colors are <strong>hard</strong> to read</li>
+										<li>I <strong>can't</strong> get out of here</li>
+									</ul>
+								</section>
+								<section>
+									<h3>Listen for uncertainty</h3>
+									<ul>
+										<li><strong>What</strong> do these pictures mean?</li>
+										<li>I'm <strong>not sure</strong></li>
+										<li><strong>Where</strong> do I go next?</li>
+									</ul>
+								</section>
+								<section>
+									<h3>Talk to other people in your organization</h3>
+									<p>Customer support, sales, anyone who talks to your users.</p>
+								</section>
+
+								<section>
+									<h2>Next class: Wednesday, July 15th, 7:00-9:30pm</h2>
+								</section>
+								<section>
+									<h2>Homework: Test Something!</h2>
+
+									<em>Pick a project that you’re working on.</em>
+									<ul>
+										<li>Find one thing that you think is a problem.</li>
+										<li>Find a living person, if possible someone who might feasibly use the project in real life some time.</li>
+										<li>Ask them to try to complete a task that will involving that potentially problematic thing.</li>
+										<li>Listen to what they say, watch what they do, and take notes. Make note of tone and body language.</li>
+										<li>Was it enlightening? Can you use this to further design and planning discussions in your organization or with your client?</li>
+									</ul>
+								</section>
+							</div>
+							<footer>
+								<div class="copyright">
+									Intro to User Experience -- Girl Develop It RDU --
+									<a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
+								</div>
+							</footer>
+						</div>
+
+
+						<script src="lib/js/head.min.js"></script>
+						<script src="js/reveal.min.js"></script>
+
+						<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+				{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+				{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+				{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+</script>
+
+</body>
+</html>
